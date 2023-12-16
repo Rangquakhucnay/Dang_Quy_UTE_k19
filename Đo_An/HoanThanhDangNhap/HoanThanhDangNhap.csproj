@@ -1,0 +1,907 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{165AE3B7-6F16-47D0-AFAC-8BA28CC6BA6F}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>HoanThanhDangNhap</RootNamespace>
+    <AssemblyName>HoanThanhDangNhap</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BouncyCastle.Crypto, Version=1.9.0.0, Culture=neutral, PublicKeyToken=0e99375e54769942, processorArchitecture=MSIL">
+      <HintPath>..\packages\Portable.BouncyCastle.1.9.0\lib\net40\BouncyCastle.Crypto.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Enums.NET, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7ea1c1650d506225, processorArchitecture=MSIL">
+      <HintPath>..\packages\Enums.NET.4.0.0\lib\net45\Enums.NET.dll</HintPath>
+    </Reference>
+    <Reference Include="ICSharpCode.SharpZipLib, Version=1.3.3.11, Culture=neutral, PublicKeyToken=1b03e6acf1164f73, processorArchitecture=MSIL">
+      <HintPath>..\packages\SharpZipLib.1.3.3\lib\net45\ICSharpCode.SharpZipLib.dll</HintPath>
+    </Reference>
+    <Reference Include="MathNet.Numerics, Version=4.15.0.0, Culture=neutral, PublicKeyToken=cd8b63ad3d691a37, processorArchitecture=MSIL">
+      <HintPath>..\packages\MathNet.Numerics.Signed.4.15.0\lib\net461\MathNet.Numerics.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IO.RecyclableMemoryStream, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.IO.RecyclableMemoryStream.2.2.0\lib\net462\Microsoft.IO.RecyclableMemoryStream.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Office.Interop.Excel.15.0.4795.1001\lib\net20\Microsoft.Office.Interop.Excel.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="SixLabors.ImageSharp, Version=2.0.0.0, Culture=neutral, PublicKeyToken=d998eea7b14cab13, processorArchitecture=MSIL">
+      <HintPath>..\packages\SixLabors.ImageSharp.2.1.3\lib\net472\SixLabors.ImageSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.SQLite, Version=1.0.117.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <HintPath>..\packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.117.0\lib\net46\System.Data.SQLite.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.SQLite.EF6, Version=1.0.117.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Data.SQLite.EF6.1.0.117.0\lib\net46\System.Data.SQLite.EF6.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.SQLite.Linq, Version=1.0.117.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Data.SQLite.Linq.1.0.117.0\lib\net46\System.Data.SQLite.Linq.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO.Compression, Version=4.1.2.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.Compression.4.3.0\lib\net46\System.IO.Compression.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.IO.FileSystem.Primitives, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.FileSystem.Primitives.4.3.0\lib\net46\System.IO.FileSystem.Primitives.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.IO.UnmanagedMemoryStream, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.UnmanagedMemoryStream.4.3.0\lib\net46\System.IO.UnmanagedMemoryStream.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.4\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.5.0.0\lib\net45\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Text.Encoding.CodePages, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.Encoding.CodePages.5.0.0\lib\net461\System.Text.Encoding.CodePages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.5.0\lib\net47\System.ValueTuple.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="daynhiet1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="daynhiet1.Designer.cs">
+      <DependentUpon>daynhiet1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="daynhiet2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="daynhiet2.Designer.cs">
+      <DependentUpon>daynhiet2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="daynhiet3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="daynhiet3.Designer.cs">
+      <DependentUpon>daynhiet3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="daynhiet3_1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="daynhiet3_1.Designer.cs">
+      <DependentUpon>daynhiet3_1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="daynhiet4.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="daynhiet4.Designer.cs">
+      <DependentUpon>daynhiet4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="daynhiet5.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="daynhiet5.Designer.cs">
+      <DependentUpon>daynhiet5.cs</DependentUpon>
+    </Compile>
+    <Compile Include="daynhiet6.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="daynhiet6.Designer.cs">
+      <DependentUpon>daynhiet6.cs</DependentUpon>
+    </Compile>
+    <Compile Include="daynhiet7.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="daynhiet7.Designer.cs">
+      <DependentUpon>daynhiet7.cs</DependentUpon>
+    </Compile>
+    <Compile Include="delcodientu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="delcodientu.Designer.cs">
+      <DependentUpon>delcodientu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="delcodientu1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="delcodientu1.Designer.cs">
+      <DependentUpon>delcodientu1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="delcodientu2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="delcodientu2.Designer.cs">
+      <DependentUpon>delcodientu2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="delcodientu3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="delcodientu3.Designer.cs">
+      <DependentUpon>delcodientu3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="delcodientu4.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="delcodientu4.Designer.cs">
+      <DependentUpon>delcodientu4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="delcohall.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="delcohall.Designer.cs">
+      <DependentUpon>delcohall.cs</DependentUpon>
+    </Compile>
+    <Compile Include="delcohall1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="delcohall1.Designer.cs">
+      <DependentUpon>delcohall1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="delcoquang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="delcoquang.Designer.cs">
+      <DependentUpon>delcoquang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="delcoquang1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="delcoquang1.Designer.cs">
+      <DependentUpon>delcoquang1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="delcoquang2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="delcoquang2.Designer.cs">
+      <DependentUpon>delcoquang2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formChonBaiHoc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formChonBaiHoc.Designer.cs">
+      <DependentUpon>formChonBaiHoc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formchonbaihocchuong2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formchonbaihocchuong2.Designer.cs">
+      <DependentUpon>formchonbaihocchuong2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formchonchuong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formchonchuong.Designer.cs">
+      <DependentUpon>formchonchuong.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formDiToiBaiHoc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formDiToiBaiHoc.Designer.cs">
+      <DependentUpon>formDiToiBaiHoc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formDiToiBaiHoc2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formDiToiBaiHoc2.Designer.cs">
+      <DependentUpon>formDiToiBaiHoc2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formExam.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formExam.Designer.cs">
+      <DependentUpon>formExam.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formEXAMtonghop.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formEXAMtonghop.Designer.cs">
+      <DependentUpon>formEXAMtonghop.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formGV.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formGV.Designer.cs">
+      <DependentUpon>formGV.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formHienThiBaiHoc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formHienThiBaiHoc.Designer.cs">
+      <DependentUpon>formHienThiBaiHoc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formHienThiBaiHoc2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formHienThiBaiHoc2.Designer.cs">
+      <DependentUpon>formHienThiBaiHoc2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formkt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formkt.Designer.cs">
+      <DependentUpon>formkt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formThucHanh.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formThucHanh.Designer.cs">
+      <DependentUpon>formThucHanh.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formthuchanhnew.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formthuchanhnew.Designer.cs">
+      <DependentUpon>formthuchanhnew.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GVTaoMaLoi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GVTaoMaLoi.Designer.cs">
+      <DependentUpon>GVTaoMaLoi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="karman.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="karman.Designer.cs">
+      <DependentUpon>karman.cs</DependentUpon>
+    </Compile>
+    <Compile Include="karman1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="karman1.Designer.cs">
+      <DependentUpon>karman1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="karman2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="karman2.Designer.cs">
+      <DependentUpon>karman2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="karman3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="karman3.Designer.cs">
+      <DependentUpon>karman3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="karman4.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="karman4.Designer.cs">
+      <DependentUpon>karman4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="karman5.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="karman5.Designer.cs">
+      <DependentUpon>karman5.cs</DependentUpon>
+    </Compile>
+    <Compile Include="karman6.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="karman6.Designer.cs">
+      <DependentUpon>karman6.cs</DependentUpon>
+    </Compile>
+    <Compile Include="karman7.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="karman7.Designer.cs">
+      <DependentUpon>karman7.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LoginDauTien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoginDauTien.Designer.cs">
+      <DependentUpon>LoginDauTien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="taoaccount.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="taoaccount.Designer.cs">
+      <DependentUpon>taoaccount.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LoginStudent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoginStudent.Designer.cs">
+      <DependentUpon>LoginStudent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="map.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="map.Designer.cs">
+      <DependentUpon>map.cs</DependentUpon>
+    </Compile>
+    <Compile Include="map1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="map1.Designer.cs">
+      <DependentUpon>map1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="map2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="map2.Designer.cs">
+      <DependentUpon>map2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\User.cs" />
+    <Compile Include="thw.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="thw.Designer.cs">
+      <DependentUpon>thw.cs</DependentUpon>
+    </Compile>
+    <Compile Include="thw1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="thw1.Designer.cs">
+      <DependentUpon>thw1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="thw2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="thw2.Designer.cs">
+      <DependentUpon>thw2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TienDoSV.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TienDoSV.Designer.cs">
+      <DependentUpon>TienDoSV.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VPAhall.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VPAhall.Designer.cs">
+      <DependentUpon>VPAhall.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VPAhall1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VPAhall1.Designer.cs">
+      <DependentUpon>VPAhall1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VPAhall2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VPAhall2.Designer.cs">
+      <DependentUpon>VPAhall2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VTAcoIDL.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VTAcoIDL.Designer.cs">
+      <DependentUpon>VTAcoIDL.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VTAcoIDL1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VTAcoIDL1.Designer.cs">
+      <DependentUpon>VTAcoIDL1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VTAcoIDL2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VTAcoIDL2.Designer.cs">
+      <DependentUpon>VTAcoIDL2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VTAcoIDL3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VTAcoIDL3.Designer.cs">
+      <DependentUpon>VTAcoIDL3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VTAcoIDL4.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VTAcoIDL4.Designer.cs">
+      <DependentUpon>VTAcoIDL4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VTAhall.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VTAhall.Designer.cs">
+      <DependentUpon>VTAhall.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VTAhall1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VTAhall1.Designer.cs">
+      <DependentUpon>VTAhall1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VTAhall2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VTAhall2.Designer.cs">
+      <DependentUpon>VTAhall2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VTAkhongIDL.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VTAkhongIDL.Designer.cs">
+      <DependentUpon>VTAkhongIDL.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VTAkhongIDL1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VTAkhongIDL1.Designer.cs">
+      <DependentUpon>VTAkhongIDL1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VTAkhongIDL2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VTAkhongIDL2.Designer.cs">
+      <DependentUpon>VTAkhongIDL2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VTAkhongIDL3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VTAkhongIDL3.Designer.cs">
+      <DependentUpon>VTAkhongIDL3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="vtatiepdiem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="vtatiepdiem.Designer.cs">
+      <DependentUpon>vtatiepdiem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="vtatiepdiem1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="vtatiepdiem1.Designer.cs">
+      <DependentUpon>vtatiepdiem1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="vtatiepdiem2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="vtatiepdiem2.Designer.cs">
+      <DependentUpon>vtatiepdiem2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="vtatiepdiem3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="vtatiepdiem3.Designer.cs">
+      <DependentUpon>vtatiepdiem3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="vtatiepdiem4.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="vtatiepdiem4.Designer.cs">
+      <DependentUpon>vtatiepdiem4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VPAtuyentinh.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VPAtuyentinh.Designer.cs">
+      <DependentUpon>VPAtuyentinh.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VPAtuyentinh1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VPAtuyentinh1.Designer.cs">
+      <DependentUpon>VPAtuyentinh1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VPAtuyentinh2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VPAtuyentinh2.Designer.cs">
+      <DependentUpon>VPAtuyentinh2.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="daynhiet1.resx">
+      <DependentUpon>daynhiet1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="daynhiet2.resx">
+      <DependentUpon>daynhiet2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="daynhiet3.resx">
+      <DependentUpon>daynhiet3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="daynhiet3_1.resx">
+      <DependentUpon>daynhiet3_1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="daynhiet4.resx">
+      <DependentUpon>daynhiet4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="daynhiet5.resx">
+      <DependentUpon>daynhiet5.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="daynhiet6.resx">
+      <DependentUpon>daynhiet6.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="delcodientu.resx">
+      <DependentUpon>delcodientu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="delcodientu1.resx">
+      <DependentUpon>delcodientu1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="delcodientu2.resx">
+      <DependentUpon>delcodientu2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="delcodientu3.resx">
+      <DependentUpon>delcodientu3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="delcodientu4.resx">
+      <DependentUpon>delcodientu4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="delcohall.resx">
+      <DependentUpon>delcohall.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="delcohall1.resx">
+      <DependentUpon>delcohall1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="delcoquang.resx">
+      <DependentUpon>delcoquang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="delcoquang1.resx">
+      <DependentUpon>delcoquang1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="delcoquang2.resx">
+      <DependentUpon>delcoquang2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formChonBaiHoc.resx">
+      <DependentUpon>formChonBaiHoc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formchonbaihocchuong2.resx">
+      <DependentUpon>formchonbaihocchuong2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formchonchuong.resx">
+      <DependentUpon>formchonchuong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formDiToiBaiHoc.resx">
+      <DependentUpon>formDiToiBaiHoc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formDiToiBaiHoc2.resx">
+      <DependentUpon>formDiToiBaiHoc2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formExam.resx">
+      <DependentUpon>formExam.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formEXAMtonghop.resx">
+      <DependentUpon>formEXAMtonghop.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formGV.resx">
+      <DependentUpon>formGV.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formHienThiBaiHoc.resx">
+      <DependentUpon>formHienThiBaiHoc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formHienThiBaiHoc2.resx">
+      <DependentUpon>formHienThiBaiHoc2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formkt.resx">
+      <DependentUpon>formkt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formThucHanh.resx">
+      <DependentUpon>formThucHanh.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formthuchanhnew.resx">
+      <DependentUpon>formthuchanhnew.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GVTaoMaLoi.resx">
+      <DependentUpon>GVTaoMaLoi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="karman.resx">
+      <DependentUpon>karman.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="karman1.resx">
+      <DependentUpon>karman1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="karman2.resx">
+      <DependentUpon>karman2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="karman3.resx">
+      <DependentUpon>karman3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="karman4.resx">
+      <DependentUpon>karman4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="karman5.resx">
+      <DependentUpon>karman5.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="karman6.resx">
+      <DependentUpon>karman6.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoginDauTien.resx">
+      <DependentUpon>LoginDauTien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="taoaccount.resx">
+      <DependentUpon>taoaccount.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoginStudent.resx">
+      <DependentUpon>LoginStudent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="map.resx">
+      <DependentUpon>map.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="map1.resx">
+      <DependentUpon>map1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="map2.resx">
+      <DependentUpon>map2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="thw.resx">
+      <DependentUpon>thw.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="thw1.resx">
+      <DependentUpon>thw1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="thw2.resx">
+      <DependentUpon>thw2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TienDoSV.resx">
+      <DependentUpon>TienDoSV.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VPAhall.resx">
+      <DependentUpon>VPAhall.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VPAhall1.resx">
+      <DependentUpon>VPAhall1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VTAcoIDL.resx">
+      <DependentUpon>VTAcoIDL.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VTAcoIDL1.resx">
+      <DependentUpon>VTAcoIDL1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VTAcoIDL2.resx">
+      <DependentUpon>VTAcoIDL2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VTAcoIDL3.resx">
+      <DependentUpon>VTAcoIDL3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VTAhall.resx">
+      <DependentUpon>VTAhall.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VTAhall1.resx">
+      <DependentUpon>VTAhall1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VTAhall2.resx">
+      <DependentUpon>VTAhall2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VTAkhongIDL.resx">
+      <DependentUpon>VTAkhongIDL.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VTAkhongIDL1.resx">
+      <DependentUpon>VTAkhongIDL1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VTAkhongIDL2.resx">
+      <DependentUpon>VTAkhongIDL2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VTAkhongIDL3.resx">
+      <DependentUpon>VTAkhongIDL3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="vtatiepdiem.resx">
+      <DependentUpon>vtatiepdiem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="vtatiepdiem1.resx">
+      <DependentUpon>vtatiepdiem1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="vtatiepdiem2.resx">
+      <DependentUpon>vtatiepdiem2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="vtatiepdiem3.resx">
+      <DependentUpon>vtatiepdiem3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="vtatiepdiem4.resx">
+      <DependentUpon>vtatiepdiem4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VPAtuyentinh.resx">
+      <DependentUpon>VPAtuyentinh.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VPAtuyentinh1.resx">
+      <DependentUpon>VPAtuyentinh1.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Du lieu cau hoi\book form thuc hanh.xlsx" />
+    <None Include="Resources\Du lieu cau hoi\excel 1_Dang nhap.xlsx" />
+    <None Include="Resources\electronics_repair_01.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Logo-DH-Su-Pham-Ky-Thuat-TP-Ho-Chi-Minh-HCMUTE.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\electronics_repair_01_whitebg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logout.png" />
+    <None Include="Resources\Icons8-Ios7-Arrows-Forward.512.png" />
+    <None Include="Resources\Icons8-Ios7-Arrows-Back.512.png" />
+    <None Include="Resources\bg2.png" />
+    <None Include="Resources\in4.jpg" />
+    <None Include="Resources\bg21.png" />
+    <None Include="Resources\Iconsmind-Outline-Information.512.png" />
+    <None Include="Resources\bg22.png" />
+    <None Include="Resources\bg3.jpg" />
+    <None Include="bin\Debug\Resources\So do fault.jpg" />
+    <None Include="Resources\Picture11.png" />
+    <None Include="Resources\Picture111.png" />
+    <None Include="Resources\Picture12.png" />
+    <None Include="Resources\MachFAULT.png" />
+    <None Include="Resources\Picture3.png" />
+    <None Include="Resources\Picture4.png" />
+    <None Include="Resources\Picture41.png" />
+    <None Include="Resources\bg100.png" />
+    <None Include="Resources\daynhiet.png" />
+    <None Include="Resources\cam-bien-luu-luong-khi-nap.jpeg" />
+    <None Include="Resources\Screenshot 2023-12-08 153203.png" />
+    <None Include="Resources\formkt.png" />
+    <None Include="Resources\nutchonformkt.png" />
+    <None Include="Resources\hinhformkt.jpg" />
+    <None Include="Resources\4bec8af5784caaf4779c842f4047eba9.jpg" />
+    <Content Include="Resources\test\hinh1.png" />
+    <Content Include="Resources\test\hinh10.png" />
+    <Content Include="Resources\test\hinh11.png" />
+    <Content Include="Resources\test\hinh12.png" />
+    <Content Include="Resources\test\hinh13.png" />
+    <Content Include="Resources\test\hinh14.png" />
+    <Content Include="Resources\test\hinh15.png" />
+    <Content Include="Resources\test\hinh16.png" />
+    <Content Include="Resources\test\hinh17.png" />
+    <Content Include="Resources\test\hinh18.png" />
+    <Content Include="Resources\test\hinh19.png" />
+    <Content Include="Resources\test\hinh2.png" />
+    <Content Include="Resources\test\hinh20.png" />
+    <Content Include="Resources\test\hinh3.png" />
+    <Content Include="Resources\test\hinh4.png" />
+    <Content Include="Resources\test\hinh5.png" />
+    <Content Include="Resources\test\hinh6.png" />
+    <Content Include="Resources\test\hinh7.png" />
+    <Content Include="Resources\test\hinh8.png" />
+    <Content Include="Resources\test\hinh9.png" />
+    <None Include="Resources\pas.png" />
+    <None Include="Resources\user.png" />
+    <None Include="Resources\pass1.jpg" />
+    <None Include="Resources\user1.jpg" />
+    <None Include="Resources\user.jpg" />
+    <None Include="Resources\aaa.png" />
+    <Content Include="Resources\hinh anh c6\relay component.gif" />
+    <Content Include="Resources\hinh anh c6\relay work.gif" />
+    <Content Include="Resources\hinh anh c6\relay working animation.gif" />
+    <Content Include="Resources\icon\unvisible eyes.png" />
+    <Content Include="Resources\icon\visible-icon-13.jpg" />
+    <Content Include="Resources\mach c6.png" />
+    <Content Include="Resources\mach trang.jpg" />
+    <None Include="Resources\visible-icon-13.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="Microsoft.Office.Core">
+      <Guid>{2DF8D04C-5BFA-101B-BDE5-00AA0044DE52}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>8</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="Microsoft.Office.Interop.Excel1">
+      <Guid>{00020813-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>9</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="VBIDE">
+      <Guid>{0002E157-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>5</VersionMajor>
+      <VersionMinor>3</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.targets'))" />
+    <Error Condition="!Exists('..\packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.117.0\build\net46\Stub.System.Data.SQLite.Core.NetFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.117.0\build\net46\Stub.System.Data.SQLite.Core.NetFramework.targets'))" />
+  </Target>
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" />
+  <Import Project="..\packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.117.0\build\net46\Stub.System.Data.SQLite.Core.NetFramework.targets" Condition="Exists('..\packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.117.0\build\net46\Stub.System.Data.SQLite.Core.NetFramework.targets')" />
+</Project>
