@@ -123,131 +123,41 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="daynhiet1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="daynhiet1.Designer.cs">
-      <DependentUpon>daynhiet1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="daynhiet2.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="daynhiet2.Designer.cs">
-      <DependentUpon>daynhiet2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="daynhiet3.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="daynhiet3.Designer.cs">
-      <DependentUpon>daynhiet3.cs</DependentUpon>
-    </Compile>
-    <Compile Include="daynhiet3_1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="daynhiet3_1.Designer.cs">
-      <DependentUpon>daynhiet3_1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="daynhiet4.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="daynhiet4.Designer.cs">
-      <DependentUpon>daynhiet4.cs</DependentUpon>
-    </Compile>
-    <Compile Include="daynhiet5.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="daynhiet5.Designer.cs">
-      <DependentUpon>daynhiet5.cs</DependentUpon>
-    </Compile>
-    <Compile Include="daynhiet6.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="daynhiet6.Designer.cs">
-      <DependentUpon>daynhiet6.cs</DependentUpon>
-    </Compile>
-    <Compile Include="daynhiet7.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="daynhiet7.Designer.cs">
-      <DependentUpon>daynhiet7.cs</DependentUpon>
-    </Compile>
-    <Compile Include="delcodientu.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="delcodientu.Designer.cs">
-      <DependentUpon>delcodientu.cs</DependentUpon>
-    </Compile>
-    <Compile Include="delcodientu1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="delcodientu1.Designer.cs">
-      <DependentUpon>delcodientu1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="delcodientu2.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="delcodientu2.Designer.cs">
-      <DependentUpon>delcodientu2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="delcodientu3.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="delcodientu3.Designer.cs">
-      <DependentUpon>delcodientu3.cs</DependentUpon>
-    </Compile>
-    <Compile Include="delcodientu4.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="delcodientu4.Designer.cs">
-      <DependentUpon>delcodientu4.cs</DependentUpon>
-    </Compile>
-    <Compile Include="delcohall.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="delcohall.Designer.cs">
-      <DependentUpon>delcohall.cs</DependentUpon>
-    </Compile>
-    <Compile Include="delcohall1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="delcohall1.Designer.cs">
-      <DependentUpon>delcohall1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="delcoquang.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="delcoquang.Designer.cs">
-      <DependentUpon>delcoquang.cs</DependentUpon>
-    </Compile>
-    <Compile Include="delcoquang1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="delcoquang1.Designer.cs">
-      <DependentUpon>delcoquang1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="delcoquang2.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="delcoquang2.Designer.cs">
-      <DependentUpon>delcoquang2.cs</DependentUpon>
-    </Compile>
     <Compile Include="formChonBaiHoc.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="formChonBaiHoc.Designer.cs">
       <DependentUpon>formChonBaiHoc.cs</DependentUpon>
     </Compile>
-    <Compile Include="formchonbaihocchuong2.cs">
+    <Compile Include="formchonbaihoc3.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="formchonbaihocchuong2.Designer.cs">
-      <DependentUpon>formchonbaihocchuong2.cs</DependentUpon>
+    <Compile Include="formchonbaihoc3.Designer.cs">
+      <DependentUpon>formchonbaihoc3.cs</DependentUpon>
     </Compile>
-    <Compile Include="formchonchuong.cs">
+    <Compile Include="formchonbaihoc2.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="formchonchuong.Designer.cs">
-      <DependentUpon>formchonchuong.cs</DependentUpon>
+    <Compile Include="formchonbaihoc2.Designer.cs">
+      <DependentUpon>formchonbaihoc2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formchonbaihoc4.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formchonbaihoc4.Designer.cs">
+      <DependentUpon>formchonbaihoc4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formchonphan1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formchonphan1.Designer.cs">
+      <DependentUpon>formchonphan1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formchonphan2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formchonphan2.Designer.cs">
+      <DependentUpon>formchonphan2.cs</DependentUpon>
     </Compile>
     <Compile Include="formDiToiBaiHoc.cs">
       <SubType>Form</SubType>
@@ -260,6 +170,18 @@
     </Compile>
     <Compile Include="formDiToiBaiHoc2.Designer.cs">
       <DependentUpon>formDiToiBaiHoc2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formDiToiBaiHoc3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formDiToiBaiHoc3.Designer.cs">
+      <DependentUpon>formDiToiBaiHoc3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formDiToiBaiHoc4.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formDiToiBaiHoc4.Designer.cs">
+      <DependentUpon>formDiToiBaiHoc4.cs</DependentUpon>
     </Compile>
     <Compile Include="formExam.cs">
       <SubType>Form</SubType>
@@ -291,11 +213,17 @@
     <Compile Include="formHienThiBaiHoc2.Designer.cs">
       <DependentUpon>formHienThiBaiHoc2.cs</DependentUpon>
     </Compile>
-    <Compile Include="formkt.cs">
+    <Compile Include="formHienThiBaiHoc3.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="formkt.Designer.cs">
-      <DependentUpon>formkt.cs</DependentUpon>
+    <Compile Include="formHienThiBaiHoc3.Designer.cs">
+      <DependentUpon>formHienThiBaiHoc3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formHienThiBaiHoc4.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formHienThiBaiHoc4.Designer.cs">
+      <DependentUpon>formHienThiBaiHoc4.cs</DependentUpon>
     </Compile>
     <Compile Include="formThucHanh.cs">
       <SubType>Form</SubType>
@@ -315,54 +243,6 @@
     <Compile Include="GVTaoMaLoi.Designer.cs">
       <DependentUpon>GVTaoMaLoi.cs</DependentUpon>
     </Compile>
-    <Compile Include="karman.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="karman.Designer.cs">
-      <DependentUpon>karman.cs</DependentUpon>
-    </Compile>
-    <Compile Include="karman1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="karman1.Designer.cs">
-      <DependentUpon>karman1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="karman2.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="karman2.Designer.cs">
-      <DependentUpon>karman2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="karman3.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="karman3.Designer.cs">
-      <DependentUpon>karman3.cs</DependentUpon>
-    </Compile>
-    <Compile Include="karman4.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="karman4.Designer.cs">
-      <DependentUpon>karman4.cs</DependentUpon>
-    </Compile>
-    <Compile Include="karman5.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="karman5.Designer.cs">
-      <DependentUpon>karman5.cs</DependentUpon>
-    </Compile>
-    <Compile Include="karman6.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="karman6.Designer.cs">
-      <DependentUpon>karman6.cs</DependentUpon>
-    </Compile>
-    <Compile Include="karman7.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="karman7.Designer.cs">
-      <DependentUpon>karman7.cs</DependentUpon>
-    </Compile>
     <Compile Include="LoginDauTien.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -381,254 +261,38 @@
     <Compile Include="LoginStudent.Designer.cs">
       <DependentUpon>LoginStudent.cs</DependentUpon>
     </Compile>
-    <Compile Include="map.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="map.Designer.cs">
-      <DependentUpon>map.cs</DependentUpon>
-    </Compile>
-    <Compile Include="map1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="map1.Designer.cs">
-      <DependentUpon>map1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="map2.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="map2.Designer.cs">
-      <DependentUpon>map2.cs</DependentUpon>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\User.cs" />
-    <Compile Include="thw.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="thw.Designer.cs">
-      <DependentUpon>thw.cs</DependentUpon>
-    </Compile>
-    <Compile Include="thw1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="thw1.Designer.cs">
-      <DependentUpon>thw1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="thw2.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="thw2.Designer.cs">
-      <DependentUpon>thw2.cs</DependentUpon>
-    </Compile>
     <Compile Include="TienDoSV.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="TienDoSV.Designer.cs">
       <DependentUpon>TienDoSV.cs</DependentUpon>
     </Compile>
-    <Compile Include="VPAhall.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="VPAhall.Designer.cs">
-      <DependentUpon>VPAhall.cs</DependentUpon>
-    </Compile>
-    <Compile Include="VPAhall1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="VPAhall1.Designer.cs">
-      <DependentUpon>VPAhall1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="VPAhall2.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="VPAhall2.Designer.cs">
-      <DependentUpon>VPAhall2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="VTAcoIDL.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="VTAcoIDL.Designer.cs">
-      <DependentUpon>VTAcoIDL.cs</DependentUpon>
-    </Compile>
-    <Compile Include="VTAcoIDL1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="VTAcoIDL1.Designer.cs">
-      <DependentUpon>VTAcoIDL1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="VTAcoIDL2.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="VTAcoIDL2.Designer.cs">
-      <DependentUpon>VTAcoIDL2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="VTAcoIDL3.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="VTAcoIDL3.Designer.cs">
-      <DependentUpon>VTAcoIDL3.cs</DependentUpon>
-    </Compile>
-    <Compile Include="VTAcoIDL4.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="VTAcoIDL4.Designer.cs">
-      <DependentUpon>VTAcoIDL4.cs</DependentUpon>
-    </Compile>
-    <Compile Include="VTAhall.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="VTAhall.Designer.cs">
-      <DependentUpon>VTAhall.cs</DependentUpon>
-    </Compile>
-    <Compile Include="VTAhall1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="VTAhall1.Designer.cs">
-      <DependentUpon>VTAhall1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="VTAhall2.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="VTAhall2.Designer.cs">
-      <DependentUpon>VTAhall2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="VTAkhongIDL.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="VTAkhongIDL.Designer.cs">
-      <DependentUpon>VTAkhongIDL.cs</DependentUpon>
-    </Compile>
-    <Compile Include="VTAkhongIDL1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="VTAkhongIDL1.Designer.cs">
-      <DependentUpon>VTAkhongIDL1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="VTAkhongIDL2.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="VTAkhongIDL2.Designer.cs">
-      <DependentUpon>VTAkhongIDL2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="VTAkhongIDL3.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="VTAkhongIDL3.Designer.cs">
-      <DependentUpon>VTAkhongIDL3.cs</DependentUpon>
-    </Compile>
-    <Compile Include="vtatiepdiem.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="vtatiepdiem.Designer.cs">
-      <DependentUpon>vtatiepdiem.cs</DependentUpon>
-    </Compile>
-    <Compile Include="vtatiepdiem1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="vtatiepdiem1.Designer.cs">
-      <DependentUpon>vtatiepdiem1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="vtatiepdiem2.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="vtatiepdiem2.Designer.cs">
-      <DependentUpon>vtatiepdiem2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="vtatiepdiem3.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="vtatiepdiem3.Designer.cs">
-      <DependentUpon>vtatiepdiem3.cs</DependentUpon>
-    </Compile>
-    <Compile Include="vtatiepdiem4.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="vtatiepdiem4.Designer.cs">
-      <DependentUpon>vtatiepdiem4.cs</DependentUpon>
-    </Compile>
-    <Compile Include="VPAtuyentinh.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="VPAtuyentinh.Designer.cs">
-      <DependentUpon>VPAtuyentinh.cs</DependentUpon>
-    </Compile>
-    <Compile Include="VPAtuyentinh1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="VPAtuyentinh1.Designer.cs">
-      <DependentUpon>VPAtuyentinh1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="VPAtuyentinh2.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="VPAtuyentinh2.Designer.cs">
-      <DependentUpon>VPAtuyentinh2.cs</DependentUpon>
-    </Compile>
-    <EmbeddedResource Include="daynhiet1.resx">
-      <DependentUpon>daynhiet1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="daynhiet2.resx">
-      <DependentUpon>daynhiet2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="daynhiet3.resx">
-      <DependentUpon>daynhiet3.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="daynhiet3_1.resx">
-      <DependentUpon>daynhiet3_1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="daynhiet4.resx">
-      <DependentUpon>daynhiet4.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="daynhiet5.resx">
-      <DependentUpon>daynhiet5.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="daynhiet6.resx">
-      <DependentUpon>daynhiet6.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="delcodientu.resx">
-      <DependentUpon>delcodientu.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="delcodientu1.resx">
-      <DependentUpon>delcodientu1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="delcodientu2.resx">
-      <DependentUpon>delcodientu2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="delcodientu3.resx">
-      <DependentUpon>delcodientu3.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="delcodientu4.resx">
-      <DependentUpon>delcodientu4.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="delcohall.resx">
-      <DependentUpon>delcohall.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="delcohall1.resx">
-      <DependentUpon>delcohall1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="delcoquang.resx">
-      <DependentUpon>delcoquang.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="delcoquang1.resx">
-      <DependentUpon>delcoquang1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="delcoquang2.resx">
-      <DependentUpon>delcoquang2.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="formChonBaiHoc.resx">
       <DependentUpon>formChonBaiHoc.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="formchonbaihocchuong2.resx">
-      <DependentUpon>formchonbaihocchuong2.cs</DependentUpon>
+    <EmbeddedResource Include="formchonbaihoc2.resx">
+      <DependentUpon>formchonbaihoc2.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="formchonchuong.resx">
-      <DependentUpon>formchonchuong.cs</DependentUpon>
+    <EmbeddedResource Include="formchonphan1.resx">
+      <DependentUpon>formchonphan1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formchonphan2.resx">
+      <DependentUpon>formchonphan2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="formDiToiBaiHoc.resx">
       <DependentUpon>formDiToiBaiHoc.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="formDiToiBaiHoc2.resx">
       <DependentUpon>formDiToiBaiHoc2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formDiToiBaiHoc3.resx">
+      <DependentUpon>formDiToiBaiHoc3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formDiToiBaiHoc4.resx">
+      <DependentUpon>formDiToiBaiHoc4.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="formExam.resx">
       <DependentUpon>formExam.cs</DependentUpon>
@@ -645,8 +309,8 @@
     <EmbeddedResource Include="formHienThiBaiHoc2.resx">
       <DependentUpon>formHienThiBaiHoc2.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="formkt.resx">
-      <DependentUpon>formkt.cs</DependentUpon>
+    <EmbeddedResource Include="formHienThiBaiHoc3.resx">
+      <DependentUpon>formHienThiBaiHoc3.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="formThucHanh.resx">
       <DependentUpon>formThucHanh.cs</DependentUpon>
@@ -657,27 +321,6 @@
     <EmbeddedResource Include="GVTaoMaLoi.resx">
       <DependentUpon>GVTaoMaLoi.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="karman.resx">
-      <DependentUpon>karman.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="karman1.resx">
-      <DependentUpon>karman1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="karman2.resx">
-      <DependentUpon>karman2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="karman3.resx">
-      <DependentUpon>karman3.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="karman4.resx">
-      <DependentUpon>karman4.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="karman5.resx">
-      <DependentUpon>karman5.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="karman6.resx">
-      <DependentUpon>karman6.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="LoginDauTien.resx">
       <DependentUpon>LoginDauTien.cs</DependentUpon>
     </EmbeddedResource>
@@ -686,15 +329,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="LoginStudent.resx">
       <DependentUpon>LoginStudent.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="map.resx">
-      <DependentUpon>map.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="map1.resx">
-      <DependentUpon>map1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="map2.resx">
-      <DependentUpon>map2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -706,77 +340,8 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="thw.resx">
-      <DependentUpon>thw.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="thw1.resx">
-      <DependentUpon>thw1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="thw2.resx">
-      <DependentUpon>thw2.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="TienDoSV.resx">
       <DependentUpon>TienDoSV.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="VPAhall.resx">
-      <DependentUpon>VPAhall.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="VPAhall1.resx">
-      <DependentUpon>VPAhall1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="VTAcoIDL.resx">
-      <DependentUpon>VTAcoIDL.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="VTAcoIDL1.resx">
-      <DependentUpon>VTAcoIDL1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="VTAcoIDL2.resx">
-      <DependentUpon>VTAcoIDL2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="VTAcoIDL3.resx">
-      <DependentUpon>VTAcoIDL3.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="VTAhall.resx">
-      <DependentUpon>VTAhall.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="VTAhall1.resx">
-      <DependentUpon>VTAhall1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="VTAhall2.resx">
-      <DependentUpon>VTAhall2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="VTAkhongIDL.resx">
-      <DependentUpon>VTAkhongIDL.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="VTAkhongIDL1.resx">
-      <DependentUpon>VTAkhongIDL1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="VTAkhongIDL2.resx">
-      <DependentUpon>VTAkhongIDL2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="VTAkhongIDL3.resx">
-      <DependentUpon>VTAkhongIDL3.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="vtatiepdiem.resx">
-      <DependentUpon>vtatiepdiem.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="vtatiepdiem1.resx">
-      <DependentUpon>vtatiepdiem1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="vtatiepdiem2.resx">
-      <DependentUpon>vtatiepdiem2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="vtatiepdiem3.resx">
-      <DependentUpon>vtatiepdiem3.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="vtatiepdiem4.resx">
-      <DependentUpon>vtatiepdiem4.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="VPAtuyentinh.resx">
-      <DependentUpon>VPAtuyentinh.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="VPAtuyentinh1.resx">
-      <DependentUpon>VPAtuyentinh1.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

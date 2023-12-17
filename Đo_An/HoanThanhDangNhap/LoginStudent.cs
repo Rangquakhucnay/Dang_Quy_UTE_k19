@@ -8,6 +8,7 @@ using System.Drawing;
 using System.IO.Ports;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -15,6 +16,9 @@ namespace HoanThanhDangNhap
 {
     public partial class LoginStudent : Form
     {
+
+        Thread th;
+        Thread th2;
         public LoginStudent()
         {
             InitializeComponent();
@@ -113,7 +117,7 @@ namespace HoanThanhDangNhap
             }
             else
             {
-                formchonchuong f1 = new formchonchuong();
+                formchonphan1 f1 = new formchonphan1();
                 f1.ShowDialog();
             }
             
@@ -174,7 +178,7 @@ namespace HoanThanhDangNhap
             }
             else
             {
-                formchonchuong f1 = new formchonchuong();
+                formchonphan1 f1 = new formchonphan1();
                 f1.ShowDialog();
             }
         }
@@ -215,9 +219,18 @@ namespace HoanThanhDangNhap
             }
             else
             {
-                formkt k = new formkt();
-                k.ShowDialog();
+                formchonbaihoc3 f1 = new formchonbaihoc3(); 
+                f1.ShowDialog();
+                this.Close();
+                th = new Thread(Opennewform);
+                th.SetApartmentState(ApartmentState.STA);
+                th.Start();
+                
             }
+        }
+        private void Opennewform(object obj)
+        {
+            Application.Run(new formchonbaihoc3());
         }
         private void panelThuchanh2_Click(object sender, EventArgs e) // form carm bien 2
         {
@@ -228,11 +241,19 @@ namespace HoanThanhDangNhap
             }
             else
             {
-                formkt k = new formkt();
-                k.ShowDialog();
+                formchonbaihoc3 f1 = new formchonbaihoc3();
+                f1.ShowDialog();
+                this.Close();
+                th2 = new Thread(Opennewform1);
+                th2.SetApartmentState(ApartmentState.STA);
+                th2.Start();
             }
         }
 
-        
+        private void Opennewform1(object obj)
+        {
+            Application.Run(new formchonbaihoc3());
+        }
+
     }
 }

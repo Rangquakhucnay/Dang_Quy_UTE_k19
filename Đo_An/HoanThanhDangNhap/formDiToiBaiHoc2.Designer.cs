@@ -47,7 +47,6 @@
             this.cbSoActiBH.Name = "cbSoActiBH";
             this.cbSoActiBH.Size = new System.Drawing.Size(65, 37);
             this.cbSoActiBH.TabIndex = 22;
-          
             // 
             // label3
             // 
@@ -130,7 +129,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1157, 324);
+            this.ClientSize = new System.Drawing.Size(1225, 321);
             this.Controls.Add(this.cbSoActiBH);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.btthoat);
