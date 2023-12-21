@@ -6,12 +6,15 @@ using System.Data;
 using System.Data.SQLite;
 using System.Drawing;
 using System.IO;
+using System.IO.Ports;
 using System.Linq;
 using System.Reflection;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ZedGraph;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace HoanThanhDangNhap
 {
@@ -29,6 +32,7 @@ namespace HoanThanhDangNhap
         string faultTruoc = "";
         string box = "";
         string mahoa = "";
+        string dien = "";
 
         int nonNullRowCount = 0;
         string rowEND;
@@ -51,19 +55,21 @@ namespace HoanThanhDangNhap
             int width = (int)(screen.Bounds.Width * scale);
             int height = (int)(screen.Bounds.Height * scale);
             this.Size = new Size(width, height);
+            Control.CheckForIllegalCrossThreadCalls = false; // phân luồng đồ thị
         }
         int chuong = int.Parse(formDiToiBaiHoc3.sttChuongBaiHoc3);
         int nActi = int.Parse(formDiToiBaiHoc3.SoActi);
         int nQT = formDiToiBaiHoc3.TiendoActi;
 
+       
+
         //------------------------------------------------------------------------------------------------------------------main !!!
-        private void formHienThiBaiHoc_Load(object sender, EventArgs e)
-        {
-            serialPort1.PortName = LoginStudent.tenCOM;
-            serialPort1.BaudRate = LoginStudent.giatribaudrate;
+        private void formHienThiBaiHoc_Load(object sender, EventArgs e)        {
+            serCom.PortName = LoginStudent.tenCOM;
+            serCom.BaudRate = LoginStudent.giatribaudrate;
             //
             panelWiring.Visible = false;// ẩn panel wiring lúc bật lên
-            panelVideo.Visible = false; //panel Video hiển thị bài học
+           // panelVideo.Visible = false; //panel Video hiển thị bài học
                                         //groupBox1.Visible =false
 
             //-------------------------------------------------------------------------fix
@@ -91,6 +97,70 @@ namespace HoanThanhDangNhap
             TaoVaXuLyNut(nonNullRowCount - 1); // hiển thị số acti
 
             HienThiBaiDaHoc(nQT);               // hiển thị các bài đã học bằng cách tô đậm
+        }
+
+        private void dothi (object sender, EventArgs e)
+        {
+           
+            // khởi tạo biểu đồ
+            GraphPane myPanne = zedGraphControl1.GraphPane;
+            myPanne.Title.Text = "Giá Trị Nhiệt Độ";
+            myPanne.YAxis.Title.Text = "Giá Trị";
+            myPanne.XAxis.Title.Text = "Thời Gian";
+
+
+            RollingPointPairList List = new RollingPointPairList(500000);
+
+            LineItem Line = myPanne.AddCurve("Nhiệt độ", List, Color.Red, SymbolType.Diamond);
+
+            myPanne.X2Axis.Scale.Min = 0; // giá trị min 
+            myPanne.X2Axis.Scale.Max = 50; // giá trị max
+            myPanne.X2Axis.Scale.MinorStep = 1;
+            myPanne.X2Axis.Scale.MajorStep = 2;
+
+            myPanne.YAxis.Scale.Min = 0;
+            myPanne.YAxis.Scale.Max = 50;
+            myPanne.YAxis.Scale.MinorStep = 1;
+            myPanne.YAxis.Scale.MajorStep = 2;
+
+            zedGraphControl1.AxisChange();
+        }
+
+        int tong = 0;
+        public void draw(double Line)
+        {
+            LineItem duongline = zedGraphControl1.GraphPane.CurveList[0] as LineItem;
+            if (duongline == null)
+            {
+                return;
+            }
+            IPointListEdit list = duongline.Points as IPointListEdit;
+            if (list == null)
+            {
+                return;
+
+            }
+            list.Add(tong, Line);
+            zedGraphControl1.AxisChange();
+            zedGraphControl1.Invalidate();
+            tong += 2;
+        }
+        private void serCom_DataReceived(object sender, SerialDataReceivedEventArgs e)
+        {
+
+            string alldata = "";
+            alldata = serCom.ReadLine(); ;// đọc dữ dữ liệu từ arduino   
+            int lenght = alldata.Length;
+
+            if (lenght > 0)
+            {
+                //  textBox1.Text = alldata;
+                // trong cái hàm nhận dữ liệu thì gán dữ liệu vựa tạo vào cái đương line 
+                Invoke(new MethodInvoker(() => draw(Convert.ToDouble(alldata)))); // in ra đồ thị
+            }
+            // trong cái hàm nhận dữ liệu thì gán dữ liệu vựa tạo vào cái đương line 
+            // Invoke(new MethodInvoker(() => draw(Convert.ToDouble(alldata)))); // in ra đồ thị
+
         }
         private void HienThiWiring()
         {
@@ -263,7 +333,7 @@ namespace HoanThanhDangNhap
             nut.BackColor = customColor;
             if (giaTriNutSoNguyen == 1)
             {
-                panelVideo.SendToBack();
+               // panelVideo.SendToBack();
                // guiMaFault("x");
                 HienThiWiring();
                 panelWiring.Visible = true;
@@ -280,8 +350,8 @@ namespace HoanThanhDangNhap
             }
             nActi = giaTriNutSoNguyen;  //set nActi về lại giá trị của cái nút mà mình bấm
             btnOK.Enabled = true;
-            NextPicVideo.Enabled = true;
-            PrevPicVideo.Enabled = true;
+          //  NextPicVideo.Enabled = true;
+          //  PrevPicVideo.Enabled = true;
             buttonLeft.Enabled = true;
             buttonRight.Enabled = true;
         }
@@ -351,15 +421,17 @@ namespace HoanThanhDangNhap
                         answer = range.Cells[row, 10].Value2.ToString();
                         fault  = range.Cells[row, 11].Value2.ToString();
                         dapanD = range.Cells[row, 12].Value2.ToString();
-                        box    = range.Cells[row, 13].Value2.ToString();
+                        dien   = range.Cells[row, 13].Value2.ToString();
+                        box    = range.Cells[row, 14].Value2.ToString();
+                       
                         //
                         if (row > 2)
                         {
-                            faultTruoc = range.Cells[row - 1, 13].Value2.ToString();
+                            faultTruoc = range.Cells[row - 1, 14].Value2.ToString();
                         }
                         //
                         label1.Text = box.ToString();
-
+                        bt1.Text = dien.ToString();
                         // Xử lý dữ liệu tìm được ở đây
                     }
                     break; // Thoát khỏi vòng lặp nếu đã tìm thấy hàng cần tìm kiếm
@@ -409,37 +481,27 @@ namespace HoanThanhDangNhap
              }*/
 
             //---------------------------------------------------------------------------------------
-            if (int.Parse(box) != 0)
-            {
-                gbBox.Visible = true;
-                gbBox.BringToFront();
-
-
-                btnOK.Enabled = true;
-            }
-            else
-            {
-                gbBox.SendToBack();
-                gbBox.Visible = false;
-                btnOK.Enabled = true;
-           
             
-                if (int.Parse(video) != 0)
+            
+            
+           
+            /*
+                if (int.Parse(video) == 1)
                 {
-                    panelVideo.Visible = true;
-                    panelVideo.BringToFront();
+                   // panelVideo.Visible = true;
+                   // panelVideo.BringToFront();
                     currentImageIndexVideo = 1;
-                    HienThiVideo();
+                   // HienThiVideo();
                     btnOK.Enabled = false;
                 }
                 else
                 {
-                    panelVideo.SendToBack();
-                    panelVideo.Visible = false;
+                   // panelVideo.SendToBack();
+                   // panelVideo.Visible = false;
                     btnOK.Enabled = true;
                 }
 
-
+            */
 
                 if (int.Parse(hide) == 1)
                 {
@@ -464,7 +526,45 @@ namespace HoanThanhDangNhap
                     string[] dsDA = { dapanA, dapanB, dapanC, dapanD };
                     chlstDapAn.Items.AddRange(dsDA);
                 }
+
+                if (int.Parse(dien) == 2)
+            {
+
+                panelDienso.Visible = true ;
+                panelDienso.BringToFront();
+                pictureBox1.Visible = false;
+                btnOK.Enabled = true;
+
             }
+                else
+            {
+                panelDienso.Visible = false;
+                pictureBox1.Visible = true;
+                // btnOK.Enabled = true;
+            }
+
+                if (int.Parse(box) == 3)
+                {
+                pictureBox1.Visible = false;
+                //pictureBox1.SendToBack();
+                panelWiring.Visible = false;
+                rtb_Baihoc.Visible = false;
+                gbBox1.Visible = true;
+                    gbBox1.BringToFront();
+                  //  button1.Text = "nnnnnn";
+                    
+                    btnOK.Enabled = true;
+                }
+
+                else 
+                 {
+               
+                pictureBox1.Visible = true;  /////////sửa
+                pictureBox1.BringToFront();
+                rtb_Baihoc.Visible = true;
+                gbBox1.Visible = false;
+                btnOK.Enabled = true;
+                 }
         }
 
         private void HienThiVideo()
@@ -487,14 +587,14 @@ namespace HoanThanhDangNhap
 
             if (File.Exists(imagePath))
             {
-                picPanelVideo.Image = Image.FromFile(imagePath);
+              //  picPanelVideo.Image = Image.FromFile(imagePath);
             }
             else if (File.Exists(gifPath))
             {
-                picPanelVideo.Image = Image.FromFile(gifPath);
+               // picPanelVideo.Image = Image.FromFile(gifPath);
             }
 
-            picPanelVideo.SizeMode = PictureBoxSizeMode.StretchImage;
+          //  picPanelVideo.SizeMode = PictureBoxSizeMode.StretchImage;
         }
 
         private void formHienThiBaiHoc_FormClosed(object sender, FormClosedEventArgs e)
@@ -523,8 +623,6 @@ namespace HoanThanhDangNhap
             }
         }
 
-       
-
         private void PrevPicVideo_Click(object sender, EventArgs e)
         {
             if (currentImageIndexVideo > 1)
@@ -532,11 +630,11 @@ namespace HoanThanhDangNhap
                 currentImageIndexVideo--;
                 LoadImageVideo(currentImageIndexVideo);
                 LoadButtonsVideo(currentImageIndexVideo, buttonCountVideo);
-                NextPicVideo.Enabled = true;
+               // NextPicVideo.Enabled = true;
             }
             if (currentImageIndexVideo == 1)
             {
-                PrevPicVideo.Enabled = false;
+               // PrevPicVideo.Enabled = false;
             }
 
         }
@@ -548,11 +646,11 @@ namespace HoanThanhDangNhap
                 currentImageIndexVideo++;
                 LoadImageVideo(currentImageIndexVideo);
                 LoadButtonsVideo(currentImageIndexVideo, buttonCountVideo);
-                PrevPicVideo.Enabled = true;
+               // PrevPicVideo.Enabled = true;
             }
             if (currentImageIndexVideo == maxImageIndexVideo)
             {
-                NextPicVideo.Enabled = false;
+              //  NextPicVideo.Enabled = false;
                 btnOK.Enabled = true;
             }
         }
@@ -604,8 +702,8 @@ namespace HoanThanhDangNhap
         private void btnOK_Click(object sender, EventArgs e)
         {
             // Bật nút chuyển ảnh lên
-            PrevPicVideo.Enabled = true;
-            NextPicVideo.Enabled = true;
+          //  PrevPicVideo.Enabled = true;
+           // NextPicVideo.Enabled = true;
 
             //-------------------------
             if (nActi == 1)

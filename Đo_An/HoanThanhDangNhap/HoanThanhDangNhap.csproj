@@ -126,6 +126,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="dothi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="dothi.Designer.cs">
+      <DependentUpon>dothi.cs</DependentUpon>
+    </Compile>
     <Compile Include="formChonBaiHoc.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -267,6 +273,9 @@
     <Compile Include="TienDoSV.Designer.cs">
       <DependentUpon>TienDoSV.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="dothi.resx">
+      <DependentUpon>dothi.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="formChonBaiHoc.resx">
       <DependentUpon>formChonBaiHoc.cs</DependentUpon>
     </EmbeddedResource>
@@ -363,6 +372,7 @@
     <None Include="Resources\electronics_repair_01_whitebg.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\z4961865012401_5e6dbbab7d1f6362a41553782ee89cd01.jpg" />
     <None Include="Resources\z4961865012401_5e6dbbab7d1f6362a41553782ee89cd0.jpg" />
     <None Include="Resources\logout.png" />
     <None Include="Resources\Icons8-Ios7-Arrows-Forward.512.png" />
@@ -390,6 +400,7 @@
     <None Include="Resources\hinhformkt.jpg" />
     <None Include="Resources\4bec8af5784caaf4779c842f4047eba9.jpg" />
     <Content Include="License-LGPL.txt" />
+    <None Include="Resources\393686953_804231791391891_7366914710212052393_n.jpg" />
     <Content Include="Resources\test\hinh1.png" />
     <Content Include="Resources\test\hinh10.png" />
     <Content Include="Resources\test\hinh11.png" />
