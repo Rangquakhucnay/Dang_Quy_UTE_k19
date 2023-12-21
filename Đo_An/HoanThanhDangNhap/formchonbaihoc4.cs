@@ -83,14 +83,14 @@ namespace HoanThanhDangNhap
 
                 if (TiendoHoanthanhChuong < lastnActi)
                 {
-                    formDiToiBaiHoc.TiendoActi = int.Parse(nlastnActi);
+                    formDiToiBaiHoc4.TiendoActi = int.Parse(nlastnActi);
                 }
                 else
                 {
-                    formDiToiBaiHoc.TiendoActi = TiendoHoanthanhChuong;
+                    formDiToiBaiHoc4.TiendoActi = TiendoHoanthanhChuong;
                 }
-                formDiToiBaiHoc.sttChuongBaiHoc = nlastChuong;
-                formDiToiBaiHoc.SoActi = nlastnActi;
+                formDiToiBaiHoc4.sttChuongBaiHoc4 = nlastChuong;
+                formDiToiBaiHoc4.SoActi = nlastnActi;
                 reader.Close();
                 reader1.Close();
                 conn.Close();

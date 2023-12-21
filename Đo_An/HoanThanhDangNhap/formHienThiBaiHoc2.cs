@@ -251,7 +251,7 @@ namespace HoanThanhDangNhap
             if (giaTriNutSoNguyen == 1)
             {
                 panelVideo.SendToBack();
-                guiMaFault("x");
+               // guiMaFault("x");
                 HienThiWiring();
                 panelWiring.Visible = true;
                 panelWiring.BringToFront();
@@ -259,7 +259,7 @@ namespace HoanThanhDangNhap
             }
             else
             {
-                guiMaFault("x");
+              //  guiMaFault("x");
                 HienThiBaiHoc(giaTriNutSoNguyen);
                 btnOK.Enabled = true;
                 panelWiring.Visible = false;
@@ -361,34 +361,35 @@ namespace HoanThanhDangNhap
             Marshal.ReleaseComObject(workbook);
             Marshal.ReleaseComObject(excel);
 
+            /*
             // Hien thi du lieu len form 
             if (fault != "0")           // phast hien co fault thi` gui di ne`
             {
                 if (fault == faultTruoc)
                 {
-                    guiMaFault(fault);
+                   // guiMaFault(fault);
                     //MessageBox.Show("a");
                 }
                 else
                 {
                     if (faultTruoc != "0")
                     {
-                        guiMaFault("x");
+                       // guiMaFault("x");
                         //MessageBox.Show("xoa loi");
-                        guiMaFault(fault);
+                       // guiMaFault(fault);
                         //MessageBox.Show("a");
                     }
                     else
                     {
-                        guiMaFault(fault);
+                       // guiMaFault(fault);
                         //MessageBox.Show("a");
                     }
                 }
             }
             else        // neu khong co thi` gui ma fault xoa fault
             {
-                guiMaFault("x");
-            }
+              //  guiMaFault("x");
+            }*/
 
             //
             if (int.Parse(video) != 0)
@@ -463,14 +464,14 @@ namespace HoanThanhDangNhap
 
         private void formHienThiBaiHoc2_FormClosed(object sender, FormClosedEventArgs e)
         {
-            guiMaFault("x");
+           // guiMaFault("x");
             LuuTiendo();
             //MessageBox.Show("đã lưu");
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            guiMaFault("x");
+           // guiMaFault("x");
             this.Close();
         }
 
@@ -559,9 +560,9 @@ namespace HoanThanhDangNhap
         */
         private void guiMaFault(string ft)
         {
-            serialPort1.Open();
-            serialPort1.Write(ft);
-            serialPort1.Close();
+           // serialPort1.Open();
+           // serialPort1.Write(ft);
+           // serialPort1.Close();
         }
         private void btnOK_Click(object sender, EventArgs e)
         {
@@ -624,8 +625,10 @@ namespace HoanThanhDangNhap
                 conn.Open();
 
                 string tendangnhapform1 = Properties.Settings.Default.TenDangNhapALL;
-                string truycapCot = "nqtc" + chuong.ToString();
-                int vitriCot = chuong + 5;
+               // string truycapCot = "nqtc" + chuong.ToString();
+
+                int vitriCot = chuong + 10;
+                string truycapCot = "nqtc" + vitriCot.ToString();
 
                 SQLiteCommand command1 = new SQLiteCommand();
                 command1.CommandType = CommandType.Text;
@@ -633,7 +636,7 @@ namespace HoanThanhDangNhap
                 command1.Connection = conn;
                 command1.Parameters.AddWithValue("@tendn", tendangnhapform1);
 
-                string lastTiendo = chuong.ToString() + "va" + nActi.ToString();
+                string lastTiendo = vitriCot.ToString() + "va" + nActi.ToString();
 
                 SQLiteDataReader reader = command1.ExecuteReader();
                 if (reader.Read())

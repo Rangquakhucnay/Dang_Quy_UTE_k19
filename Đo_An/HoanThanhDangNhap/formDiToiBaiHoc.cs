@@ -105,9 +105,15 @@ namespace HoanThanhDangNhap
                 sttChuongBaiHoc = cbSttChuongBH.Text;
                 SoActi = cbSoActiBH.Text;
                 //formBaiHocChuong3 f = new formBaiHocChuong3();
-                formHienThiBaiHoc f = new formHienThiBaiHoc();
+              //  formHienThiBaiHoc f = new formHienThiBaiHoc();
+               // int a = int.Parse(cbSttChuongBH.Text);
+               // f.ShowDialog();
+
+                this.Hide();
+                formHienThiBaiHoc f1 = new formHienThiBaiHoc();
                 int a = int.Parse(cbSttChuongBH.Text);
-                f.ShowDialog();
+                f1.ShowDialog();
+                this.Close();
             }
             this.Close();
         }

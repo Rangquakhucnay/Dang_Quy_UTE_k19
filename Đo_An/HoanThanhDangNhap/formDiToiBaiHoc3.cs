@@ -21,7 +21,7 @@ namespace HoanThanhDangNhap
         }
 
         public static string SoActi = string.Empty;
-        public static string sttChuongBaiHoc2 = string.Empty;
+        public static string sttChuongBaiHoc3 = string.Empty;
         public static int TiendoActi = 0;
 
         string[,] lookupTable_Chuong = new string[,]
@@ -50,7 +50,7 @@ namespace HoanThanhDangNhap
             cbSoActiBH.Enabled = true;
             string tendangnhapform1 = Properties.Settings.Default.TenDangNhapALL;
             int chuongBH = int.Parse(cbSttChuongBH.Text);
-            int DinhviCot = chuongBH + 12;  //+12 là vì thứ tự cột bên database
+            int DinhviCot = chuongBH + 18;  //+18 là vì thứ tự cột bên database
             SQLiteConnection conn = null;
             string strConn = string.Format(@"Data Source = {0}\DBLogin.db;Version=3;", System.Windows.Forms.Application.StartupPath);
             if (conn == null)
@@ -109,10 +109,10 @@ namespace HoanThanhDangNhap
             }
             else
             {
-                sttChuongBaiHoc2 = cbSttChuongBH.Text;
+                sttChuongBaiHoc3 = cbSttChuongBH.Text;
                 SoActi = cbSoActiBH.Text;////////////////////////////////////////////////////////
                 //formBaiHocChuong3 f = new formBaiHocChuong3();
-                formHienThiBaiHoc2 f = new formHienThiBaiHoc2();
+                formHienThiBaiHoc3 f = new formHienThiBaiHoc3();
                 int a = int.Parse(cbSttChuongBH.Text);
                 f.ShowDialog();
             }

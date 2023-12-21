@@ -92,8 +92,8 @@ namespace HoanThanhDangNhap
             }
             else
             {
-                formThucHanh f = new formThucHanh();
-                f.ShowDialog();
+                formThucHanh f111 = new formThucHanh();
+                f111.ShowDialog();
             }  
         }
 
@@ -105,8 +105,8 @@ namespace HoanThanhDangNhap
         private void LoginStudent_FormClosed(object sender, FormClosedEventArgs e)
         {
             this.Hide();
-            Form1 f = new Form1();
-            f.Show();
+            Form1 f122 = new Form1();
+            f122.Show();
         }
 
         private void label2_Click(object sender, EventArgs e)       //form chon chuong 1
@@ -117,8 +117,8 @@ namespace HoanThanhDangNhap
             }
             else
             {
-                formchonphan1 f1 = new formchonphan1();
-                f1.ShowDialog();
+                formchonphan1 f21 = new formchonphan1();
+                f21.ShowDialog();
             }
             
         }
@@ -158,16 +158,16 @@ namespace HoanThanhDangNhap
             }
             else
             {
-                formExam f1 = new formExam();
-                f1.ShowDialog();
+                formExam f99 = new formExam();
+                f99.ShowDialog();
             }
         }
 
         private void NutDangXuat_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Form1 f = new Form1();
-            f.Show();
+            Form1 f100 = new Form1();
+            f100.Show();
         }
 
         private void panelBaiHoc_Click(object sender, EventArgs e)// form chon chuong 2
@@ -178,8 +178,8 @@ namespace HoanThanhDangNhap
             }
             else
             {
-                formchonphan1 f1 = new formchonphan1();
-                f1.ShowDialog();
+                formchonphan1 f14 = new formchonphan1();
+                f14.ShowDialog();
             }
         }
 
@@ -191,8 +191,8 @@ namespace HoanThanhDangNhap
             }
             else
             {
-                formThucHanh f = new formThucHanh();
-                f.ShowDialog();
+                formThucHanh f56 = new formThucHanh();
+                f56.ShowDialog();
             }
         }
 
@@ -204,8 +204,8 @@ namespace HoanThanhDangNhap
             }
             else
             {
-                formExam f1 = new formExam();
-                f1.ShowDialog();
+                formExam f12 = new formExam();
+                f12.ShowDialog();
             }
         }
 
@@ -219,19 +219,15 @@ namespace HoanThanhDangNhap
             }
             else
             {
-                formchonbaihoc3 f1 = new formchonbaihoc3(); 
+              // this.Hide();
+                formchonphan2 f1 = new formchonphan2(); 
                 f1.ShowDialog();
-                this.Close();
-                th = new Thread(Opennewform);
-                th.SetApartmentState(ApartmentState.STA);
-                th.Start();
+               // this.Close();
+                
                 
             }
         }
-        private void Opennewform(object obj)
-        {
-            Application.Run(new formchonbaihoc3());
-        }
+        
         private void panelThuchanh2_Click(object sender, EventArgs e) // form carm bien 2
         {
 
@@ -241,19 +237,19 @@ namespace HoanThanhDangNhap
             }
             else
             {
-                formchonbaihoc3 f1 = new formchonbaihoc3();
+               // this.Hide();
+           formchonphan2 f1 =   new formchonphan2();
                 f1.ShowDialog();
-                this.Close();
-                th2 = new Thread(Opennewform1);
-                th2.SetApartmentState(ApartmentState.STA);
-                th2.Start();
+                //this.Close();
+               
             }
         }
 
-        private void Opennewform1(object obj)
-        {
-            Application.Run(new formchonbaihoc3());
-        }
+       
 
+        private void panelBaiHoc_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

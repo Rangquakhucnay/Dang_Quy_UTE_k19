@@ -62,7 +62,6 @@
             this.panel1.Controls.Add(this.label5);
             resources.ApplyResources(this.panel1, "panel1");
             this.panel1.Name = "panel1";
-            
             // 
             // label4
             // 
@@ -70,7 +69,6 @@
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.ForeColor = System.Drawing.Color.White;
             this.label4.Name = "label4";
-            
             // 
             // label5
             // 
@@ -93,7 +91,7 @@
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.TabStop = false;
             // 
-            // formchonchuong
+            // formchonphan1
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -102,8 +100,8 @@
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.panel1);
             this.MaximizeBox = false;
-            this.Name = "formchonchuong";
-            
+            this.Name = "formchonphan1";
+            this.ShowInTaskbar = false;
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

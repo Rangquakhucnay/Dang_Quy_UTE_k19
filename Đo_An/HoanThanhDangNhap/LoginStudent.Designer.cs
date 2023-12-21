@@ -259,6 +259,7 @@
             this.panelBaiHoc.Size = new System.Drawing.Size(732, 110);
             this.panelBaiHoc.TabIndex = 29;
             this.panelBaiHoc.Click += new System.EventHandler(this.panelBaiHoc_Click);
+            this.panelBaiHoc.Paint += new System.Windows.Forms.PaintEventHandler(this.panelBaiHoc_Paint);
             // 
             // panelThucHanh
             // 
@@ -269,7 +270,6 @@
             this.panelThucHanh.Size = new System.Drawing.Size(732, 110);
             this.panelThucHanh.TabIndex = 30;
             this.panelThucHanh.Click += new System.EventHandler(this.panelThucHanh_Click);
-
             // 
             // panelKiemTra
             // 

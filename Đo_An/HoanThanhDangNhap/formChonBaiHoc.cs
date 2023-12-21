@@ -6,27 +6,31 @@ using System.Data.SQLite;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.ProgressBar;
 
 namespace HoanThanhDangNhap
 {
+    
     public partial class formChonBaiHoc : Form
     {
+        Thread th;
+        Thread th2;
         public formChonBaiHoc()
         {
             InitializeComponent();
         }
 
-        private void btnTat_Click(object sender, EventArgs e)
+        private void btnTat_Click(object sender, EventArgs e)// lỗi
         {
-            this.Close();
+          this.Close();
         }
 
         private void formChonBaiHoc_FormClosed(object sender, FormClosedEventArgs e)
         {
-            this.Close();
+            
         }
 
         private void btnChonBaiHoc_Click(object sender, EventArgs e)
@@ -34,9 +38,15 @@ namespace HoanThanhDangNhap
             this.Hide();
             formDiToiBaiHoc f = new formDiToiBaiHoc();
             f.ShowDialog();
+            this.Close();
+           
+        }
+        private void Opennewform(object obj)
+        {
+           // Application.Run(new formChonBaiHoc());
         }
 
-        private void btnTiepTuc_Click(object sender, EventArgs e)
+        private void btnTiepTuc_Click(object sender, EventArgs e)   
         {
             int lastChuong = 0;
             int lastnActi = 0;
@@ -58,7 +68,7 @@ namespace HoanThanhDangNhap
                 SQLiteDataReader reader = command.ExecuteReader();
                 if (reader.Read())
                 {
-                    lastTiendo = reader.GetString(22);
+                    lastTiendo = reader.GetString(41);
                 }
                 
 
@@ -100,13 +110,17 @@ namespace HoanThanhDangNhap
             {
                 MessageBox.Show("Lỗi: " + ex.Message);
             }
-            
+
             this.Hide();
-            formHienThiBaiHoc f = new formHienThiBaiHoc();
+            formDiToiBaiHoc f = new formDiToiBaiHoc();
             f.ShowDialog();
-
+            this.Close();
+           
         }
-
+        private void Opennewform2(object obj)
+        {
+            Application.Run(new formChonBaiHoc());
+        }
         private void formChonBaiHoc_Load(object sender, EventArgs e)
         {
 

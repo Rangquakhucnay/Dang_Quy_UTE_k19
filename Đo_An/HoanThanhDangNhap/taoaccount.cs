@@ -157,7 +157,7 @@ namespace HoanThanhDangNhap
                         //Thêm dữ liệu sinh viên
                         SQLiteCommand command = new SQLiteCommand();
                         command.CommandType = CommandType.Text;
-                        string sql = "Insert into ThongTinSinhVien(TenSinhVien,TenDangNhap,MatKhau,MaLop,Quyen,nqtc1,nqtc2,nqtc3,nqtc4,nqtc5,nqtc6,nqtc7,nqtc8,nqtc9,nqtc10,nqtc11,nqtc12,nqtc13,nqtc14,nqtc15,nqtc16) values(@tensv,@tendn,@matkhau,@malop,@quyen,@nqtc1,@nqtc2,@nqtc3,@nqtc4,@nqtc5,@nqtc6,@nqtc7,@nqtc8,@nqtc9,@nqtc10,@nqtc11,@nqtc12,@nqtc13,@nqtc14,@nqtc15,@nqtc16)";
+                        string sql = "Insert into ThongTinSinhVien(TenSinhVien,TenDangNhap,MatKhau,MaLop,Quyen,nqtc1,nqtc2,nqtc3,nqtc4,nqtc5,nqtc6,nqtc7,nqtc8,nqtc9,nqtc10,nqtc11,nqtc12,nqtc13,nqtc14,nqtc15,nqtc16,nqtc17,nqtc18,nqtc19,nqtc20,nqtc21,nqtc22,nqtc23,nqtc24,nqtc25,nqtc26,nqtc27,nqtc28,nqtc29,nqtc30,nqtc31,nqtc32,nqtc33,nqtc34,nqtc35) values(@tensv,@tendn,@matkhau,@malop,@quyen,@nqtc1,@nqtc2,@nqtc3,@nqtc4,@nqtc5,@nqtc6,@nqtc7,@nqtc8,@nqtc9,@nqtc10,@nqtc11,@nqtc12,@nqtc13,@nqtc14,@nqtc15,@nqtc16,@nqtc17,@nqtc18,@nqtc19,@nqtc20,@nqtc21,@nqtc22,@nqtc23,@nqtc24,@nqtc25,@nqtc26,@nqtc27,@nqtc28,@nqtc29,@nqtc30,@nqtc31,@nqtc32,@nqtc33,@nqtc34,@nqtc35)";
                         command.CommandText = sql;
                         command.Connection = conn;
                         command.Parameters.AddWithValue("@tensv", txtTensinhvienmoi.Text);
@@ -166,22 +166,41 @@ namespace HoanThanhDangNhap
                         command.Parameters.AddWithValue("@malop", txtLopmoi.Text);
                         command.Parameters.AddWithValue("@quyen", 0);
 
-                        command.Parameters.AddWithValue("@nqtc1", 17);
-                        command.Parameters.AddWithValue("@nqtc2", 13);
-                        command.Parameters.AddWithValue("@nqtc3", 4);
-                        command.Parameters.AddWithValue("@nqtc4", 8);
-                        command.Parameters.AddWithValue("@nqtc5", 3);
-                        command.Parameters.AddWithValue("@nqtc6", 5);
-                        command.Parameters.AddWithValue("@nqtc7", 5);
-                        command.Parameters.AddWithValue("@nqtc8", 13);
+                        command.Parameters.AddWithValue("@nqtc1", 1);
+                        command.Parameters.AddWithValue("@nqtc2", 1);
+                        command.Parameters.AddWithValue("@nqtc3", 1);
+                        command.Parameters.AddWithValue("@nqtc4", 1);
+                        command.Parameters.AddWithValue("@nqtc5", 1);
+                        command.Parameters.AddWithValue("@nqtc6", 1);
+                        command.Parameters.AddWithValue("@nqtc7", 1);
+                        command.Parameters.AddWithValue("@nqtc8", 1);
                         command.Parameters.AddWithValue("@nqtc9", 1);
-                        command.Parameters.AddWithValue("@nqtc10", 3);
-                        command.Parameters.AddWithValue("@nqtc11", 2);
-                        command.Parameters.AddWithValue("@nqtc12", 10);
-                        command.Parameters.AddWithValue("@nqtc13", 3);
-                        command.Parameters.AddWithValue("@nqtc14", 14);
-                        command.Parameters.AddWithValue("@nqtc15", 6);
-                        command.Parameters.AddWithValue("@nqtc16", 9);
+                        command.Parameters.AddWithValue("@nqtc10",1);
+                        command.Parameters.AddWithValue("@nqtc11",1);
+                        command.Parameters.AddWithValue("@nqtc12",1);
+                        command.Parameters.AddWithValue("@nqtc13",1);
+                        command.Parameters.AddWithValue("@nqtc14",1);
+                        command.Parameters.AddWithValue("@nqtc15",1);
+                        command.Parameters.AddWithValue("@nqtc16",1);
+                        command.Parameters.AddWithValue("@nqtc17",1);
+                        command.Parameters.AddWithValue("@nqtc18",1);
+                        command.Parameters.AddWithValue("@nqtc19",1);
+                        command.Parameters.AddWithValue("@nqtc20",1);
+                        command.Parameters.AddWithValue("@nqtc21",1);
+                        command.Parameters.AddWithValue("@nqtc22",1);
+                        command.Parameters.AddWithValue("@nqtc23",1);
+                        command.Parameters.AddWithValue("@nqtc24",1);
+                        command.Parameters.AddWithValue("@nqtc25",1);
+                        command.Parameters.AddWithValue("@nqtc26",1);
+                        command.Parameters.AddWithValue("@nqtc27",1);
+                        command.Parameters.AddWithValue("@nqtc28",1);
+                        command.Parameters.AddWithValue("@nqtc29",1);
+                        command.Parameters.AddWithValue("@nqtc30",1);
+                        command.Parameters.AddWithValue("@nqtc31",1);
+                        command.Parameters.AddWithValue("@nqtc32",1);
+                        command.Parameters.AddWithValue("@nqtc33",1);
+                        command.Parameters.AddWithValue("@nqtc34",1);
+                        command.Parameters.AddWithValue("@nqtc35",1);
                         // command.Parameters.AddWithValue("@nqtc10000", 1);
                         int kq = command.ExecuteNonQuery();
                         if (kq > 0)
@@ -483,7 +502,7 @@ namespace HoanThanhDangNhap
             NutXemTienDo.Visible = false;
             
         }
-
+        //tieng do ??
         private void NutXemTienDo_Click(object sender, EventArgs e)
         {
             connectSqlite();

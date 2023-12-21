@@ -1683,7 +1683,6 @@ D:\Đăng_Quý_UTE_K19\Dang_Quy_UTE_k19\Đo_An\HoanThanhDangNhap\obj\Debug\HoanT
 D:\Đăng_Quý_UTE_K19\Dang_Quy_UTE_k19\Đo_An\HoanThanhDangNhap\obj\Debug\HoanThanhDangNhap.formHienThiBaiHoc.resources
 D:\Đăng_Quý_UTE_K19\Dang_Quy_UTE_k19\Đo_An\HoanThanhDangNhap\obj\Debug\HoanThanhDangNhap.formHienThiBaiHoc2.resources
 D:\Đăng_Quý_UTE_K19\Dang_Quy_UTE_k19\Đo_An\HoanThanhDangNhap\obj\Debug\HoanThanhDangNhap.formThucHanh.resources
-D:\Đăng_Quý_UTE_K19\Dang_Quy_UTE_k19\Đo_An\HoanThanhDangNhap\obj\Debug\HoanThanhDangNhap.formthuchanhnew.resources
 D:\Đăng_Quý_UTE_K19\Dang_Quy_UTE_k19\Đo_An\HoanThanhDangNhap\obj\Debug\HoanThanhDangNhap.GVTaoMaLoi.resources
 D:\Đăng_Quý_UTE_K19\Dang_Quy_UTE_k19\Đo_An\HoanThanhDangNhap\obj\Debug\HoanThanhDangNhap.Form1.resources
 D:\Đăng_Quý_UTE_K19\Dang_Quy_UTE_k19\Đo_An\HoanThanhDangNhap\obj\Debug\HoanThanhDangNhap.taoaccount.resources
@@ -1701,3 +1700,18 @@ D:\Đăng_Quý_UTE_K19\Dang_Quy_UTE_k19\Đo_An\HoanThanhDangNhap\obj\Debug\HoanT
 D:\Đăng_Quý_UTE_K19\Dang_Quy_UTE_k19\Đo_An\HoanThanhDangNhap\obj\Debug\HoanThanhDangNhap.formchonphan2.resources
 D:\Đăng_Quý_UTE_K19\Dang_Quy_UTE_k19\Đo_An\HoanThanhDangNhap\obj\Debug\HoanThanhDangNhap.formDiToiBaiHoc3.resources
 D:\Đăng_Quý_UTE_K19\Dang_Quy_UTE_k19\Đo_An\HoanThanhDangNhap\obj\Debug\HoanThanhDangNhap.formDiToiBaiHoc4.resources
+D:\Đăng_Quý_UTE_K19\Dang_Quy_UTE_k19\Đo_An\HoanThanhDangNhap\bin\Debug\ZedGraph.dll
+D:\Đăng_Quý_UTE_K19\Dang_Quy_UTE_k19\Đo_An\HoanThanhDangNhap\bin\Debug\ZedGraph.xml
+D:\Đăng_Quý_UTE_K19\Dang_Quy_UTE_k19\Đo_An\HoanThanhDangNhap\bin\Debug\de\ZedGraph.resources.dll
+D:\Đăng_Quý_UTE_K19\Dang_Quy_UTE_k19\Đo_An\HoanThanhDangNhap\bin\Debug\es\ZedGraph.resources.dll
+D:\Đăng_Quý_UTE_K19\Dang_Quy_UTE_k19\Đo_An\HoanThanhDangNhap\bin\Debug\fr\ZedGraph.resources.dll
+D:\Đăng_Quý_UTE_K19\Dang_Quy_UTE_k19\Đo_An\HoanThanhDangNhap\bin\Debug\hu\ZedGraph.resources.dll
+D:\Đăng_Quý_UTE_K19\Dang_Quy_UTE_k19\Đo_An\HoanThanhDangNhap\bin\Debug\it\ZedGraph.resources.dll
+D:\Đăng_Quý_UTE_K19\Dang_Quy_UTE_k19\Đo_An\HoanThanhDangNhap\bin\Debug\ja\ZedGraph.resources.dll
+D:\Đăng_Quý_UTE_K19\Dang_Quy_UTE_k19\Đo_An\HoanThanhDangNhap\bin\Debug\pt\ZedGraph.resources.dll
+D:\Đăng_Quý_UTE_K19\Dang_Quy_UTE_k19\Đo_An\HoanThanhDangNhap\bin\Debug\ru\ZedGraph.resources.dll
+D:\Đăng_Quý_UTE_K19\Dang_Quy_UTE_k19\Đo_An\HoanThanhDangNhap\bin\Debug\sk\ZedGraph.resources.dll
+D:\Đăng_Quý_UTE_K19\Dang_Quy_UTE_k19\Đo_An\HoanThanhDangNhap\bin\Debug\sv\ZedGraph.resources.dll
+D:\Đăng_Quý_UTE_K19\Dang_Quy_UTE_k19\Đo_An\HoanThanhDangNhap\bin\Debug\tr\ZedGraph.resources.dll
+D:\Đăng_Quý_UTE_K19\Dang_Quy_UTE_k19\Đo_An\HoanThanhDangNhap\bin\Debug\zh-cn\ZedGraph.resources.dll
+D:\Đăng_Quý_UTE_K19\Dang_Quy_UTE_k19\Đo_An\HoanThanhDangNhap\bin\Debug\zh-tw\ZedGraph.resources.dll

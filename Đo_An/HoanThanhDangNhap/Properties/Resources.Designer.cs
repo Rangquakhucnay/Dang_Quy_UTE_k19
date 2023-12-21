@@ -429,5 +429,15 @@ namespace HoanThanhDangNhap.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap z4961865012401_5e6dbbab7d1f6362a41553782ee89cd0 {
+            get {
+                object obj = ResourceManager.GetObject("z4961865012401_5e6dbbab7d1f6362a41553782ee89cd0", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }

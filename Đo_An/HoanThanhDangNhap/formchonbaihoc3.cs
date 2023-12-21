@@ -32,7 +32,7 @@ namespace HoanThanhDangNhap
         private void btnChonBaiHoc_Click(object sender, EventArgs e)
         {
             this.Hide();
-            formDiToiBaiHoc f = new formDiToiBaiHoc();
+            formDiToiBaiHoc3 f = new formDiToiBaiHoc3();
             f.ShowDialog();
         }
 
@@ -58,11 +58,11 @@ namespace HoanThanhDangNhap
                 SQLiteDataReader reader = command.ExecuteReader();
                 if (reader.Read())
                 {
-                    lastTiendo = reader.GetString(22);
+                    lastTiendo = reader.GetString(41);
                 }
 
 
-                string[] parts = lastTiendo.Split(new[] { "va" }, StringSplitOptions.None);
+                string[] parts = lastTiendo.Split(new[] { "va" }, StringSplitOptions.None); // gồm 2 vị trí 0,1
                 lastChuong = int.Parse(parts[0]);
                 lastnActi = int.Parse(parts[1]);
 
@@ -83,14 +83,14 @@ namespace HoanThanhDangNhap
 
                 if (TiendoHoanthanhChuong < lastnActi)
                 {
-                    formDiToiBaiHoc.TiendoActi = int.Parse(nlastnActi);
+                    formDiToiBaiHoc3.TiendoActi = int.Parse(nlastnActi);
                 }
                 else
                 {
-                    formDiToiBaiHoc.TiendoActi = TiendoHoanthanhChuong;
+                    formDiToiBaiHoc3.TiendoActi = TiendoHoanthanhChuong;
                 }
-                formDiToiBaiHoc.sttChuongBaiHoc = nlastChuong;
-                formDiToiBaiHoc.SoActi = nlastnActi;
+                formDiToiBaiHoc3.sttChuongBaiHoc3 = nlastChuong;
+                formDiToiBaiHoc3.SoActi = nlastnActi;
                 reader.Close();
                 reader1.Close();
                 conn.Close();
@@ -107,9 +107,6 @@ namespace HoanThanhDangNhap
 
         }
 
-        private void formChonBaiHoc_Load(object sender, EventArgs e)
-        {
-
-        }
+       
     }
 }

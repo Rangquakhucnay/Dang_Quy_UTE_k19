@@ -79,16 +79,16 @@
             this.btnTiepTuc2.UseVisualStyleBackColor = true;
             this.btnTiepTuc2.Click += new System.EventHandler(this.btnTiepTuc2_Click);
             // 
-            // formchonbaihocchuong2
+            // formchonbaihoc2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(364, 414);
             this.Controls.Add(this.panel1);
-            this.Name = "formchonbaihocchuong2";
+            this.Name = "formchonbaihoc2";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Chọn Bài Học";
-            this.Load += new System.EventHandler(this.formchonbaihocchuong2_Load);
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.formchonbaihoc2_FormClosed);
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 

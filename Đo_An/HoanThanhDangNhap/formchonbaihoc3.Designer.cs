@@ -92,7 +92,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Chọn bài học";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.formChonBaiHoc_FormClosed);
-            this.Load += new System.EventHandler(this.formChonBaiHoc_Load);
+          
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 

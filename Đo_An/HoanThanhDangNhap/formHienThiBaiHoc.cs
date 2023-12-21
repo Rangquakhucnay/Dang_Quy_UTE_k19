@@ -62,9 +62,9 @@ namespace HoanThanhDangNhap
             //
             panelWiring.Visible = false;// ẩn panel wiring lúc bật lên
             panelVideo.Visible = false; //panel Video hiển thị bài học
+                                        //groupBox1.Visible =false
 
-            
-
+            //-------------------------------------------------------------------------fix
             if (nActi == 1)
             {
 
@@ -75,7 +75,11 @@ namespace HoanThanhDangNhap
                 panelWiring.BringToFront();
                 btnOK.Enabled = false;
             }
-            else 
+            else /*// if (nActi == 2)
+            {
+
+            }
+            */
             {
                 panelWiring.Visible = false;
                 panelWiring.SendToBack();
@@ -92,6 +96,14 @@ namespace HoanThanhDangNhap
             LoadImage(currentImageIndex);
             LoadButtonsWiring(currentImageIndex, buttonCount);
             picChe.BringToFront(); //pic che hiện lên để che cái chỗ câu hỏi
+        }
+        private void HienThiGroupBox()
+        {
+            panelWiring.Visible = true;
+           // LoadImage(currentImageIndex);
+           // LoadButtonsWiring(currentImageIndex, buttonCount);
+            picChe.BringToFront(); //pic che hiện lên để che cái chỗ câu hỏi
+
         }
         
         private void LaySoHinh()
@@ -311,7 +323,7 @@ namespace HoanThanhDangNhap
                 {
                     nonNullRowCount++; // =27 của chương1
                 }
-                bt1.Text = nonNullRowCount.ToString();
+                bt1.Text = nonNullRowCount.ToString();//-----------------------------------------------------fix
             }
             ////////////////
 
@@ -393,7 +405,7 @@ namespace HoanThanhDangNhap
                 guiMaFault("x");
             }
 
-            //
+            //---------------------------------------------------------------------------------------
             if (int.Parse(video) != 0)
             {
                 panelVideo.Visible = true;
@@ -409,6 +421,21 @@ namespace HoanThanhDangNhap
                 btnOK.Enabled = true;
             }
 
+            /*   if (int.Parse(box) != 0)
+               {
+                  GroupBox1.Visible = true;
+                   GroupBox1.BringToFront();
+
+
+                   btnOK.Enabled = true;
+               }
+               else
+               {
+                   GroupBox1.SendToBack();
+                   GroupBox1.Visible = false;
+                   btnOK.Enabled = true;
+               }
+            */
             if (int.Parse(hide) == 1)
             {
                 picChe.BringToFront();
@@ -521,7 +548,12 @@ namespace HoanThanhDangNhap
             }
         }
 
-        
+        private void panelWiring_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+
 
         /*private void pictureBox3_Click(object sender, EventArgs e)
         {

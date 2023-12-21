@@ -53,6 +53,7 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panelWiring = new System.Windows.Forms.Panel();
             this.bt1 = new System.Windows.Forms.Button();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.flowLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -309,6 +310,7 @@
             this.panelWiring.Name = "panelWiring";
             this.panelWiring.Size = new System.Drawing.Size(1768, 683);
             this.panelWiring.TabIndex = 15;
+            this.panelWiring.Paint += new System.Windows.Forms.PaintEventHandler(this.panelWiring_Paint);
             // 
             // bt1
             // 
@@ -384,5 +386,6 @@
         private System.Windows.Forms.Panel panelWiring;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Button bt1;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
     }
 }

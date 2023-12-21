@@ -18,22 +18,17 @@ namespace HoanThanhDangNhap
         {
             InitializeComponent();
         }
-
-        private void btnChonBaiHoc2_Click(object sender, EventArgs e)
+    
+        private void btnTat2_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            formDiToiBaiHoc2 f = new formDiToiBaiHoc2();
-            f.ShowDialog();
+            this.Close();
         }
 
-        
-
-        private void formchonbaihocchuong2_Load(object sender, EventArgs e)
+        private void formchonbaihoc2_FormClosed(object sender, FormClosedEventArgs e)
         {
-        
-        
+            this.Close();
         }
-
+       
         private void btnTiepTuc2_Click(object sender, EventArgs e)
         {
             int lastChuong = 0;
@@ -56,7 +51,7 @@ namespace HoanThanhDangNhap
                 SQLiteDataReader reader = command.ExecuteReader();
                 if (reader.Read())
                 {
-                    lastTiendo = reader.GetString(22);
+                    lastTiendo = reader.GetString(41);
                 }
 
 
@@ -82,14 +77,14 @@ namespace HoanThanhDangNhap
 
                 if (TiendoHoanthanhChuong < lastnActi)
                 {
-                    formDiToiBaiHoc.TiendoActi = int.Parse(nlastnActi);
+                    formDiToiBaiHoc2.TiendoActi = int.Parse(nlastnActi);
                 }
                 else
                 {
-                    formDiToiBaiHoc.TiendoActi = TiendoHoanthanhChuong;
+                    formDiToiBaiHoc2.TiendoActi = TiendoHoanthanhChuong;
                 }
-                formDiToiBaiHoc.sttChuongBaiHoc = nlastChuong;
-                formDiToiBaiHoc.SoActi = nlastnActi;
+                formDiToiBaiHoc2.sttChuongBaiHoc2 = nlastChuong;
+                formDiToiBaiHoc2.SoActi = nlastnActi;
                 reader.Close();
                 reader1.Close();
                 conn.Close();
@@ -100,14 +95,20 @@ namespace HoanThanhDangNhap
                 MessageBox.Show("Lỗi: " + ex.Message);
             }
 
+         
+           
+         
             this.Hide();
-            formHienThiBaiHoc f = new formHienThiBaiHoc();
-            f.ShowDialog();
-
+            formDiToiBaiHoc2 f1 = new formDiToiBaiHoc2();
+            f1.ShowDialog();
+            this.Close();
         }
 
-        private void btnTat2_Click(object sender, EventArgs e)
+        private void btnChonBaiHoc2_Click(object sender, EventArgs e)
         {
+            this.Hide();
+            formDiToiBaiHoc2 f1 = new formDiToiBaiHoc2();
+            f1.ShowDialog();
             this.Close();
         }
     }
