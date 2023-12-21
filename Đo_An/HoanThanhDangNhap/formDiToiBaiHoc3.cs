@@ -1,4 +1,5 @@
 ﻿using Org.BouncyCastle.Math.EC;
+using Org.BouncyCastle.Tls.Crypto;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -112,9 +113,11 @@ namespace HoanThanhDangNhap
                 sttChuongBaiHoc3 = cbSttChuongBH.Text;
                 SoActi = cbSoActiBH.Text;////////////////////////////////////////////////////////
                 //formBaiHocChuong3 f = new formBaiHocChuong3();
+                this.Hide();
                 formHienThiBaiHoc3 f = new formHienThiBaiHoc3();
                 int a = int.Parse(cbSttChuongBH.Text);
                 f.ShowDialog();
+                this.Close();
             }
             this.Close();
         }

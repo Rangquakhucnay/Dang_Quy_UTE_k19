@@ -318,6 +318,9 @@
     <EmbeddedResource Include="formHienThiBaiHoc3.resx">
       <DependentUpon>formHienThiBaiHoc3.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="formHienThiBaiHoc4.resx">
+      <DependentUpon>formHienThiBaiHoc4.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="formThucHanh.resx">
       <DependentUpon>formThucHanh.cs</DependentUpon>
     </EmbeddedResource>

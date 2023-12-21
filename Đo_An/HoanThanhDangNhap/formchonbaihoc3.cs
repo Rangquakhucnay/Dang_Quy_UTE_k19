@@ -34,6 +34,7 @@ namespace HoanThanhDangNhap
             this.Hide();
             formDiToiBaiHoc3 f = new formDiToiBaiHoc3();
             f.ShowDialog();
+            this.Close();
         }
 
         private void btnTiepTuc_Click(object sender, EventArgs e)
@@ -98,11 +99,11 @@ namespace HoanThanhDangNhap
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Lỗi: " + ex.Message);
+               MessageBox.Show("Lỗi: " + ex.Message);
             }
 
             this.Hide();
-            formHienThiBaiHoc f = new formHienThiBaiHoc();
+            formHienThiBaiHoc3 f = new formHienThiBaiHoc3();
             f.ShowDialog();
 
         }

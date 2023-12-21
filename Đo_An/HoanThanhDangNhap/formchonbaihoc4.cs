@@ -32,8 +32,9 @@ namespace HoanThanhDangNhap
         private void btnChonBaiHoc_Click(object sender, EventArgs e)
         {
             this.Hide();
-            formDiToiBaiHoc f = new formDiToiBaiHoc();
+            formDiToiBaiHoc4 f = new formDiToiBaiHoc4();
             f.ShowDialog();
+            this.Close();
         }
 
         private void btnTiepTuc_Click(object sender, EventArgs e)
@@ -58,7 +59,7 @@ namespace HoanThanhDangNhap
                 SQLiteDataReader reader = command.ExecuteReader();
                 if (reader.Read())
                 {
-                    lastTiendo = reader.GetString(22);
+                    lastTiendo = reader.GetString(41);
                 }
 
 
@@ -102,8 +103,9 @@ namespace HoanThanhDangNhap
             }
 
             this.Hide();
-            formHienThiBaiHoc f = new formHienThiBaiHoc();
+            formHienThiBaiHoc4 f = new formHienThiBaiHoc4();
             f.ShowDialog();
+            this.Close  ();
 
         }
 

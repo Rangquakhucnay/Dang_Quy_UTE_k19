@@ -275,7 +275,7 @@
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.Transparent;
-            this.button1.BackgroundImage = global::HoanThanhDangNhap.Properties.Resources.Icons8_Ios7_Arrows_Back_512;
+ // sủa          this.button1.BackgroundImage = global::HoanThanhDangNhap.Properties.Resources.Icons8_Ios7_Arrows_Back_512;
             this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.button1.Location = new System.Drawing.Point(722, 577);
             this.button1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -288,7 +288,7 @@
             // button2
             // 
             this.button2.BackColor = System.Drawing.Color.Transparent;
-            this.button2.BackgroundImage = global::HoanThanhDangNhap.Properties.Resources.Icons8_Ios7_Arrows_Forward_512;
+//  sủa          this.button2.BackgroundImage = global::HoanThanhDangNhap.Properties.Resources.Icons8_Ios7_Arrows_Forward_512;
             this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.button2.Location = new System.Drawing.Point(1155, 577);
             this.button2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -362,7 +362,7 @@
             // 
             // pictureBo
             // 
-            this.pictureBo.Image = global::HoanThanhDangNhap.Properties.Resources._393686953_804231791391891_7366914710212052393_n;
+//sủa            this.pictureBo.Image = global::HoanThanhDangNhap.Properties.Resources._393686953_804231791391891_7366914710212052393_n;
             this.pictureBo.Location = new System.Drawing.Point(38, 9);
             this.pictureBo.Name = "pictureBo";
             this.pictureBo.Size = new System.Drawing.Size(1579, 546);

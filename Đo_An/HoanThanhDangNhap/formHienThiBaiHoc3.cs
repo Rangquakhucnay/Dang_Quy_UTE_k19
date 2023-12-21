@@ -762,7 +762,7 @@ namespace HoanThanhDangNhap
                 string tendangnhapform1 = Properties.Settings.Default.TenDangNhapALL;
               //  string truycapCot = "nqtc" + chuong.ToString();
                 //--------------------------------------------------------------------------------------------------------------------------fix
-                int vitriCot = chuong + 13;
+                int vitriCot = chuong + 18;
                 string truycapCot = "nqtc" + vitriCot.ToString();
 
                 SQLiteCommand command1 = new SQLiteCommand();
@@ -796,6 +796,7 @@ namespace HoanThanhDangNhap
                         {
                             MessageBox.Show("Lưu tiến độ thành công!");
                             MessageBox.Show(nqt.ToString());
+                            MessageBox.Show(vitri.ToString());
                         }
                         else
                         {
