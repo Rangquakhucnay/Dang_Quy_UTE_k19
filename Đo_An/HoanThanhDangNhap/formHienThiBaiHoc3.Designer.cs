@@ -35,7 +35,10 @@
             this.button3 = new System.Windows.Forms.Button();
             this.bt1 = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.buttonRight = new System.Windows.Forms.Button();
+            this.buttonLeft = new System.Windows.Forms.Button();
             this.serCom = new System.IO.Ports.SerialPort(this.components);
             this.label1 = new System.Windows.Forms.Label();
             this.zedGraphControl1 = new ZedGraph.ZedGraphControl();
@@ -43,33 +46,30 @@
             this.txtQues = new System.Windows.Forms.TextBox();
             this.chlstDapAn = new System.Windows.Forms.CheckedListBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.picChe = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.rtb_Baihoc = new System.Windows.Forms.RichTextBox();
             this.panelWiring = new System.Windows.Forms.Panel();
             this.flowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.buttonRight = new System.Windows.Forms.Button();
-            this.buttonLeft = new System.Windows.Forms.Button();
-            this.picChe = new System.Windows.Forms.PictureBox();
             this.panelDienso = new System.Windows.Forms.Panel();
             this.pictureBo = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.flowLayoutPanel1.SuspendLayout();
             this.gbBox1.SuspendLayout();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picChe)).BeginInit();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panelWiring.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picChe)).BeginInit();
             this.panelDienso.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBo)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // flowLayoutPanel2
@@ -127,6 +127,14 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "groupBox1";
             // 
+            // pictureBox4
+            // 
+            this.pictureBox4.Location = new System.Drawing.Point(-16, -11);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(88, 50);
+            this.pictureBox4.TabIndex = 5;
+            this.pictureBox4.TabStop = false;
+            // 
             // flowLayoutPanel1
             // 
             this.flowLayoutPanel1.Controls.Add(this.buttonRight);
@@ -137,6 +145,32 @@
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(89, 46);
             this.flowLayoutPanel1.TabIndex = 1;
+            // 
+            // buttonRight
+            // 
+            this.buttonRight.BackColor = System.Drawing.Color.Transparent;
+            this.buttonRight.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonRight.BackgroundImage")));
+            this.buttonRight.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.buttonRight.Location = new System.Drawing.Point(3, 4);
+            this.buttonRight.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.buttonRight.Name = "buttonRight";
+            this.buttonRight.Size = new System.Drawing.Size(35, 35);
+            this.buttonRight.TabIndex = 3;
+            this.buttonRight.UseVisualStyleBackColor = false;
+            this.buttonRight.Click += new System.EventHandler(this.buttonRight_Click);
+            // 
+            // buttonLeft
+            // 
+            this.buttonLeft.BackColor = System.Drawing.Color.Transparent;
+            this.buttonLeft.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonLeft.BackgroundImage")));
+            this.buttonLeft.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.buttonLeft.Location = new System.Drawing.Point(44, 4);
+            this.buttonLeft.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.buttonLeft.Name = "buttonLeft";
+            this.buttonLeft.Size = new System.Drawing.Size(35, 35);
+            this.buttonLeft.TabIndex = 2;
+            this.buttonLeft.UseVisualStyleBackColor = false;
+            this.buttonLeft.Click += new System.EventHandler(this.buttonLeft_Click);
             // 
             // serCom
             // 
@@ -218,6 +252,16 @@
             this.panel2.Size = new System.Drawing.Size(1496, 272);
             this.panel2.TabIndex = 11;
             // 
+            // picChe
+            // 
+            this.picChe.BackColor = System.Drawing.Color.Transparent;
+            this.picChe.Location = new System.Drawing.Point(-1, 0);
+            this.picChe.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.picChe.Name = "picChe";
+            this.picChe.Size = new System.Drawing.Size(1497, 318);
+            this.picChe.TabIndex = 17;
+            this.picChe.TabStop = false;
+            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -237,6 +281,16 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1638, 631);
             this.panel1.TabIndex = 3;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox1.Location = new System.Drawing.Point(450, 10);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(1185, 611);
+            this.pictureBox1.TabIndex = 24;
+            this.pictureBox1.TabStop = false;
             // 
             // rtb_Baihoc
             // 
@@ -275,7 +329,6 @@
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.Transparent;
- // sủa          this.button1.BackgroundImage = global::HoanThanhDangNhap.Properties.Resources.Icons8_Ios7_Arrows_Back_512;
             this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.button1.Location = new System.Drawing.Point(722, 577);
             this.button1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -288,7 +341,6 @@
             // button2
             // 
             this.button2.BackColor = System.Drawing.Color.Transparent;
-//  sủa          this.button2.BackgroundImage = global::HoanThanhDangNhap.Properties.Resources.Icons8_Ios7_Arrows_Forward_512;
             this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.button2.Location = new System.Drawing.Point(1155, 577);
             this.button2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -308,50 +360,6 @@
             this.pictureBox2.TabIndex = 0;
             this.pictureBox2.TabStop = false;
             // 
-            // pictureBox4
-            // 
-            this.pictureBox4.Location = new System.Drawing.Point(-16, -11);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(88, 50);
-            this.pictureBox4.TabIndex = 5;
-            this.pictureBox4.TabStop = false;
-            // 
-            // buttonRight
-            // 
-            this.buttonRight.BackColor = System.Drawing.Color.Transparent;
-            this.buttonRight.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonRight.BackgroundImage")));
-            this.buttonRight.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.buttonRight.Location = new System.Drawing.Point(3, 4);
-            this.buttonRight.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.buttonRight.Name = "buttonRight";
-            this.buttonRight.Size = new System.Drawing.Size(35, 35);
-            this.buttonRight.TabIndex = 3;
-            this.buttonRight.UseVisualStyleBackColor = false;
-            this.buttonRight.Click += new System.EventHandler(this.buttonRight_Click);
-            // 
-            // buttonLeft
-            // 
-            this.buttonLeft.BackColor = System.Drawing.Color.Transparent;
-            this.buttonLeft.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonLeft.BackgroundImage")));
-            this.buttonLeft.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.buttonLeft.Location = new System.Drawing.Point(44, 4);
-            this.buttonLeft.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.buttonLeft.Name = "buttonLeft";
-            this.buttonLeft.Size = new System.Drawing.Size(35, 35);
-            this.buttonLeft.TabIndex = 2;
-            this.buttonLeft.UseVisualStyleBackColor = false;
-            this.buttonLeft.Click += new System.EventHandler(this.buttonLeft_Click);
-            // 
-            // picChe
-            // 
-            this.picChe.BackColor = System.Drawing.Color.Transparent;
-            this.picChe.Location = new System.Drawing.Point(-1, 0);
-            this.picChe.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.picChe.Name = "picChe";
-            this.picChe.Size = new System.Drawing.Size(1497, 318);
-            this.picChe.TabIndex = 17;
-            this.picChe.TabStop = false;
-            // 
             // panelDienso
             // 
             this.panelDienso.Controls.Add(this.pictureBo);
@@ -362,23 +370,13 @@
             // 
             // pictureBo
             // 
-//sủa            this.pictureBo.Image = global::HoanThanhDangNhap.Properties.Resources._393686953_804231791391891_7366914710212052393_n;
+            this.pictureBo.Image = global::HoanThanhDangNhap.Properties.Resources._393686953_804231791391891_7366914710212052393_n;
             this.pictureBo.Location = new System.Drawing.Point(38, 9);
             this.pictureBo.Name = "pictureBo";
             this.pictureBo.Size = new System.Drawing.Size(1579, 546);
             this.pictureBo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBo.TabIndex = 0;
             this.pictureBo.TabStop = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox1.Location = new System.Drawing.Point(450, 10);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(1185, 611);
-            this.pictureBox1.TabIndex = 24;
-            this.pictureBox1.TabStop = false;
             // 
             // formHienThiBaiHoc3
             // 
@@ -405,18 +403,18 @@
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.formHienThiBaiHoc_FormClosed);
             this.Load += new System.EventHandler(this.formHienThiBaiHoc_Load);
             this.groupBox1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.flowLayoutPanel1.ResumeLayout(false);
             this.gbBox1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picChe)).EndInit();
             this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panelWiring.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picChe)).EndInit();
             this.panelDienso.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBo)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -117,7 +117,7 @@ namespace HoanThanhDangNhap
                 formHienThiBaiHoc3 f = new formHienThiBaiHoc3();
                 int a = int.Parse(cbSttChuongBH.Text);
                 f.ShowDialog();
-                this.Close();
+               // this.Close();
             }
             this.Close();
         }
