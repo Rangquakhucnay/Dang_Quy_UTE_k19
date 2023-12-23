@@ -43,6 +43,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.zedGraphControl1 = new ZedGraph.ZedGraphControl();
             this.gbBox1 = new System.Windows.Forms.Panel();
+            this.btChaydothi = new System.Windows.Forms.Button();
             this.txtQues = new System.Windows.Forms.TextBox();
             this.chlstDapAn = new System.Windows.Forms.CheckedListBox();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -58,6 +59,7 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panelDienso = new System.Windows.Forms.Panel();
             this.pictureBo = new System.Windows.Forms.PictureBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.flowLayoutPanel1.SuspendLayout();
@@ -203,11 +205,24 @@
             // 
             // gbBox1
             // 
+            this.gbBox1.Controls.Add(this.label3);
+            this.gbBox1.Controls.Add(this.btChaydothi);
             this.gbBox1.Controls.Add(this.zedGraphControl1);
             this.gbBox1.Location = new System.Drawing.Point(61, 3);
             this.gbBox1.Name = "gbBox1";
             this.gbBox1.Size = new System.Drawing.Size(1491, 699);
             this.gbBox1.TabIndex = 1;
+            // 
+            // btChaydothi
+            // 
+            this.btChaydothi.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.btChaydothi.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btChaydothi.Location = new System.Drawing.Point(19, 437);
+            this.btChaydothi.Name = "btChaydothi";
+            this.btChaydothi.Size = new System.Drawing.Size(228, 56);
+            this.btChaydothi.TabIndex = 3;
+            this.btChaydothi.Text = "Chạy đồ thị";
+            this.btChaydothi.UseVisualStyleBackColor = false;
             // 
             // txtQues
             // 
@@ -378,11 +393,23 @@
             this.pictureBo.TabIndex = 0;
             this.pictureBo.TabStop = false;
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Linen;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(668, 648);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(305, 32);
+            this.label3.TabIndex = 4;
+            this.label3.Text = "Tên của đồ thị ..........";
+            // 
             // formHienThiBaiHoc3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1890, 950);
+            this.Controls.Add(this.gbBox1);
             this.Controls.Add(this.panelDienso);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.bt1);
@@ -392,7 +419,6 @@
             this.Controls.Add(this.button3);
             this.Controls.Add(this.btnOK);
             this.Controls.Add(this.flowLayoutPanel2);
-            this.Controls.Add(this.gbBox1);
             this.Controls.Add(this.panelWiring);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -406,6 +432,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.flowLayoutPanel1.ResumeLayout(false);
             this.gbBox1.ResumeLayout(false);
+            this.gbBox1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picChe)).EndInit();
@@ -450,5 +477,7 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panelDienso;
         private System.Windows.Forms.PictureBox pictureBo;
+        private System.Windows.Forms.Button btChaydothi;
+        private System.Windows.Forms.Label label3;
     }
 }

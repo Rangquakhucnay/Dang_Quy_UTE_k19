@@ -221,7 +221,7 @@ namespace HoanThanhDangNhap
             }
         }
 
-        private void HienThiBaiDaHoc(int v)
+        private void HienThiBaiDaHoc(int v)// tô đậm giá trị câu đã làm 
         {
             // Lấy danh sách các nút hiển thị trên flowLayoutPanel2
             var buttons = flowLayoutPanel2.Controls.OfType<System.Windows.Forms.Button>().ToList();
@@ -241,10 +241,14 @@ namespace HoanThanhDangNhap
         {
             // Lấy danh sách các nút hiển thị trên flowLayoutPanel2
             var buttons = flowLayoutPanel2.Controls.OfType<System.Windows.Forms.Button>().ToList();
+            // định nghĩa một màu tùy chỉnh (customColor) sử dụng giá trị mã màu RGB.
             Color customColor = Color.FromArgb(110, 172, 183);
+            // Kiểm tra v có giá trị hợp lệ trong khoảng từ 1 đến số lượng nút
             if (v > 0 && v <= buttons.Count)
             {
+                // Đặt màu nút vừa chọn thành màu tùy chỉnh
                 buttons.ElementAt(v - 1).BackColor = customColor;
+                // Kích hoạt nút vừa chọn
                 buttons.ElementAt(v - 1).Enabled = true;
             }
         }
@@ -362,6 +366,17 @@ namespace HoanThanhDangNhap
                     break; // Thoát khỏi vòng lặp nếu đã tìm thấy hàng cần tìm kiếm
                 }
                 if (rowEND == "END")
+                {
+                    MessageBox.Show("Bạn đã hoàn thành bài học");
+                    nActi = row;
+                    this.Hide();
+                    formDiToiBaiHoc f = new formDiToiBaiHoc();
+                    f.ShowDialog();
+                    this.Close();
+
+                    return;
+                }
+                else if (rowEND == "ENDEND")
                 {
                     MessageBox.Show("Bạn đã hoàn thành bài học");
                     nActi = row;
@@ -611,7 +626,7 @@ namespace HoanThanhDangNhap
             {
                 if (int.Parse(hide) == 1)
                 {
-                    nActi++;
+                    nActi++;//3
                     HienThiBaiHoc(nActi);
                     HienthiKhinhanOK(nActi);
                 }

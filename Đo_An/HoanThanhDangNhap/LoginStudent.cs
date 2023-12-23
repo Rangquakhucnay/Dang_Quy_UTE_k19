@@ -119,6 +119,7 @@ namespace HoanThanhDangNhap
             {
                 formchonphan1 f21 = new formchonphan1();
                 f21.ShowDialog();
+               // this.Close();   
             }
             
         }
@@ -144,6 +145,7 @@ namespace HoanThanhDangNhap
             {
                 tenCOM = listcom.Text;
                 giatribaudrate = int.Parse(listrate.Text);
+                ////////////////
                 serialPort1.PortName = tenCOM;
                 serialPort1.BaudRate = giatribaudrate;
                 btnNutKetNoi.Text = "Ngắt kết nối";

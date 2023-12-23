@@ -60,10 +60,10 @@ namespace HoanThanhDangNhap
                 lastnActi = int.Parse(parts[1]);
 
                 int vitriCot = lastChuong + 5;
-                
+
                 string nlastChuong = lastChuong.ToString();
                 string nlastnActi = lastnActi.ToString();
-                
+
                 SQLiteCommand command1 = new SQLiteCommand();
                 command1.CommandType = CommandType.Text;
                 command1.CommandText = "select * from ThongTinSinhVien where TenDangNhap=@tendn";
@@ -94,9 +94,6 @@ namespace HoanThanhDangNhap
             {
                 MessageBox.Show("Lỗi: " + ex.Message);
             }
-
-         
-           
          
             this.Hide();
             formDiToiBaiHoc2 f1 = new formDiToiBaiHoc2();

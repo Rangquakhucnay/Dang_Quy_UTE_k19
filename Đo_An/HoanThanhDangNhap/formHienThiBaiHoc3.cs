@@ -33,6 +33,7 @@ namespace HoanThanhDangNhap
         string box = "";
         string mahoa = "";
         string dien = "";
+        string ten = "";
 
         int nonNullRowCount = 0;
         string rowEND;
@@ -69,8 +70,31 @@ namespace HoanThanhDangNhap
             serCom.BaudRate = LoginStudent.giatribaudrate;
             //
             panelWiring.Visible = false;// ẩn panel wiring lúc bật lên
-           // panelVideo.Visible = false; //panel Video hiển thị bài học
+                                        // panelVideo.Visible = false; //panel Video hiển thị bài học
                                         //groupBox1.Visible =false
+
+              // khởi tạo biểu đồ
+            GraphPane myPanne = zedGraphControl1.GraphPane;
+            myPanne.Title.Text = "Giá Trị Nhiệt Độ";
+            myPanne.YAxis.Title.Text = "Giá Trị";
+            myPanne.XAxis.Title.Text = "Thời Gian";
+
+
+            RollingPointPairList List = new RollingPointPairList(500000);
+
+            LineItem Line = myPanne.AddCurve("Nhiệt độ", List, Color.Red, SymbolType.Diamond);
+
+            myPanne.X2Axis.Scale.Min = 0; // giá trị min 
+            myPanne.X2Axis.Scale.Max = 50; // giá trị max
+            myPanne.X2Axis.Scale.MinorStep = 1;
+            myPanne.X2Axis.Scale.MajorStep = 2;
+
+            myPanne.YAxis.Scale.Min = 0;
+            myPanne.YAxis.Scale.Max = 50;
+            myPanne.YAxis.Scale.MinorStep = 1;
+            myPanne.YAxis.Scale.MajorStep = 2;
+
+            zedGraphControl1.AxisChange();
 
             //-------------------------------------------------------------------------fix
             if (nActi == 1)
@@ -99,33 +123,8 @@ namespace HoanThanhDangNhap
             HienThiBaiDaHoc(nQT);               // hiển thị các bài đã học bằng cách tô đậm
         }
 
-        private void dothi (object sender, EventArgs e)
-        {
-           
-            // khởi tạo biểu đồ
-            GraphPane myPanne = zedGraphControl1.GraphPane;
-            myPanne.Title.Text = "Giá Trị Nhiệt Độ";
-            myPanne.YAxis.Title.Text = "Giá Trị";
-            myPanne.XAxis.Title.Text = "Thời Gian";
-
-
-            RollingPointPairList List = new RollingPointPairList(500000);
-
-            LineItem Line = myPanne.AddCurve("Nhiệt độ", List, Color.Red, SymbolType.Diamond);
-
-            myPanne.X2Axis.Scale.Min = 0; // giá trị min 
-            myPanne.X2Axis.Scale.Max = 50; // giá trị max
-            myPanne.X2Axis.Scale.MinorStep = 1;
-            myPanne.X2Axis.Scale.MajorStep = 2;
-
-            myPanne.YAxis.Scale.Min = 0;
-            myPanne.YAxis.Scale.Max = 50;
-            myPanne.YAxis.Scale.MinorStep = 1;
-            myPanne.YAxis.Scale.MajorStep = 2;
-
-            zedGraphControl1.AxisChange();
-        }
-
+       
+        // @01D1#
         int tong = 0;
         public void draw(double Line)
         {
@@ -149,7 +148,7 @@ namespace HoanThanhDangNhap
         {
 
             string alldata = "";
-            alldata = serCom.ReadLine(); ;// đọc dữ dữ liệu từ arduino   
+            alldata = serCom.ReadLine(); ; // đọc dữ dữ liệu từ arduino   
             int lenght = alldata.Length;
 
             if (lenght > 0)
@@ -423,6 +422,7 @@ namespace HoanThanhDangNhap
                         dapanD = range.Cells[row, 12].Value2.ToString();
                         dien   = range.Cells[row, 13].Value2.ToString();
                         box    = range.Cells[row, 14].Value2.ToString();
+                       // ten    = range.Cells[row, 15].Value2.ToString();
                        
                         //
                         if (row > 2)
@@ -437,6 +437,17 @@ namespace HoanThanhDangNhap
                     break; // Thoát khỏi vòng lặp nếu đã tìm thấy hàng cần tìm kiếm
                 }
                 if (rowEND == "END")
+                {
+                    MessageBox.Show("Bạn đã hoàn thành bài học");
+                    nActi = row;
+                    this.Hide();
+                    formDiToiBaiHoc3 f = new formDiToiBaiHoc3();
+                    f.ShowDialog();
+                    this.Close();
+
+                    return;
+                }
+                else if (rowEND == "ENDEND")
                 {
                     MessageBox.Show("Bạn đã hoàn thành bài học");
                     nActi = row;
@@ -622,6 +633,8 @@ namespace HoanThanhDangNhap
                 }
             }
         }
+
+       
 
         private void PrevPicVideo_Click(object sender, EventArgs e)
         {

@@ -350,6 +350,17 @@ namespace HoanThanhDangNhap
                 {
                     MessageBox.Show("Bạn đã hoàn thành bài học");
                     nActi = row;
+                    this.Hide();
+                    formDiToiBaiHoc2 f = new formDiToiBaiHoc2();
+                    f.ShowDialog();
+                    this.Close();
+
+                    return;
+                }
+                else if (rowEND == "ENDEND")
+                {
+                    MessageBox.Show("Bạn đã hoàn thành bài học");
+                    nActi = row;
                     this.Close();
                     return;
                 }
