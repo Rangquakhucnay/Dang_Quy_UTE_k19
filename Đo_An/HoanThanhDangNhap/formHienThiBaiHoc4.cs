@@ -108,15 +108,15 @@ namespace HoanThanhDangNhap
 
         private void LaySoHinh()
         {
-            string folderPath = System.Windows.Forms.Application.StartupPath + "\\Resources2\\Wiring\\" + $"wiring_c{chuong}";
+            string folderPath = System.Windows.Forms.Application.StartupPath + "\\Resources4\\Wiring\\" + $"wiring_c{chuong}";
             maxImageIndex = Directory.GetFiles(folderPath, "*.*", SearchOption.AllDirectories).Length;
             buttonCount = 7;
         }
 
         private void LoadImage(int index)
         {
-            int chuong = int.Parse(formDiToiBaiHoc.sttChuongBaiHoc);
-            string fileName = System.Windows.Forms.Application.StartupPath + "\\Resources2\\Wiring\\" + $"wiring_c{chuong}" + "\\" + $"hinh{index}.png";
+            int chuong = int.Parse(formDiToiBaiHoc4.sttChuongBaiHoc4);
+            string fileName = System.Windows.Forms.Application.StartupPath + "\\Resources4\\Wiring\\" + $"wiring_c{chuong}" + "\\" + $"hinh{index}.png";
             pictureBox2.Image = Image.FromFile(fileName);
             pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
         }
@@ -296,7 +296,7 @@ namespace HoanThanhDangNhap
 
             // Khai báo đối tượng Excel
             Microsoft.Office.Interop.Excel.Application excel = new Microsoft.Office.Interop.Excel.Application();
-            Workbook workbook = excel.Workbooks.Open(System.Windows.Forms.Application.StartupPath + "\\Resources2\\Du lieu cau hoi\\thu vien bai hoc.xlsx");
+            Workbook workbook = excel.Workbooks.Open(System.Windows.Forms.Application.StartupPath + "\\Resources4\\Du lieu cau hoi\\thu vien bai hoc.xlsx");
             Worksheet worksheet = workbook.Sheets[chuong];// Worksheet worksheet = workbook.Sheets["Tên sheet"];
             Range range = worksheet.UsedRange;
 
@@ -477,7 +477,7 @@ namespace HoanThanhDangNhap
         private void HienThiVideo()
         {
             // lấy số hình có trong video đó
-            string folderPath = System.Windows.Forms.Application.StartupPath + "\\Resources2\\VideoCacChuong\\" + $"chuong{chuong}\\" + $"video{video}";
+            string folderPath = System.Windows.Forms.Application.StartupPath + "\\Resources4\\VideoCacChuong\\" + $"chuong{chuong}\\" + $"video{video}";
             maxImageIndexVideo = Directory.GetFiles(folderPath, "*.*", SearchOption.AllDirectories).Length;
             buttonCountVideo = 7; // số nút hiển thị là 7
 
@@ -488,7 +488,7 @@ namespace HoanThanhDangNhap
 
         private void LoadImageVideo(int index)
         {
-            string fileName = System.Windows.Forms.Application.StartupPath + "\\Resources2\\VideoCacChuong\\" + $"chuong{chuong}\\" + $"video{video}\\" + $"hinh{index}";
+            string fileName = System.Windows.Forms.Application.StartupPath + "\\Resources4\\VideoCacChuong\\" + $"chuong{chuong}\\" + $"video{video}\\" + $"hinh{index}";
             string imagePath = Path.ChangeExtension(fileName, ".png");
             string gifPath = Path.ChangeExtension(fileName, ".gif");    // check xem có đuôi là gif hay png
 
@@ -667,8 +667,9 @@ namespace HoanThanhDangNhap
 
                 string tendangnhapform1 = Properties.Settings.Default.TenDangNhapALL;
             
-                int vitriCot = chuong + 31;
-                string truycapCot = "nqtc" + chuong.ToString();
+                int vitriCot = chuong + 32;
+                int linh = chuong + 27;
+                string truycapCot = "nqtc" + linh.ToString();
 
                 SQLiteCommand command1 = new SQLiteCommand();
                 command1.CommandType = CommandType.Text;

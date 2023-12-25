@@ -43,6 +43,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.zedGraphControl1 = new ZedGraph.ZedGraphControl();
             this.gbBox1 = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
             this.btChaydothi = new System.Windows.Forms.Button();
             this.txtQues = new System.Windows.Forms.TextBox();
             this.chlstDapAn = new System.Windows.Forms.CheckedListBox();
@@ -59,7 +60,7 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panelDienso = new System.Windows.Forms.Panel();
             this.pictureBo = new System.Windows.Forms.PictureBox();
-            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.flowLayoutPanel1.SuspendLayout();
@@ -213,6 +214,17 @@
             this.gbBox1.Size = new System.Drawing.Size(1491, 699);
             this.gbBox1.TabIndex = 1;
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Linen;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(668, 648);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(305, 32);
+            this.label3.TabIndex = 4;
+            this.label3.Text = "Tên của đồ thị ..........";
+            // 
             // btChaydothi
             // 
             this.btChaydothi.BackColor = System.Drawing.Color.LightSteelBlue;
@@ -223,6 +235,7 @@
             this.btChaydothi.TabIndex = 3;
             this.btChaydothi.Text = "Chạy đồ thị";
             this.btChaydothi.UseVisualStyleBackColor = false;
+            this.btChaydothi.Click += new System.EventHandler(this.btChaydothi_Click);
             // 
             // txtQues
             // 
@@ -393,22 +406,21 @@
             this.pictureBo.TabIndex = 0;
             this.pictureBo.TabStop = false;
             // 
-            // label3
+            // label4
             // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.Linen;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(668, 648);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(305, 32);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "Tên của đồ thị ..........";
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(1714, 791);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(44, 16);
+            this.label4.TabIndex = 27;
+            this.label4.Text = "label4";
             // 
             // formHienThiBaiHoc3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1890, 950);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.gbBox1);
             this.Controls.Add(this.panelDienso);
             this.Controls.Add(this.label1);
@@ -479,5 +491,6 @@
         private System.Windows.Forms.PictureBox pictureBo;
         private System.Windows.Forms.Button btChaydothi;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
     }
 }

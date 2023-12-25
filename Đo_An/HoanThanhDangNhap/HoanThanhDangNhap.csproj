@@ -282,6 +282,9 @@
     <EmbeddedResource Include="formchonbaihoc2.resx">
       <DependentUpon>formchonbaihoc2.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="formchonbaihoc3.resx">
+      <DependentUpon>formchonbaihoc3.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="formchonphan1.resx">
       <DependentUpon>formchonphan1.cs</DependentUpon>
     </EmbeddedResource>

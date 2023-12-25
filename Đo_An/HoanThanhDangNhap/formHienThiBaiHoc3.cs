@@ -61,14 +61,19 @@ namespace HoanThanhDangNhap
         int chuong = int.Parse(formDiToiBaiHoc3.sttChuongBaiHoc3);
         int nActi = int.Parse(formDiToiBaiHoc3.SoActi);
         int nQT = formDiToiBaiHoc3.TiendoActi;
+        
 
-       
+
 
         //------------------------------------------------------------------------------------------------------------------main !!!
         private void formHienThiBaiHoc_Load(object sender, EventArgs e)        {
             serCom.PortName = LoginStudent.tenCOM;
             serCom.BaudRate = LoginStudent.giatribaudrate;
-            //
+            serCom.Open();
+
+            MessageBox.Show(LoginStudent.tenCOM.ToString());
+            MessageBox.Show(LoginStudent.giatribaudrate.ToString());
+
             panelWiring.Visible = false;// ẩn panel wiring lúc bật lên
                                         // panelVideo.Visible = false; //panel Video hiển thị bài học
                                         //groupBox1.Visible =false
@@ -179,7 +184,7 @@ namespace HoanThanhDangNhap
 
         private void LaySoHinh()
         {
-            string folderPath = System.Windows.Forms.Application.StartupPath + "\\Resources1\\Wiring\\" + $"wiring_c{chuong}";
+            string folderPath = System.Windows.Forms.Application.StartupPath + "\\Resources3\\Wiring\\" + $"wiring_c{chuong}";
             maxImageIndex = Directory.GetFiles(folderPath, "*.*", SearchOption.AllDirectories).Length;
             buttonCount = 7;
         }
@@ -187,7 +192,7 @@ namespace HoanThanhDangNhap
         private void LoadImage(int index)
         {
             int chuong = int.Parse(formDiToiBaiHoc3.sttChuongBaiHoc3);
-            string fileName = System.Windows.Forms.Application.StartupPath + "\\Resources1\\Wiring\\" + $"wiring_c{chuong}" + "\\" + $"hinh{index}.png";
+            string fileName = System.Windows.Forms.Application.StartupPath + "\\Resources3\\Wiring\\" + $"wiring_c{chuong}" + "\\" + $"hinh{index}.png";
             pictureBox2.Image = Image.FromFile(fileName);
             pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
         }
@@ -367,7 +372,7 @@ namespace HoanThanhDangNhap
 
             // Khai báo đối tượng Excel
             Microsoft.Office.Interop.Excel.Application excel = new Microsoft.Office.Interop.Excel.Application();
-            Workbook workbook = excel.Workbooks.Open(System.Windows.Forms.Application.StartupPath + "\\Resources1\\Du lieu cau hoi\\thu vien bai hoc.xlsx");
+            Workbook workbook = excel.Workbooks.Open(System.Windows.Forms.Application.StartupPath + "\\Resources3\\Du lieu cau hoi\\thu vien bai hoc.xlsx");
             Worksheet worksheet = workbook.Sheets[chuong];// Worksheet worksheet = workbook.Sheets["Tên sheet"];
             Range range = worksheet.UsedRange;
 
@@ -432,6 +437,7 @@ namespace HoanThanhDangNhap
                         //
                         label1.Text = box.ToString();
                         bt1.Text = dien.ToString();
+                        label4.Text = chuong.ToString();
                         // Xử lý dữ liệu tìm được ở đây
                     }
                     break; // Thoát khỏi vòng lặp nếu đã tìm thấy hàng cần tìm kiếm
@@ -581,7 +587,7 @@ namespace HoanThanhDangNhap
         private void HienThiVideo()
         {
             // lấy số hình có trong video đó
-            string folderPath = System.Windows.Forms.Application.StartupPath + "\\Resources1\\VideoCacChuong\\" + $"chuong{chuong}\\" + $"video{video}";
+            string folderPath = System.Windows.Forms.Application.StartupPath + "\\Resources3\\VideoCacChuong\\" + $"chuong{chuong}\\" + $"video{video}";
             maxImageIndexVideo = Directory.GetFiles(folderPath, "*.*", SearchOption.AllDirectories).Length;
             buttonCountVideo = 7; // số nút hiển thị là 7
 
@@ -592,7 +598,7 @@ namespace HoanThanhDangNhap
 
         private void LoadImageVideo(int index)
         {
-            string fileName = System.Windows.Forms.Application.StartupPath + "\\Resources1\\VideoCacChuong\\" + $"chuong{chuong}\\" + $"video{video}\\" + $"hinh{index}";
+            string fileName = System.Windows.Forms.Application.StartupPath + "\\Resources3\\VideoCacChuong\\" + $"chuong{chuong}\\" + $"video{video}\\" + $"hinh{index}";
             string imagePath = Path.ChangeExtension(fileName, ".png");
             string gifPath = Path.ChangeExtension(fileName, ".gif");    // check xem có đuôi là gif hay png
 
@@ -634,7 +640,15 @@ namespace HoanThanhDangNhap
             }
         }
 
-       
+        private void btChaydothi_Click(object sender, EventArgs e)
+        {
+            if (!serCom.IsOpen)
+            {
+                MessageBox.Show("nhu cc");
+            }
+            else
+                serCom.Write("@01D1#");
+        }
 
         private void PrevPicVideo_Click(object sender, EventArgs e)
         {
@@ -775,8 +789,9 @@ namespace HoanThanhDangNhap
                 string tendangnhapform1 = Properties.Settings.Default.TenDangNhapALL;
               //  string truycapCot = "nqtc" + chuong.ToString();
                 //--------------------------------------------------------------------------------------------------------------------------fix
-                int vitriCot = chuong + 18;
-                string truycapCot = "nqtc" + vitriCot.ToString();
+                int vitriCot = chuong + 19;
+                int linh = chuong + 14; 
+                string truycapCot = "nqtc" + linh.ToString();
 
                 SQLiteCommand command1 = new SQLiteCommand();
                 command1.CommandType = CommandType.Text;
@@ -792,6 +807,7 @@ namespace HoanThanhDangNhap
 
                     int nqtOLD = reader.GetInt32(vitriCot);// lấy giá trị trong db ở chương so sánh vs nActi 
                     int vitri = reader.GetInt32(0);
+                    MessageBox.Show(nqtOLD.ToString());
                     int nqt = 0;
                     if (nqtOLD < nActi)
                     {

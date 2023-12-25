@@ -31,8 +31,10 @@ namespace HoanThanhDangNhap
             { "Chương 4:", "BỘ ĐIỀU ÁP" },
             { "Chương 5:", "KIM PHUN" },
             { "Chương 6:", "KIM PHUN KHỞI ĐỘNG LẠNH" },
-            { "Chương 7:", "HỆ THỐNG ĐIÊU KHIỂN TỐC ĐỘ CẦM CHỪNG" },
-            { "Chương 8:", "HỆ THỐNG ĐIỀU KHIỂN BƯỚM GA ĐIỆN TỬ" },
+            { "Chương 7:", "BOBIN ĐÁNH LỬA" },
+            { "Chương 8:", "HỆ THỐNG ĐIÊU KHIỂN TỐC ĐỘ CẦM CHỪNG" },
+            { "Chương 9:", "HỆ THỐNG ĐIỀU KHIỂN BƯỚM GA ĐIỆN TỬ" },
+            
             //{ "Chương 8:", "value4" },
             // và tiếp tục với các cặp khác...
         };
@@ -43,7 +45,7 @@ namespace HoanThanhDangNhap
             cbSoActiBH.Enabled = true;
             string tendangnhapform1 = Properties.Settings.Default.TenDangNhapALL;
             int chuongBH = int.Parse(cbSttChuongBH.Text);
-            int DinhviCot = chuongBH + 10;  //+12 là vì thứ tự cột bên database
+            int DinhviCot = chuongBH + 10;  //+11 là vì thứ tự cột bên database
             SQLiteConnection conn = null;
             string strConn = string.Format(@"Data Source = {0}\DBLogin.db;Version=3;", System.Windows.Forms.Application.StartupPath);
             if (conn == null)

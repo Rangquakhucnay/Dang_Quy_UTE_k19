@@ -75,11 +75,7 @@ namespace HoanThanhDangNhap
                 panelWiring.BringToFront();
                 btnOK.Enabled = false;
             }
-            else /*// if (nActi == 2)
-            {
-
-            }
-            */
+            else 
             {
                 panelWiring.Visible = false;
                 panelWiring.SendToBack();
@@ -187,7 +183,7 @@ namespace HoanThanhDangNhap
                 int buttonIndexVideo = i - startIndexVideo;
                 System.Windows.Forms.Button button = new System.Windows.Forms.Button();
                 button.Text = i.ToString();
-                button.Size = new Size(30, 30);            // mới sửa 40.40
+                button.Size = new Size(30, 30);            
                 if (i == currentIndexVideo)
                 {
                     button.BackColor = Color.Silver;
@@ -266,15 +262,15 @@ namespace HoanThanhDangNhap
             if (giaTriNutSoNguyen == 1) 
             {
                 panelVideo.SendToBack();
-                guiMaFault("x");
+              //  guiMaFault("x");
                 HienThiWiring();
                 panelWiring.Visible = true;
                 panelWiring.BringToFront();
                 hide = "1";
-            }
+            }   
             else
             {
-                guiMaFault("x");
+               //guiMaFault("x");
                 HienThiBaiHoc(giaTriNutSoNguyen);
                 btnOK.Enabled = true;
                 panelWiring.Visible = false;
@@ -392,6 +388,7 @@ namespace HoanThanhDangNhap
             Marshal.ReleaseComObject(excel);
 
             // Hien thi du lieu len form 
+           /*
             if (fault != "0")           // phast hien co fault thi` gui di ne`
             {
                 if (fault == faultTruoc)
@@ -418,7 +415,7 @@ namespace HoanThanhDangNhap
             else        // neu khong co thi` gui ma fault xoa fault
             {
                 guiMaFault("x");
-            }
+            }*/
 
             //---------------------------------------------------------------------------------------
             if (int.Parse(video) != 0)
@@ -508,14 +505,14 @@ namespace HoanThanhDangNhap
 
         private void formHienThiBaiHoc_FormClosed(object sender, FormClosedEventArgs e)
         {
-            guiMaFault("x");
+           // guiMaFault("x");
             LuuTiendo();
             //MessageBox.Show("đã lưu");
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            guiMaFault("x");
+           // guiMaFault("x");
             this.Close();
         }
 
@@ -686,6 +683,8 @@ namespace HoanThanhDangNhap
                 {
 
                     int nqtOLD = reader.GetInt32(vitriCot);
+                    MessageBox.Show(nqtOLD.ToString());
+
                     int vitri = reader.GetInt32(0);
                     int nqt = 0;
                     if (nqtOLD < nActi)

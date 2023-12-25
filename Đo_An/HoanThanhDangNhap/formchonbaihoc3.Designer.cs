@@ -37,7 +37,7 @@
             // 
             // btnTat
             // 
-            this.btnTat.Font = new System.Drawing.Font("Quicksand", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTat.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTat.Location = new System.Drawing.Point(8, 246);
             this.btnTat.Name = "btnTat";
             this.btnTat.Size = new System.Drawing.Size(308, 67);
@@ -48,7 +48,7 @@
             // 
             // btnChonBaiHoc
             // 
-            this.btnChonBaiHoc.Font = new System.Drawing.Font("Quicksand", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnChonBaiHoc.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnChonBaiHoc.Location = new System.Drawing.Point(8, 28);
             this.btnChonBaiHoc.Name = "btnChonBaiHoc";
             this.btnChonBaiHoc.Size = new System.Drawing.Size(308, 67);
@@ -59,7 +59,7 @@
             // 
             // btnTiepTuc
             // 
-            this.btnTiepTuc.Font = new System.Drawing.Font("Quicksand", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTiepTuc.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTiepTuc.Location = new System.Drawing.Point(8, 137);
             this.btnTiepTuc.Name = "btnTiepTuc";
             this.btnTiepTuc.Size = new System.Drawing.Size(308, 67);
@@ -79,20 +79,19 @@
             this.panel1.Size = new System.Drawing.Size(329, 342);
             this.panel1.TabIndex = 8;
             // 
-            // formChonBaiHoc
+            // formchonbaihoc3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(382, 388);
+            this.ClientSize = new System.Drawing.Size(808, 574);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
-            this.Name = "formChonBaiHoc";
+            this.Name = "formchonbaihoc3";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Chọn bài học";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.formChonBaiHoc_FormClosed);
-          
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 

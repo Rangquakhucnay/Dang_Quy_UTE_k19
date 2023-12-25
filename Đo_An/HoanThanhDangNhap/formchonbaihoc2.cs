@@ -6,31 +6,45 @@ using System.Data.SQLite;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.ProgressBar;
 
 namespace HoanThanhDangNhap
 {
-    public partial class formchonbaihoc2 : Form
+
+    public partial class formChonBaiHoc2 : Form
     {
-        public formchonbaihoc2()
+        Thread th;
+        Thread th2;
+        public formChonBaiHoc2()
         {
             InitializeComponent();
         }
-    
-        private void btnTat2_Click(object sender, EventArgs e)
+
+        private void btnTat_Click(object sender, EventArgs e)// lỗi
         {
             this.Close();
         }
 
-        private void formchonbaihoc2_FormClosed(object sender, FormClosedEventArgs e)
+        private void formChonBaiHoc_FormClosed(object sender, FormClosedEventArgs e)
         {
+
+        }
+
+        private void btnChonBaiHoc_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            formDiToiBaiHoc2 f = new formDiToiBaiHoc2();
+            f.ShowDialog();
             this.Close();
+
         }
        
-        private void btnTiepTuc2_Click(object sender, EventArgs e)
-        {
+
+        private void btnTiepTuc_Click(object sender, EventArgs e)
+        {   int em = 0;
             int lastChuong = 0;
             int lastnActi = 0;
             int TiendoHoanthanhChuong = 0;
@@ -42,7 +56,7 @@ namespace HoanThanhDangNhap
                 conn = new SQLiteConnection(strConn);
                 conn.Open();
 
-                string tendangnhapform1 = Properties.Settings.Default.TenDangNhapALL; // khai báo
+                string tendangnhapform1 = Properties.Settings.Default.TenDangNhapALL;
                 SQLiteCommand command = new SQLiteCommand();
                 command.CommandType = CommandType.Text;
                 command.CommandText = "select * from ThongTinSinhVien where TenDangNhap=@tendn";
@@ -59,11 +73,11 @@ namespace HoanThanhDangNhap
                 lastChuong = int.Parse(parts[0]);
                 lastnActi = int.Parse(parts[1]);
 
-                int vitriCot = lastChuong + 5;
+                int vitriCot = lastChuong -  5;
+                em = int.Parse(parts[0]) - 10;
 
-                string nlastChuong = lastChuong.ToString();
+                string nlastChuong = em.ToString();
                 string nlastnActi = lastnActi.ToString();
-
                 SQLiteCommand command1 = new SQLiteCommand();
                 command1.CommandType = CommandType.Text;
                 command1.CommandText = "select * from ThongTinSinhVien where TenDangNhap=@tendn";
@@ -72,7 +86,7 @@ namespace HoanThanhDangNhap
                 SQLiteDataReader reader1 = command1.ExecuteReader();
                 if (reader1.Read())
                 {
-                    TiendoHoanthanhChuong = reader.GetInt32(vitriCot);// số câu đã lưu hiện tại
+                    TiendoHoanthanhChuong = reader.GetInt32(vitriCot);
                 }
 
                 if (TiendoHoanthanhChuong < lastnActi)
@@ -94,19 +108,18 @@ namespace HoanThanhDangNhap
             {
                 MessageBox.Show("Lỗi: " + ex.Message);
             }
-         
-            this.Hide();
-            formDiToiBaiHoc2 f1 = new formDiToiBaiHoc2();
-            f1.ShowDialog();
-            this.Close();
-        }
 
-        private void btnChonBaiHoc2_Click(object sender, EventArgs e)
-        {
             this.Hide();
-            formDiToiBaiHoc2 f1 = new formDiToiBaiHoc2();
-            f1.ShowDialog();
+           // formDiToiBaiHoc2 f = new formDiToiBaiHoc2();
+           formHienThiBaiHoc2 f = new formHienThiBaiHoc2();
+            f.ShowDialog();
             this.Close();
+
+        }
+       
+        private void formChonBaiHoc_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

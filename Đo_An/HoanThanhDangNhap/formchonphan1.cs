@@ -33,7 +33,8 @@ namespace HoanThanhDangNhap
 
         private void btChuong2_Click(object sender, EventArgs e)
         {   this.Hide();
-           formchonbaihoc2 f1 = new formchonbaihoc2();
+           //formchonbaihoc2 f1 = new formchonbaihoc2(); 
+           formChonBaiHoc2 f1 = new formChonBaiHoc2();
             f1.ShowDialog();
             this.Close();
            

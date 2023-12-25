@@ -52,6 +52,8 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panelWiring = new System.Windows.Forms.Panel();
+            this.bt1 = new System.Windows.Forms.Button();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.flowLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -112,7 +114,6 @@
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
             this.flowLayoutPanel2.Size = new System.Drawing.Size(108, 854);
             this.flowLayoutPanel2.TabIndex = 16;
-       
             // 
             // button3
             // 
@@ -309,12 +310,23 @@
             this.panelWiring.Name = "panelWiring";
             this.panelWiring.Size = new System.Drawing.Size(1768, 683);
             this.panelWiring.TabIndex = 15;
+            this.panelWiring.Paint += new System.Windows.Forms.PaintEventHandler(this.panelWiring_Paint);
+            // 
+            // bt1
+            // 
+            this.bt1.Location = new System.Drawing.Point(1613, 907);
+            this.bt1.Name = "bt1";
+            this.bt1.Size = new System.Drawing.Size(75, 23);
+            this.bt1.TabIndex = 20;
+            this.bt1.Text = "button1";
+            this.bt1.UseVisualStyleBackColor = true;
             // 
             // formHienThiBaiHoc2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1890, 950);
+            this.Controls.Add(this.bt1);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.panelWiring);
             this.Controls.Add(this.panelVideo);
@@ -330,8 +342,8 @@
             this.Name = "formHienThiBaiHoc2";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Bài học";
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.formHienThiBaiHoc2_FormClosed);
-            this.Load += new System.EventHandler(this.formHienThiBaiHoc2_Load);
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.formHienThiBaiHoc_FormClosed);
+            this.Load += new System.EventHandler(this.formHienThiBaiHoc_Load);
             this.flowLayoutPanel1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
@@ -373,5 +385,7 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Panel panelWiring;
         private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Button bt1;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
     }
 }

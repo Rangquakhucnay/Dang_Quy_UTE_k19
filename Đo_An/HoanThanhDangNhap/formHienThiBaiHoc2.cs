@@ -54,17 +54,17 @@ namespace HoanThanhDangNhap
         int nActi = int.Parse(formDiToiBaiHoc2.SoActi);
         int nQT = formDiToiBaiHoc.TiendoActi;
 
-        /////////////////////////////////////////////////////////////////////////////////////////////
-         private void formHienThiBaiHoc2_Load(object sender, EventArgs e)
+        //
+        private void formHienThiBaiHoc_Load(object sender, EventArgs e)
         {
             serialPort1.PortName = LoginStudent.tenCOM;
             serialPort1.BaudRate = LoginStudent.giatribaudrate;
             //
             panelWiring.Visible = false;// ẩn panel wiring lúc bật lên
             panelVideo.Visible = false; //panel Video hiển thị bài học
+                                        //groupBox1.Visible =false
 
-
-
+            //-------------------------------------------------------------------------fix
             if (nActi == 1)
             {
 
@@ -80,13 +80,12 @@ namespace HoanThanhDangNhap
                 panelWiring.Visible = false;
                 panelWiring.SendToBack();
                 HienThiBaiHoc(nActi);
-}
+            }
 
-                TaoVaXuLyNut(nonNullRowCount - 1); // hiển thị số acti   nonNullRowCount
+            TaoVaXuLyNut(nonNullRowCount - 1); // hiển thị số acti
 
-                HienThiBaiDaHoc(nQT);               // hiển thị các bài đã học bằng cách tô đậm
+            HienThiBaiDaHoc(nQT);               // hiển thị các bài đã học bằng cách tô đậm
         }
-        
         private void HienThiWiring()
         {
             panelWiring.Visible = true;
@@ -94,10 +93,18 @@ namespace HoanThanhDangNhap
             LoadButtonsWiring(currentImageIndex, buttonCount);
             picChe.BringToFront(); //pic che hiện lên để che cái chỗ câu hỏi
         }
+        private void HienThiGroupBox()
+        {
+            panelWiring.Visible = true;
+            // LoadImage(currentImageIndex);
+            // LoadButtonsWiring(currentImageIndex, buttonCount);
+            picChe.BringToFront(); //pic che hiện lên để che cái chỗ câu hỏi
+
+        }
 
         private void LaySoHinh()
         {
-            string folderPath = System.Windows.Forms.Application.StartupPath + "\\nhucc\\Wiring\\" + $"wiring_c{chuong}";
+            string folderPath = System.Windows.Forms.Application.StartupPath + "\\Resources2\\Wiring\\" + $"wiring_c{chuong}";
             maxImageIndex = Directory.GetFiles(folderPath, "*.*", SearchOption.AllDirectories).Length;
             buttonCount = 7;
         }
@@ -105,7 +112,7 @@ namespace HoanThanhDangNhap
         private void LoadImage(int index)
         {
             int chuong = int.Parse(formDiToiBaiHoc2.sttChuongBaiHoc2);
-            string fileName = System.Windows.Forms.Application.StartupPath + "\\nhucc\\Wiring\\" + $"wiring_c{chuong}" + "\\" + $"hinh{index}.png";
+            string fileName = System.Windows.Forms.Application.StartupPath + "\\Resources2\\Wiring\\" + $"wiring_c{chuong}" + "\\" + $"hinh{index}.png";
             pictureBox2.Image = Image.FromFile(fileName);
             pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
         }
@@ -176,7 +183,7 @@ namespace HoanThanhDangNhap
                 int buttonIndexVideo = i - startIndexVideo;
                 System.Windows.Forms.Button button = new System.Windows.Forms.Button();
                 button.Text = i.ToString();
-                button.Size = new Size(30, 30);            // mới sửa 40.40
+                button.Size = new Size(30, 30);
                 if (i == currentIndexVideo)
                 {
                     button.BackColor = Color.Silver;
@@ -210,7 +217,7 @@ namespace HoanThanhDangNhap
             }
         }
 
-        private void HienThiBaiDaHoc(int v)
+        private void HienThiBaiDaHoc(int v)// tô đậm giá trị câu đã làm 
         {
             // Lấy danh sách các nút hiển thị trên flowLayoutPanel2
             var buttons = flowLayoutPanel2.Controls.OfType<System.Windows.Forms.Button>().ToList();
@@ -230,10 +237,14 @@ namespace HoanThanhDangNhap
         {
             // Lấy danh sách các nút hiển thị trên flowLayoutPanel2
             var buttons = flowLayoutPanel2.Controls.OfType<System.Windows.Forms.Button>().ToList();
+            // định nghĩa một màu tùy chỉnh (customColor) sử dụng giá trị mã màu RGB.
             Color customColor = Color.FromArgb(110, 172, 183);
+            // Kiểm tra v có giá trị hợp lệ trong khoảng từ 1 đến số lượng nút
             if (v > 0 && v <= buttons.Count)
             {
+                // Đặt màu nút vừa chọn thành màu tùy chỉnh
                 buttons.ElementAt(v - 1).BackColor = customColor;
+                // Kích hoạt nút vừa chọn
                 buttons.ElementAt(v - 1).Enabled = true;
             }
         }
@@ -251,7 +262,7 @@ namespace HoanThanhDangNhap
             if (giaTriNutSoNguyen == 1)
             {
                 panelVideo.SendToBack();
-               // guiMaFault("x");
+                //  guiMaFault("x");
                 HienThiWiring();
                 panelWiring.Visible = true;
                 panelWiring.BringToFront();
@@ -259,7 +270,7 @@ namespace HoanThanhDangNhap
             }
             else
             {
-              //  guiMaFault("x");
+                //guiMaFault("x");
                 HienThiBaiHoc(giaTriNutSoNguyen);
                 btnOK.Enabled = true;
                 panelWiring.Visible = false;
@@ -273,6 +284,9 @@ namespace HoanThanhDangNhap
             buttonRight.Enabled = true;
         }
 
+        /// <summary>
+        /// /////////////////////////////////////////////////////////////////////////////////////
+        /// </summary>
 
         private void HienThiBaiHoc(int v)
         {
@@ -282,7 +296,7 @@ namespace HoanThanhDangNhap
 
             // Khai báo đối tượng Excel
             Microsoft.Office.Interop.Excel.Application excel = new Microsoft.Office.Interop.Excel.Application();
-            Workbook workbook = excel.Workbooks.Open(System.Windows.Forms.Application.StartupPath + "\\nhucc\\Du lieu cau hoi\\thu vien bai hoc.xlsx");
+            Workbook workbook = excel.Workbooks.Open(System.Windows.Forms.Application.StartupPath + "\\Resources2\\Du lieu cau hoi\\thu vien bai hoc.xlsx");
             Worksheet worksheet = workbook.Sheets[chuong];// Worksheet worksheet = workbook.Sheets["Tên sheet"];
             Range range = worksheet.UsedRange;
 
@@ -307,10 +321,11 @@ namespace HoanThanhDangNhap
                 }
                 if (hasNonNullValue)
                 {
-                    nonNullRowCount++;
+                    nonNullRowCount++; // =27 của chương1
                 }
+                bt1.Text = nonNullRowCount.ToString();//-----------------------------------------------------fix
             }
-
+            ////////////////
 
             // Duyệt qua các hàng trong tập tin Excel để tìm kiếm dữ liệu
             for (int row = 1; row <= nonNullRowCount; row++)
@@ -351,7 +366,7 @@ namespace HoanThanhDangNhap
                     MessageBox.Show("Bạn đã hoàn thành bài học");
                     nActi = row;
                     this.Hide();
-                    formDiToiBaiHoc2 f = new formDiToiBaiHoc2();
+                    formDiToiBaiHoc f = new formDiToiBaiHoc();
                     f.ShowDialog();
                     this.Close();
 
@@ -372,37 +387,37 @@ namespace HoanThanhDangNhap
             Marshal.ReleaseComObject(workbook);
             Marshal.ReleaseComObject(excel);
 
-            /*
             // Hien thi du lieu len form 
-            if (fault != "0")           // phast hien co fault thi` gui di ne`
-            {
-                if (fault == faultTruoc)
-                {
-                   // guiMaFault(fault);
-                    //MessageBox.Show("a");
-                }
-                else
-                {
-                    if (faultTruoc != "0")
-                    {
-                       // guiMaFault("x");
-                        //MessageBox.Show("xoa loi");
-                       // guiMaFault(fault);
-                        //MessageBox.Show("a");
-                    }
-                    else
-                    {
-                       // guiMaFault(fault);
-                        //MessageBox.Show("a");
-                    }
-                }
-            }
-            else        // neu khong co thi` gui ma fault xoa fault
-            {
-              //  guiMaFault("x");
-            }*/
+            /*
+             if (fault != "0")           // phast hien co fault thi` gui di ne`
+             {
+                 if (fault == faultTruoc)
+                 {
+                     guiMaFault(fault);
+                     //MessageBox.Show("a");
+                 }
+                 else
+                 {
+                     if (faultTruoc != "0")
+                     {
+                         guiMaFault("x");
+                         //MessageBox.Show("xoa loi");
+                         guiMaFault(fault);
+                         //MessageBox.Show("a");
+                     }
+                     else
+                     {
+                         guiMaFault(fault);
+                         //MessageBox.Show("a");
+                     }
+                 }
+             }
+             else        // neu khong co thi` gui ma fault xoa fault
+             {
+                 guiMaFault("x");
+             }*/
 
-            //
+            //---------------------------------------------------------------------------------------
             if (int.Parse(video) != 0)
             {
                 panelVideo.Visible = true;
@@ -418,6 +433,21 @@ namespace HoanThanhDangNhap
                 btnOK.Enabled = true;
             }
 
+            /*   if (int.Parse(box) != 0)
+               {
+                  GroupBox1.Visible = true;
+                   GroupBox1.BringToFront();
+
+
+                   btnOK.Enabled = true;
+               }
+               else
+               {
+                   GroupBox1.SendToBack();
+                   GroupBox1.Visible = false;
+                   btnOK.Enabled = true;
+               }
+            */
             if (int.Parse(hide) == 1)
             {
                 picChe.BringToFront();
@@ -446,7 +476,7 @@ namespace HoanThanhDangNhap
         private void HienThiVideo()
         {
             // lấy số hình có trong video đó
-            string folderPath = System.Windows.Forms.Application.StartupPath + "\\nhucc\\VideoCacChuong\\" + $"chuong{chuong}\\" + $"video{video}";
+            string folderPath = System.Windows.Forms.Application.StartupPath + "\\Resources2\\VideoCacChuong\\" + $"chuong{chuong}\\" + $"video{video}";
             maxImageIndexVideo = Directory.GetFiles(folderPath, "*.*", SearchOption.AllDirectories).Length;
             buttonCountVideo = 7; // số nút hiển thị là 7
 
@@ -457,7 +487,7 @@ namespace HoanThanhDangNhap
 
         private void LoadImageVideo(int index)
         {
-            string fileName = System.Windows.Forms.Application.StartupPath + "\\nhucc\\VideoCacChuong\\" + $"chuong{chuong}\\" + $"video{video}\\" + $"hinh{index}";
+            string fileName = System.Windows.Forms.Application.StartupPath + "\\Resources2\\VideoCacChuong\\" + $"chuong{chuong}\\" + $"video{video}\\" + $"hinh{index}";
             string imagePath = Path.ChangeExtension(fileName, ".png");
             string gifPath = Path.ChangeExtension(fileName, ".gif");    // check xem có đuôi là gif hay png
 
@@ -473,16 +503,16 @@ namespace HoanThanhDangNhap
             picPanelVideo.SizeMode = PictureBoxSizeMode.StretchImage;
         }
 
-        private void formHienThiBaiHoc2_FormClosed(object sender, FormClosedEventArgs e)
+        private void formHienThiBaiHoc_FormClosed(object sender, FormClosedEventArgs e)
         {
-           // guiMaFault("x");
+            // guiMaFault("x");
             LuuTiendo();
             //MessageBox.Show("đã lưu");
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-           // guiMaFault("x");
+            // guiMaFault("x");
             this.Close();
         }
 
@@ -530,9 +560,10 @@ namespace HoanThanhDangNhap
             }
         }
 
-        
+        private void panelWiring_Paint(object sender, PaintEventArgs e)
+        {
 
-
+        }
 
 
 
@@ -571,9 +602,9 @@ namespace HoanThanhDangNhap
         */
         private void guiMaFault(string ft)
         {
-           // serialPort1.Open();
-           // serialPort1.Write(ft);
-           // serialPort1.Close();
+            serialPort1.Open();
+            serialPort1.Write(ft);
+            serialPort1.Close();
         }
         private void btnOK_Click(object sender, EventArgs e)
         {
@@ -592,7 +623,7 @@ namespace HoanThanhDangNhap
             {
                 if (int.Parse(hide) == 1)
                 {
-                    nActi++;
+                    nActi++;//3
                     HienThiBaiHoc(nActi);
                     HienthiKhinhanOK(nActi);
                 }
@@ -636,11 +667,11 @@ namespace HoanThanhDangNhap
                 conn.Open();
 
                 string tendangnhapform1 = Properties.Settings.Default.TenDangNhapALL;
-               // string truycapCot = "nqtc" + chuong.ToString();
-
                 int vitriCot = chuong + 10;
-                string truycapCot = "nqtc" + vitriCot.ToString();
-
+                int linh = chuong + 5;
+                string truycapCot = "nqtc" + linh.ToString();
+         
+                
                 SQLiteCommand command1 = new SQLiteCommand();
                 command1.CommandType = CommandType.Text;
                 command1.CommandText = "select * from ThongTinSinhVien where TenDangNhap=@tendn";

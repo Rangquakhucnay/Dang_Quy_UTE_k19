@@ -107,7 +107,8 @@
             "5",
             "6",
             "7",
-            "8"});
+            "8",
+            "9"});
             this.cbSttChuongBH.Location = new System.Drawing.Point(249, 50);
             this.cbSttChuongBH.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cbSttChuongBH.Name = "cbSttChuongBH";
@@ -129,7 +130,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1225, 321);
+            this.ClientSize = new System.Drawing.Size(1288, 323);
             this.Controls.Add(this.cbSoActiBH);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.btthoat);

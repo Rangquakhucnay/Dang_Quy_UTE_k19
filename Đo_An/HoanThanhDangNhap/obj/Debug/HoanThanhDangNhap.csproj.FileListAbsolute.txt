@@ -1717,3 +1717,4 @@ D:\Đăng_Quý_UTE_K19\Dang_Quy_UTE_k19\Đo_An\HoanThanhDangNhap\bin\Debug\zh-cn
 D:\Đăng_Quý_UTE_K19\Dang_Quy_UTE_k19\Đo_An\HoanThanhDangNhap\bin\Debug\zh-tw\ZedGraph.resources.dll
 D:\Đăng_Quý_UTE_K19\Dang_Quy_UTE_k19\Đo_An\HoanThanhDangNhap\obj\Debug\HoanThanhDangNhap.dothi.resources
 D:\Đăng_Quý_UTE_K19\Dang_Quy_UTE_k19\Đo_An\HoanThanhDangNhap\obj\Debug\HoanThanhDangNhap.formHienThiBaiHoc4.resources
+D:\Đăng_Quý_UTE_K19\Dang_Quy_UTE_k19\Đo_An\HoanThanhDangNhap\obj\Debug\HoanThanhDangNhap.formchonbaihoc3.resources

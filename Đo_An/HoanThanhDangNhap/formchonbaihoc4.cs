@@ -38,7 +38,7 @@ namespace HoanThanhDangNhap
         }
 
         private void btnTiepTuc_Click(object sender, EventArgs e)
-        {
+        {   int em = 0;
             int lastChuong = 0;
             int lastnActi = 0;
             int TiendoHoanthanhChuong = 0;
@@ -67,9 +67,9 @@ namespace HoanThanhDangNhap
                 lastChuong = int.Parse(parts[0]);
                 lastnActi = int.Parse(parts[1]);
 
-                int vitriCot = lastChuong + 5;
-
-                string nlastChuong = lastChuong.ToString();
+                int vitriCot = lastChuong - 5;
+                em = int.Parse(parts[0]) - 32;
+                string nlastChuong = em.ToString();
                 string nlastnActi = lastnActi.ToString();
                 SQLiteCommand command1 = new SQLiteCommand();
                 command1.CommandType = CommandType.Text;

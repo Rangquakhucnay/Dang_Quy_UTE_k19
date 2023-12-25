@@ -112,7 +112,7 @@ namespace HoanThanhDangNhap
             }
 
             this.Hide();
-            formDiToiBaiHoc f = new formDiToiBaiHoc();
+            formHienThiBaiHoc f = new formHienThiBaiHoc();
             f.ShowDialog();
             this.Close();
            
