@@ -1,4 +1,5 @@
 ﻿using Microsoft.Office.Interop.Excel;
+using Org.BouncyCastle.Bcpg.OpenPgp;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,7 +15,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using ZedGraph;
+using System.Threading;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using System.Security.Cryptography;
 
 namespace HoanThanhDangNhap
 {
@@ -31,13 +34,16 @@ namespace HoanThanhDangNhap
         string video = "";
         string faultTruoc = "";
         string box = "";
-        string mahoa = "";
+        
         string dien = "";
-        string ten = "";
+        string alldata = "";
+        string madothi = "", tendothi = "";
+        string chancb = "", check = "";
 
         int nonNullRowCount = 0;
         string rowEND;
-
+        int a = 0;
+       
         // cac bien hien thi panel wiring
         private int currentImageIndex = 1;
         private int maxImageIndex;
@@ -57,6 +63,7 @@ namespace HoanThanhDangNhap
             int height = (int)(screen.Bounds.Height * scale);
             this.Size = new Size(width, height);
             Control.CheckForIllegalCrossThreadCalls = false; // phân luồng đồ thị
+           // System .Windows.Forms.Timer.Mytimer = new System .Windows.Forms.Timer();
         }
         int chuong = int.Parse(formDiToiBaiHoc3.sttChuongBaiHoc3);
         int nActi = int.Parse(formDiToiBaiHoc3.SoActi);
@@ -69,8 +76,10 @@ namespace HoanThanhDangNhap
         private void formHienThiBaiHoc_Load(object sender, EventArgs e)        {
             serCom.PortName = LoginStudent.tenCOM;
             serCom.BaudRate = LoginStudent.giatribaudrate;
-            serCom.Open();
-
+            //serCom.Open();
+            btDientinhhieu.Visible = false;
+            lbnhanso.Visible = false;
+            //-------------------------------------------------------------------------------------------------------------
             MessageBox.Show(LoginStudent.tenCOM.ToString());
             MessageBox.Show(LoginStudent.giatribaudrate.ToString());
 
@@ -130,6 +139,292 @@ namespace HoanThanhDangNhap
 
        
         // @01D1#
+        
+        /// <summary>
+        /// ///////////////////////////////////////////////////////////////////////////////////// fix main  
+        /// </summary>
+
+        private void Delay(int milliseconds)
+        {
+            // Tạm dừng chương trình trong số milliseconds chỉ định
+            Thread.Sleep(milliseconds);
+        }
+
+       
+        private void HienThiBaiHoc(int v)
+        {
+            panelWiring.Visible = false;
+            string str = v.ToString();
+            string chuong = formDiToiBaiHoc3.sttChuongBaiHoc3;
+
+            // Khai báo đối tượng Excel
+            Microsoft.Office.Interop.Excel.Application excel = new Microsoft.Office.Interop.Excel.Application();
+            Workbook workbook = excel.Workbooks.Open(System.Windows.Forms.Application.StartupPath + "\\Resources3\\Du lieu cau hoi\\thu vien bai hoc.xlsx");
+            Worksheet worksheet = workbook.Sheets[chuong];// Worksheet worksheet = workbook.Sheets["Tên sheet"];
+            Range range = worksheet.UsedRange;
+
+            // Lấy số hàng và số cột của tập tin Excel
+            int rowCount = range.Rows.Count;
+            int colCount = range.Columns.Count;
+
+            // Lấy giá trị của các ô trong phạm vi
+            object[,] values = range.Value2;
+
+            // Đếm số hàng có giá trị khác null
+            for (int i = 1; i <= rowCount; i++)
+            {
+                bool hasNonNullValue = false;
+                for (int j = 1; j <= colCount; j++)
+                {
+                    if (values[i, j] != null)
+                    {
+                        hasNonNullValue = true;
+                        break;
+                    }
+                }
+                if (hasNonNullValue)
+                {
+                    nonNullRowCount++; // =27 của chương1
+                }
+                bt1.Text = nonNullRowCount.ToString();//-----------------------------------------------------fix
+            }
+            ////////////////
+
+            // Duyệt qua các hàng trong tập tin Excel để tìm kiếm dữ liệu
+            for (int row = 1; row <= nonNullRowCount; row++)
+            {
+                string firstCellValue = range.Cells[row, 1].Value2.ToString();
+                rowEND = range.Cells[row + 1, 1].Value2.ToString();
+                // Nếu giá trị của ô đầu tiên trong hàng bằng với giá trị cần tìm kiếm
+                if (firstCellValue == str)
+                {
+                    // Duyệt qua các ô trong hàng để lấy dữ liệu
+                    for (int col = 2; col <= colCount; col++)
+                    {
+                        video = range.Cells[row, 2].Value2.ToString();
+                        hinhAnh = range.Cells[row, 3].Value2.ToString();
+                        baihoc = range.Cells[row, 4].Value2.ToString();
+                        hide = range.Cells[row, 5].Value2.ToString();
+                        cauhoi = range.Cells[row, 6].Value2.ToString();
+                        dapanA = range.Cells[row, 7].Value2.ToString();
+                        dapanB = range.Cells[row, 8].Value2.ToString();
+                        dapanC = range.Cells[row, 9].Value2.ToString();
+                        answer = range.Cells[row, 10].Value2.ToString();
+                        fault  = range.Cells[row, 11].Value2.ToString();
+                        dapanD = range.Cells[row, 12].Value2.ToString();
+                        dien   = range.Cells[row, 13].Value2.ToString();
+                        box    = range.Cells[row, 14].Value2.ToString();
+                      tendothi = range.Cells[row, 15].Value2.ToString();
+                       madothi = range.Cells[row, 16].Value2.ToString();
+                        chancb  = range.Cells[row,17].Value2.ToString();
+                        check = range.Cells[row, 18].Value2.ToString();
+
+                        //
+                        if (row > 2)
+                        {
+                            faultTruoc = range.Cells[row - 1, 18].Value2.ToString();
+                        }
+                        //----------------------------------------------------------------------------------------------------------
+                        label1.Text = box.ToString();
+                        bt1.Text = dien.ToString();
+                        label4.Text = chuong.ToString();
+                        // Xử lý dữ liệu tìm được ở đây
+                    }
+                    break; // Thoát khỏi vòng lặp nếu đã tìm thấy hàng cần tìm kiếm
+                }
+                if (rowEND == "END")
+                {
+                    MessageBox.Show("Bạn đã hoàn thành bài học");
+                    nActi = row;
+                    this.Hide();
+                    formDiToiBaiHoc3 f = new formDiToiBaiHoc3();
+                    f.ShowDialog();
+                    this.Close();
+
+                    return;
+                }
+                else if (rowEND == "ENDEND")
+                {
+                    MessageBox.Show("Bạn đã hoàn thành bài học");
+                    nActi = row;
+                    this.Close();
+                    return;
+                }
+            }
+            // Đóng tập tin Excel và giải phóng các tài nguyên
+            workbook.Close(true, Type.Missing, Type.Missing);
+            excel.Quit();
+            Marshal.ReleaseComObject(worksheet);
+            Marshal.ReleaseComObject(workbook);
+            Marshal.ReleaseComObject(excel);
+
+            // Hien thi du lieu len form 
+            /* if (fault != "0")           // phast hien co fault thi` gui di ne`
+             {
+                 if (fault == faultTruoc)
+                 {
+                    // guiMaFault(fault);
+                     //MessageBox.Show("a");
+                 }
+                 else
+                 {
+                     if (faultTruoc != "0")
+                     {
+                         guiMaFault("x");
+                         //MessageBox.Show("xoa loi");
+                         guiMaFault(fault);
+                         //MessageBox.Show("a");
+                     }
+                     else
+                     {
+                         guiMaFault(fault);
+                         //MessageBox.Show("a");
+                     }
+                 }
+             }
+             else        // neu khong co thi` gui ma fault xoa fault
+             {
+                 guiMaFault("x");
+             }*/
+
+            //---------------------------------------------------------------------------------------
+
+
+
+
+            /*
+                if (int.Parse(video) == 1)
+                {
+                   // panelVideo.Visible = true;
+                   // panelVideo.BringToFront();
+                    currentImageIndexVideo = 1;
+                   // HienThiVideo();
+                    btnOK.Enabled = false;
+                }
+                else
+                {
+                   // panelVideo.SendToBack();
+                   // panelVideo.Visible = false;
+                    btnOK.Enabled = true;
+                }
+
+            */
+            //=======================================================================================
+            
+            
+            void check_null()
+            {
+                string[] answers = new string[4] { dapanA, dapanB, dapanC, dapanD };
+               // int a=0;
+                for (int i = 0; i < 4; i++)
+                {
+                    if (answers[i] == "NULL")
+                    { btDientinhhieu.Visible=true;
+                        if (serCom.IsOpen) 
+                        {
+                            
+                            serCom.Write(chancb.ToString());
+                        }
+                        else
+                        {
+                            serCom.Open();
+                            serCom.Write(chancb.ToString());
+                        }
+                      
+
+                        // array[i] = madothi;
+                        // Delay(1000);
+                        // serCom.Close();
+                       // answers[i] = alldata;
+                          a = i;
+                        break;
+                    }
+                   
+                }
+              
+            }
+            
+            
+            
+
+
+                if (int.Parse(hide) == 1)
+                {
+                    picChe.BringToFront();
+                    pictureBox1.Image = new Bitmap(System.Windows.Forms.Application.StartupPath + hinhAnh);
+                    pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+                    pictureBox1.Show();
+                    rtb_Baihoc.Clear();
+                    rtb_Baihoc.Text = baihoc;
+                    btDientinhhieu.Visible=false;
+                }
+                else
+                {
+                    picChe.SendToBack();
+                    pictureBox1.Image = new Bitmap(System.Windows.Forms.Application.StartupPath + hinhAnh);
+                    pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+                    pictureBox1.Show();
+                    rtb_Baihoc.Clear();
+                    rtb_Baihoc.Text = baihoc;
+                    txtQues.Text = cauhoi;
+                    chlstDapAn.Items.Clear();
+                //  btDientinhhieu.Visible = true;
+
+                check_null();
+
+                // Delay(1000);
+                
+                if (int.Parse(check) == 0)
+                    {
+                       string[] dsDA = { dapanA, dapanB, dapanC, dapanD };
+                     chlstDapAn.Items.AddRange(dsDA);
+                    }
+                }
+
+                if (int.Parse(dien) == 2)
+            {
+
+                panelDienso.Visible = true ;
+                panelDienso.BringToFront();
+                pictureBox1.Visible = false;
+                btnOK.Enabled = true;
+
+            }
+                else
+            {
+                panelDienso.Visible = false;
+                pictureBox1.Visible = true;
+                // btnOK.Enabled = true;
+            }
+
+                if (int.Parse(box) == 3)
+                {
+                     serCom.Open();
+                   //  btDientinhhieu.Visible= false;  
+                    lbTendothi.Text = tendothi;
+                    pictureBox1.Visible = false;
+                    //pictureBox1.SendToBack();
+                    panelWiring.Visible = false;
+                    rtb_Baihoc.Visible = false;
+                    gbBox1.Visible = true;
+                    gbBox1.BringToFront();
+                //  button1.Text = "nnnnnn";
+                serCom.Write(madothi.ToString());
+                    btnOK.Enabled = true;
+                
+                
+                }
+
+                else 
+                 {
+               // btDientinhhieu.Visible= false;
+                pictureBox1.Visible = true;  /////////sửa
+                pictureBox1.BringToFront();
+                rtb_Baihoc.Visible = true;
+                gbBox1.Visible = false;
+                btnOK.Enabled = true;
+                 }
+        }
         int tong = 0;
         public void draw(double Line)
         {
@@ -149,16 +444,26 @@ namespace HoanThanhDangNhap
             zedGraphControl1.Invalidate();
             tong += 2;
         }
+
+
         private void serCom_DataReceived(object sender, SerialDataReceivedEventArgs e)
         {
 
-            string alldata = "";
+            //   string alldata = "";
             alldata = serCom.ReadLine(); ; // đọc dữ dữ liệu từ arduino   
+            alldata = alldata.Trim();
             int lenght = alldata.Length;
+
 
             if (lenght > 0)
             {
-                //  textBox1.Text = alldata;
+                // int     VTD= alldata.IndexOf('d');// T29.5DHIGH
+                // int     VTC= alldata.IndexOf('c');
+                // string temp = alldata.Substring(VTD+1 ,VTC-VTD -1 );
+                // textBox1.Text = alldata.Substring(VTD+1, VTC-VTD-1);
+                //textBox1.Text= temp;
+
+                lbnhanso.Text = alldata;
                 // trong cái hàm nhận dữ liệu thì gán dữ liệu vựa tạo vào cái đương line 
                 Invoke(new MethodInvoker(() => draw(Convert.ToDouble(alldata)))); // in ra đồ thị
             }
@@ -166,6 +471,18 @@ namespace HoanThanhDangNhap
             // Invoke(new MethodInvoker(() => draw(Convert.ToDouble(alldata)))); // in ra đồ thị
 
         }
+        private void btDientinhhieu_Click(object sender, EventArgs e)
+        {
+            serCom.Close();
+           // dapanD = lbnhanso.Text;
+            string[] dsDA = { dapanA, dapanB, dapanC, dapanD };
+            dsDA[a] = lbnhanso.Text;
+            chlstDapAn.Items.AddRange(dsDA);
+
+            //MessageBox.Show(lbnhanso.Text);
+            btDientinhhieu.Visible = false;
+        }
+        
         private void HienThiWiring()
         {
             panelWiring.Visible = true;
@@ -337,8 +654,8 @@ namespace HoanThanhDangNhap
             nut.BackColor = customColor;
             if (giaTriNutSoNguyen == 1)
             {
-               // panelVideo.SendToBack();
-               // guiMaFault("x");
+                // panelVideo.SendToBack();
+                // guiMaFault("x");
                 HienThiWiring();
                 panelWiring.Visible = true;
                 panelWiring.BringToFront();
@@ -346,7 +663,7 @@ namespace HoanThanhDangNhap
             }
             else
             {
-              //  guiMaFault("x");
+                //  guiMaFault("x");
                 HienThiBaiHoc(giaTriNutSoNguyen);
                 btnOK.Enabled = true;
                 panelWiring.Visible = false;
@@ -354,236 +671,11 @@ namespace HoanThanhDangNhap
             }
             nActi = giaTriNutSoNguyen;  //set nActi về lại giá trị của cái nút mà mình bấm
             btnOK.Enabled = true;
-          //  NextPicVideo.Enabled = true;
-          //  PrevPicVideo.Enabled = true;
+            //  NextPicVideo.Enabled = true;
+            //  PrevPicVideo.Enabled = true;
             buttonLeft.Enabled = true;
             buttonRight.Enabled = true;
         }
-
-        /// <summary>
-        /// ///////////////////////////////////////////////////////////////////////////////////// fix main  
-        /// </summary>
-
-        private void HienThiBaiHoc(int v)
-        {
-            panelWiring.Visible = false;
-            string str = v.ToString();
-            string chuong = formDiToiBaiHoc3.sttChuongBaiHoc3;
-
-            // Khai báo đối tượng Excel
-            Microsoft.Office.Interop.Excel.Application excel = new Microsoft.Office.Interop.Excel.Application();
-            Workbook workbook = excel.Workbooks.Open(System.Windows.Forms.Application.StartupPath + "\\Resources3\\Du lieu cau hoi\\thu vien bai hoc.xlsx");
-            Worksheet worksheet = workbook.Sheets[chuong];// Worksheet worksheet = workbook.Sheets["Tên sheet"];
-            Range range = worksheet.UsedRange;
-
-            // Lấy số hàng và số cột của tập tin Excel
-            int rowCount = range.Rows.Count;
-            int colCount = range.Columns.Count;
-
-            // Lấy giá trị của các ô trong phạm vi
-            object[,] values = range.Value2;
-
-            // Đếm số hàng có giá trị khác null
-            for (int i = 1; i <= rowCount; i++)
-            {
-                bool hasNonNullValue = false;
-                for (int j = 1; j <= colCount; j++)
-                {
-                    if (values[i, j] != null)
-                    {
-                        hasNonNullValue = true;
-                        break;
-                    }
-                }
-                if (hasNonNullValue)
-                {
-                    nonNullRowCount++; // =27 của chương1
-                }
-                bt1.Text = nonNullRowCount.ToString();//-----------------------------------------------------fix
-            }
-            ////////////////
-
-            // Duyệt qua các hàng trong tập tin Excel để tìm kiếm dữ liệu
-            for (int row = 1; row <= nonNullRowCount; row++)
-            {
-                string firstCellValue = range.Cells[row, 1].Value2.ToString();
-                rowEND = range.Cells[row + 1, 1].Value2.ToString();
-                // Nếu giá trị của ô đầu tiên trong hàng bằng với giá trị cần tìm kiếm
-                if (firstCellValue == str)
-                {
-                    // Duyệt qua các ô trong hàng để lấy dữ liệu
-                    for (int col = 2; col <= colCount; col++)
-                    {
-                        video = range.Cells[row, 2].Value2.ToString();
-                        hinhAnh = range.Cells[row, 3].Value2.ToString();
-                        baihoc = range.Cells[row, 4].Value2.ToString();
-                        hide = range.Cells[row, 5].Value2.ToString();
-                        cauhoi = range.Cells[row, 6].Value2.ToString();
-                        dapanA = range.Cells[row, 7].Value2.ToString();
-                        dapanB = range.Cells[row, 8].Value2.ToString();
-                        dapanC = range.Cells[row, 9].Value2.ToString();
-                        answer = range.Cells[row, 10].Value2.ToString();
-                        fault  = range.Cells[row, 11].Value2.ToString();
-                        dapanD = range.Cells[row, 12].Value2.ToString();
-                        dien   = range.Cells[row, 13].Value2.ToString();
-                        box    = range.Cells[row, 14].Value2.ToString();
-                       // ten    = range.Cells[row, 15].Value2.ToString();
-                       
-                        //
-                        if (row > 2)
-                        {
-                            faultTruoc = range.Cells[row - 1, 14].Value2.ToString();
-                        }
-                        //
-                        label1.Text = box.ToString();
-                        bt1.Text = dien.ToString();
-                        label4.Text = chuong.ToString();
-                        // Xử lý dữ liệu tìm được ở đây
-                    }
-                    break; // Thoát khỏi vòng lặp nếu đã tìm thấy hàng cần tìm kiếm
-                }
-                if (rowEND == "END")
-                {
-                    MessageBox.Show("Bạn đã hoàn thành bài học");
-                    nActi = row;
-                    this.Hide();
-                    formDiToiBaiHoc3 f = new formDiToiBaiHoc3();
-                    f.ShowDialog();
-                    this.Close();
-
-                    return;
-                }
-                else if (rowEND == "ENDEND")
-                {
-                    MessageBox.Show("Bạn đã hoàn thành bài học");
-                    nActi = row;
-                    this.Close();
-                    return;
-                }
-            }
-            // Đóng tập tin Excel và giải phóng các tài nguyên
-            workbook.Close(true, Type.Missing, Type.Missing);
-            excel.Quit();
-            Marshal.ReleaseComObject(worksheet);
-            Marshal.ReleaseComObject(workbook);
-            Marshal.ReleaseComObject(excel);
-
-            // Hien thi du lieu len form 
-            /* if (fault != "0")           // phast hien co fault thi` gui di ne`
-             {
-                 if (fault == faultTruoc)
-                 {
-                    // guiMaFault(fault);
-                     //MessageBox.Show("a");
-                 }
-                 else
-                 {
-                     if (faultTruoc != "0")
-                     {
-                         guiMaFault("x");
-                         //MessageBox.Show("xoa loi");
-                         guiMaFault(fault);
-                         //MessageBox.Show("a");
-                     }
-                     else
-                     {
-                         guiMaFault(fault);
-                         //MessageBox.Show("a");
-                     }
-                 }
-             }
-             else        // neu khong co thi` gui ma fault xoa fault
-             {
-                 guiMaFault("x");
-             }*/
-
-            //---------------------------------------------------------------------------------------
-            
-            
-            
-           
-            /*
-                if (int.Parse(video) == 1)
-                {
-                   // panelVideo.Visible = true;
-                   // panelVideo.BringToFront();
-                    currentImageIndexVideo = 1;
-                   // HienThiVideo();
-                    btnOK.Enabled = false;
-                }
-                else
-                {
-                   // panelVideo.SendToBack();
-                   // panelVideo.Visible = false;
-                    btnOK.Enabled = true;
-                }
-
-            */
-
-                if (int.Parse(hide) == 1)
-                {
-                    picChe.BringToFront();
-                    pictureBox1.Image = new Bitmap(System.Windows.Forms.Application.StartupPath + hinhAnh);
-                    pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
-                    pictureBox1.Show();
-                    rtb_Baihoc.Clear();
-                    rtb_Baihoc.Text = baihoc;
-                }
-                else
-                {
-                    picChe.SendToBack();
-                    pictureBox1.Image = new Bitmap(System.Windows.Forms.Application.StartupPath + hinhAnh);
-                    pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
-                    pictureBox1.Show();
-                    rtb_Baihoc.Clear();
-                    rtb_Baihoc.Text = baihoc;
-                    txtQues.Text = cauhoi;
-                    chlstDapAn.Items.Clear();
-
-                    string[] dsDA = { dapanA, dapanB, dapanC, dapanD };
-                    chlstDapAn.Items.AddRange(dsDA);
-                }
-
-                if (int.Parse(dien) == 2)
-            {
-
-                panelDienso.Visible = true ;
-                panelDienso.BringToFront();
-                pictureBox1.Visible = false;
-                btnOK.Enabled = true;
-
-            }
-                else
-            {
-                panelDienso.Visible = false;
-                pictureBox1.Visible = true;
-                // btnOK.Enabled = true;
-            }
-
-                if (int.Parse(box) == 3)
-                {
-                pictureBox1.Visible = false;
-                //pictureBox1.SendToBack();
-                panelWiring.Visible = false;
-                rtb_Baihoc.Visible = false;
-                gbBox1.Visible = true;
-                    gbBox1.BringToFront();
-                  //  button1.Text = "nnnnnn";
-                    
-                    btnOK.Enabled = true;
-                }
-
-                else 
-                 {
-               
-                pictureBox1.Visible = true;  /////////sửa
-                pictureBox1.BringToFront();
-                rtb_Baihoc.Visible = true;
-                gbBox1.Visible = false;
-                btnOK.Enabled = true;
-                 }
-        }
-
         private void HienThiVideo()
         {
             // lấy số hình có trong video đó
@@ -617,6 +709,10 @@ namespace HoanThanhDangNhap
         private void formHienThiBaiHoc_FormClosed(object sender, FormClosedEventArgs e)
         {
            // guiMaFault("x");
+           if (serCom.IsOpen)
+            {
+                serCom.Close();
+            }
             LuuTiendo();
             //MessageBox.Show("đã lưu");
         }
@@ -627,6 +723,8 @@ namespace HoanThanhDangNhap
           //guiMaFault("x");
             this.Close();
         }
+
+        
 
         private void chlstDapAn_ItemCheck(object sender, ItemCheckEventArgs e)
         {
@@ -640,15 +738,14 @@ namespace HoanThanhDangNhap
             }
         }
 
-        private void btChaydothi_Click(object sender, EventArgs e)
+        
+
+        private void timer1_Tick(object sender, EventArgs e)
         {
-            if (!serCom.IsOpen)
-            {
-                MessageBox.Show("nhu cc");
-            }
-            else
-                serCom.Write("@01D1#");
+
         }
+
+       
 
         private void PrevPicVideo_Click(object sender, EventArgs e)
         {

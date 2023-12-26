@@ -43,11 +43,13 @@
             this.label1 = new System.Windows.Forms.Label();
             this.zedGraphControl1 = new ZedGraph.ZedGraphControl();
             this.gbBox1 = new System.Windows.Forms.Panel();
-            this.label3 = new System.Windows.Forms.Label();
+            this.tesssssssssss = new System.Windows.Forms.Button();
+            this.lbTendothi = new System.Windows.Forms.Label();
             this.btChaydothi = new System.Windows.Forms.Button();
             this.txtQues = new System.Windows.Forms.TextBox();
             this.chlstDapAn = new System.Windows.Forms.CheckedListBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btDientinhhieu = new System.Windows.Forms.Button();
             this.picChe = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -59,8 +61,11 @@
             this.button2 = new System.Windows.Forms.Button();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panelDienso = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
             this.pictureBo = new System.Windows.Forms.PictureBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.lbnhanso = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.flowLayoutPanel1.SuspendLayout();
@@ -206,7 +211,8 @@
             // 
             // gbBox1
             // 
-            this.gbBox1.Controls.Add(this.label3);
+            this.gbBox1.Controls.Add(this.tesssssssssss);
+            this.gbBox1.Controls.Add(this.lbTendothi);
             this.gbBox1.Controls.Add(this.btChaydothi);
             this.gbBox1.Controls.Add(this.zedGraphControl1);
             this.gbBox1.Location = new System.Drawing.Point(61, 3);
@@ -214,16 +220,25 @@
             this.gbBox1.Size = new System.Drawing.Size(1491, 699);
             this.gbBox1.TabIndex = 1;
             // 
-            // label3
+            // tesssssssssss
             // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.Linen;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(668, 648);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(305, 32);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "Tên của đồ thị ..........";
+            this.tesssssssssss.Location = new System.Drawing.Point(63, 78);
+            this.tesssssssssss.Name = "tesssssssssss";
+            this.tesssssssssss.Size = new System.Drawing.Size(81, 65);
+            this.tesssssssssss.TabIndex = 6;
+            this.tesssssssssss.Text = "button4";
+            this.tesssssssssss.UseVisualStyleBackColor = true;
+            // 
+            // lbTendothi
+            // 
+            this.lbTendothi.AutoSize = true;
+            this.lbTendothi.BackColor = System.Drawing.Color.Linen;
+            this.lbTendothi.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbTendothi.Location = new System.Drawing.Point(668, 648);
+            this.lbTendothi.Name = "lbTendothi";
+            this.lbTendothi.Size = new System.Drawing.Size(305, 32);
+            this.lbTendothi.TabIndex = 4;
+            this.lbTendothi.Text = "Tên của đồ thị ..........";
             // 
             // btChaydothi
             // 
@@ -235,7 +250,6 @@
             this.btChaydothi.TabIndex = 3;
             this.btChaydothi.Text = "Chạy đồ thị";
             this.btChaydothi.UseVisualStyleBackColor = false;
-            this.btChaydothi.Click += new System.EventHandler(this.btChaydothi_Click);
             // 
             // txtQues
             // 
@@ -271,6 +285,8 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.lbnhanso);
+            this.panel2.Controls.Add(this.btDientinhhieu);
             this.panel2.Controls.Add(this.picChe);
             this.panel2.Controls.Add(this.chlstDapAn);
             this.panel2.Controls.Add(this.txtQues);
@@ -279,6 +295,17 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1496, 272);
             this.panel2.TabIndex = 11;
+            // 
+            // btDientinhhieu
+            // 
+            this.btDientinhhieu.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btDientinhhieu.Location = new System.Drawing.Point(1050, 72);
+            this.btDientinhhieu.Name = "btDientinhhieu";
+            this.btDientinhhieu.Size = new System.Drawing.Size(381, 44);
+            this.btDientinhhieu.TabIndex = 4;
+            this.btDientinhhieu.Text = "Bấm vào em đi ";
+            this.btDientinhhieu.UseVisualStyleBackColor = true;
+            this.btDientinhhieu.Click += new System.EventHandler(this.btDientinhhieu_Click);
             // 
             // picChe
             // 
@@ -390,18 +417,29 @@
             // 
             // panelDienso
             // 
+            this.panelDienso.Controls.Add(this.label3);
             this.panelDienso.Controls.Add(this.pictureBo);
             this.panelDienso.Location = new System.Drawing.Point(2, 13);
             this.panelDienso.Name = "panelDienso";
             this.panelDienso.Size = new System.Drawing.Size(1670, 623);
             this.panelDienso.TabIndex = 26;
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(24, 22);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(386, 29);
+            this.label3.TabIndex = 3;
+            this.label3.Text = "Bấm để Tiếp tục phần thực hành";
+            // 
             // pictureBo
             // 
             this.pictureBo.Image = global::HoanThanhDangNhap.Properties.Resources._393686953_804231791391891_7366914710212052393_n;
-            this.pictureBo.Location = new System.Drawing.Point(38, 9);
+            this.pictureBo.Location = new System.Drawing.Point(496, 6);
             this.pictureBo.Name = "pictureBo";
-            this.pictureBo.Size = new System.Drawing.Size(1579, 546);
+            this.pictureBo.Size = new System.Drawing.Size(1539, 536);
             this.pictureBo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBo.TabIndex = 0;
             this.pictureBo.TabStop = false;
@@ -415,14 +453,28 @@
             this.label4.TabIndex = 27;
             this.label4.Text = "label4";
             // 
+            // timer1
+            // 
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // lbnhanso
+            // 
+            this.lbnhanso.AutoSize = true;
+            this.lbnhanso.Location = new System.Drawing.Point(762, 137);
+            this.lbnhanso.Name = "lbnhanso";
+            this.lbnhanso.Size = new System.Drawing.Size(44, 16);
+            this.lbnhanso.TabIndex = 18;
+            this.lbnhanso.Text = "label5";
+            // 
             // formHienThiBaiHoc3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1890, 950);
-            this.Controls.Add(this.label4);
             this.Controls.Add(this.gbBox1);
+            this.Controls.Add(this.panelWiring);
             this.Controls.Add(this.panelDienso);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.bt1);
             this.Controls.Add(this.groupBox1);
@@ -431,7 +483,6 @@
             this.Controls.Add(this.button3);
             this.Controls.Add(this.btnOK);
             this.Controls.Add(this.flowLayoutPanel2);
-            this.Controls.Add(this.panelWiring);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
@@ -453,6 +504,7 @@
             this.panelWiring.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panelDienso.ResumeLayout(false);
+            this.panelDienso.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -490,7 +542,12 @@
         private System.Windows.Forms.Panel panelDienso;
         private System.Windows.Forms.PictureBox pictureBo;
         private System.Windows.Forms.Button btChaydothi;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lbTendothi;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button tesssssssssss;
+        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button btDientinhhieu;
+        private System.Windows.Forms.Label lbnhanso;
     }
 }
