@@ -77,8 +77,8 @@
             this.chlst_fault.FormattingEnabled = true;
             this.chlst_fault.Items.AddRange(new object[] {
             "Hở mạch",
-            "Nối tắt GND",
-            "Nối tắt nguồn",
+            "Ngắn mạch nguồn",
+            "Ngắn mạch GND",
             "Điện trở không mong muốn"});
             this.chlst_fault.Location = new System.Drawing.Point(0, 0);
             this.chlst_fault.Name = "chlst_fault";
@@ -148,7 +148,14 @@
             "4",
             "5",
             "6",
-            "7"});
+            "7",
+            "8",
+            "9",
+            "10",
+            "11",
+            "12",
+            "13",
+            "14"});
             this.cbChuong.Location = new System.Drawing.Point(176, 25);
             this.cbChuong.Name = "cbChuong";
             this.cbChuong.Size = new System.Drawing.Size(121, 37);

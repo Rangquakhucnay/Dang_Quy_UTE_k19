@@ -49,70 +49,69 @@ namespace HoanThanhDangNhap
 
                 switch (int.Parse(txtMaLoi.Text))
                 {
-                    case 24:
-                        guiMaFault("a");
-                        break;
-                    case 25:
-                        guiMaFault("b");
-                        break;
-                    case 27:
-                        guiMaFault("c");
-                        break;
-                    case 6:
-                        guiMaFault("d");
-                        MessageBox.Show("check D");
-                        break;
-                    case 5:
-                        guiMaFault("e");
-                        break;
-                    case 4:
-                        guiMaFault("f");
-                        break;
-                    case 3:
-                        guiMaFault("g");
+                    case 1:
+                        guiMaFault("p1");
                         break;
                     case 2:
-                        guiMaFault("h");
+                        guiMaFault("p19");
+                        break;
+                    case 3:
+                        guiMaFault("p4");
+                        break;
+                    case 4:
+                        guiMaFault("p2");
+                      //  MessageBox.Show("check D");
+                        break;
+                    case 5:
+                        guiMaFault("p3");
+                        break;
+                    case 6:
+                        guiMaFault("p17");
                         break;
                     case 7:
-                        guiMaFault("i");
+                        guiMaFault("p5");
                         break;
-                    case 15:
-                        guiMaFault("j");
+                    case 8:
+                        guiMaFault("p6");
                         break;
-                    case 23:
-                        guiMaFault("k");
-                        break;
-                    case 22:
-                        guiMaFault("l");
-                        break;
-                    case 21:
-                        guiMaFault("m");
-                        break;
-                    case 14:
-                        guiMaFault("n");
-                        break;
-                    case 13:
-                        guiMaFault("o");
+                    case 9:
+                        guiMaFault("p18");
                         break;
                     case 10:
-                        guiMaFault("p");
+                        guiMaFault("p7");
                         break;
                     case 11:
-                        guiMaFault("q");
+                        guiMaFault("p8");
                         break;
                     case 12:
-                        guiMaFault("r");
+                        guiMaFault("p9");
                         break;
-                    case 20:
-                        guiMaFault("s");
+                    case 13:
+                        guiMaFault("p15");
+                        break;
+                    case 14:
+                        guiMaFault("p10");
+                        break;
+                    case 15:
+                        guiMaFault("p11");
                         break;
                     case 16:
-                        guiMaFault("t");
+                        guiMaFault("p12");
                         break;
                     case 17:
-                        guiMaFault("u");
+                        guiMaFault("p13");
                         break;
+                    case 18:
+                        guiMaFault("p14");
+                        break;
+                    case 19:
+                        guiMaFault("p15");
+                        break;
+                    case 20:
+                        guiMaFault("p16");
+                        break;
+                    
+                        
                     default:
                         MessageBox.Show("Vui lòng nhập đúng mã lỗi có trong danh sách");
                         break;

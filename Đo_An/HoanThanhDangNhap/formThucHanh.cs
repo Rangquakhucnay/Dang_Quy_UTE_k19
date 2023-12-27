@@ -25,14 +25,21 @@ namespace HoanThanhDangNhap
         // Bảng để dò tên chương sử dụng mảng 2 chiều
         string[,] lookupTable_Chuong = new string[,]
         {
-            { "Chương 1:"," CÁC SỰ CỐ TRÊN MẠCH ĐIỆN" },
-            { "Chương 2:", "ĐỊNH LUẬT OHM" },
-            { "Chương 3:", "MẠCH CÒI" },
-            { "Chương 4:", "MẠCH ĐÈN LÙI" },
-            { "Chương 5:", "MẠCH ĐÈN HẬU VÀ ĐÈN PHANH" },
-            { "Chương 6:", "MẠCH KHỞI ĐỘNG" },
-            { "Chương 7:", "MẠCH ĐÈN BÁO RẼ" },
-            { "Chương 8:", "value4" },
+            { "Chương 1:","CẢM BIẾN ĐO GIÓ DÂY NHIỆT" },
+            { "Chương 2:", "CẢM BIẾN KARMAN SIÊU ÂM" },
+            { "Chương 3:", "CẢM BIẾN ĐO GIÓ VAN TRƯỢT" },
+            { "Chương 4:", "CẢM BIẾN CHÂN KHÔNG" },
+            { "Chương 5:", "CẢM BIẾN NE" },
+            { "Chương 6:", "CẢM BIẾN NHIỆT ĐỘ" },
+            { "Chương 7:", "BƯỚM GA TUYẾN TÍNH CÓ IDL" },
+            { "Chương 8:", "BƯỚM GA TIÊP ĐIỂM" },
+            { "Chương 9:", "BƯỚM GA TUYẾN TÍNH KHÔNG CÓ IDL" },
+            { "Chương 10:", "CẢM BIẾN VỊ TRÍ BÀN ĐẠP GA" },
+            { "Chương 11:", "HỆ THỐNG BƠM NHIÊN LIỆU" },
+            { "Chương 12:", "HỆ THỐNG ĐÁNH LỬA" },
+            { "Chương 13:", "HỆ THỐNG PHUN XĂNG" },
+            { "Chương 14:", "HỆ THỐNG ĐIỀU KHIỂN BƯỚM GA" },
+           
             // và tiếp tục với các cặp khác...
         };
 
@@ -40,42 +47,28 @@ namespace HoanThanhDangNhap
         // Thư viện lỗi
         Dictionary<string, string[]> faultCDictionary = new Dictionary<string, string[]>()
         {
-            { "faultC1", new string[] { "02", "03", "10", "13", "21" } },
-            { "faultC2", new string[] { "02", "03", "10", "13", "21" } },
-            { "faultC3", new string[] { "02", "03", "05", "15", "22", "23" } },
-            { "faultC4", new string[] { "02", "03", "04", "06", "24", "25" } },
-            { "faultC5", new string[] { "02", "03", "04", "06", "07", "11", "12", "16", "20" } },
-            { "faultC6", new string[] { "02", "03", "15", "17", "20", "22", "24", "25", "27" } },
-            { "faultC7", new string[] { "02", "03", "04", "06", "07", "11", "12", "17", "24", "25" } },
+            { "faultC1", new string[] { "01", "02" } },
+            { "faultC2", new string[] { "03", } },
+            { "faultC3", new string[] {  "05", "04" } },
+            { "faultC4", new string[] { "06" } },
+            { "faultC5", new string[] { "07" } },
+            { "faultC6", new string[] { "08","09" } },
+            { "faultC7", new string[] { "10" } },
+            { "faultC8", new string[] { "11" } },
+            { "faultC9", new string[] { "12" } },
+            { "faultC10", new string[] { "13" } },
+            { "faultC11", new string[] { "14","15","16" } },
+            { "faultC12", new string[] { "17" } },
+            { "faultC13", new string[] { "18"} },
+            { "faultC14", new string[] { "19", "20" } },
+        
 
-            //chưa check
-            { "faultC8", new string[] { "02", "03", "04", "06", "07", "17", "24", "25" } }
-
-
-            /* này là trên atech
-             * lúc mới làm
-            { "faultC3", new string[] { "01", "02", "10", "12" } },
-
-            // da xu ly xong
-            { "faultC4", new string[] { "02", "03", "10", "13", "21" } },
-            { "faultC5", new string[] { "02", "03", "11", "12", "15" } },
-            { "faultC6", new string[] { "02", "03", "05", "15", "22", "23" } },
-            { "faultC7", new string[] { "02", "03", "04", "06", "24", "25" } },
-            { "faultC8", new string[] { "02", "03", "04", "06", "07", "11", "12", "16", "20" } },
-            { "faultC9", new string[] { "02", "03", "15", "17", "20", "22", "24", "25", "27" } },
-            { "faultC10", new string[] { "02", "03", "04", "06", "07", "11", "12", "17", "24", "25" } },
-            { "faultC11", new string[] { "02", "03", "05", "24", "25" } },
-            { "faultC12", new string[] { "02", "03", "05", "15", "16", "22", "23", "27" } },
-            { "faultC13", new string[] { "02", "03", "04", "05","20", "24"} },
-            { "faultC14", new string[] { "02", "03", "10", "16", "17", "20", "21", "24", "25", "27" } },
-            { "faultC15", new string[] { "02", "03", "04", "06", "07", "16", "24", "25" } },
-            { "faultC16", new string[] { "02", "03", "04", "05", "07", "11", "12", "16", "24", "25" } }
-            */
+           
         };
 
         // các biến để lưu kí tự excel lấy được
         string KituFault, Ma;
-        string comp1, comp2, comp3, comp4, comp5, comp6, comp7, comp8, comp9;
+        string comp1, comp2, comp3, comp4, comp5, comp6, comp7, comp8, comp9, comp10;
         string dapan1, dapan2, hinh;
 
         // các biến để tạo lỗi
@@ -105,7 +98,7 @@ namespace HoanThanhDangNhap
             serialPort1.Write(ft);
             serialPort1.Close();
         }
-        private void LoadHinhvaComp() // cái cần fix lại 
+        private void LoadHinhvaComp() 
         {
            string chuong = cbChuong.Text;
 
@@ -138,7 +131,10 @@ namespace HoanThanhDangNhap
                         comp7 = range.Cells[row, 8].Value2.ToString();
                         comp8 = range.Cells[row, 9].Value2.ToString();      
                         comp9 = range.Cells[row,10].Value2.ToString();
-                        hinh  = range.Cells[row,11].Value2.ToString();
+                        comp10 = range.Cells[row,11].Value2.ToString();
+                        
+
+                        hinh  = range.Cells[row,12].Value2.ToString();
                         // Xử lý dữ liệu tìm được ở đây
                     }
                     break; // Thoát khỏi vòng lặp nếu đã tìm thấy hàng cần tìm kiếm
@@ -152,7 +148,7 @@ namespace HoanThanhDangNhap
             Marshal.ReleaseComObject(excel);
 
             // xu ly danh sach comp
-            string[] comps = { comp1, comp2, comp3, comp4, comp5, comp6, comp7, comp8, comp9 };
+            string[] comps = { comp1, comp2, comp3, comp4, comp5, comp6, comp7, comp8, comp9, comp10 };// vị trí có thể xảy ra lỗi!!
             List<string> danhSachChuoi = new List<string>();
             foreach (string comp in comps)
             {
@@ -226,12 +222,12 @@ namespace HoanThanhDangNhap
 
             // Gửi mã đi để tạo fault ở phần cứng @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
             guiMaFault(KituFault);
-            MessageBox.Show("da~ gui ma tao fault chuong " + a.ToString() + " loi " + Ma);// mơi thay ///////////////////////////////
+            MessageBox.Show("Đã gửi mã tạo fault chuong " + a.ToString() + " loi " + Ma);// mơi thay ///////////////////////////////
 
             }
             else
             {
-                MessageBox.Show("gắng kiếm tiền cưới vợ");
+                MessageBox.Show("vui lòng chon chương","Thông Báo",MessageBoxButtons.OK);
             }
         }// tới đay rồi
 
@@ -320,7 +316,7 @@ namespace HoanThanhDangNhap
             {
                 if (i != e.Index)
                 {
-                    chlst_fault.SetItemChecked(i, false);
+                    chlst_fault.SetItemChecked(i, false);// setItermchecked : xem thằng nào có tính hiệu Index dc chọn ở ngoài chlst_fault thì hiện ra
                 }
             }
         }
@@ -332,8 +328,8 @@ namespace HoanThanhDangNhap
 
         private void formThucHanh_FormClosing(object sender, FormClosingEventArgs e)
         {
-            guiMaFault("x");
-            MessageBox.Show("het fault");// moi sua lại ////////////////////////////////
+           // guiMaFault("x");
+           // MessageBox.Show("het fault");// moi sua lại ////////////////////////////////
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -393,7 +389,7 @@ namespace HoanThanhDangNhap
 
         private void CheckToHienthi()
         {
-            if (chlst_comp.CheckedItems.Count > 0)
+            if (chlst_comp.CheckedItems.Count > 0) //có ít nhất một mục được chọn trong chlst_comp thì mới hiển thị ra chlst_fault
             {
                 chlst_fault.Visible = true;
 
