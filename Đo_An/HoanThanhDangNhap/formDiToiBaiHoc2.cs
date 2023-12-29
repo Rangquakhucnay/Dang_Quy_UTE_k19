@@ -54,7 +54,7 @@ namespace HoanThanhDangNhap
             {
                 conn.Open();
                 //MessageBox.Show("Đã kết nối");
-            }
+            }//lấy acti
             SQLiteCommand command = new SQLiteCommand();
             command.CommandType = CommandType.Text;
             command.CommandText = "Select * from ThongTinSinhVien where TenDangNhap=@tendn";
@@ -74,7 +74,7 @@ namespace HoanThanhDangNhap
                 arrActi[i - 1] = i.ToString();
             }
 
-            // code de hien thi ten chuong va nActi
+            // code de hien thi ten chuong 
             string tenChuong = "Chương " + cbSttChuongBH.Text + ":";
             string value = null;
 

@@ -396,7 +396,6 @@
     <None Include="Resources\nutchonformkt.png" />
     <None Include="Resources\hinhformkt.jpg" />
     <None Include="Resources\4bec8af5784caaf4779c842f4047eba9.jpg" />
-    <Content Include="License-LGPL.txt" />
     <None Include="Resources\393686953_804231791391891_7366914710212052393_n.jpg" />
     <Content Include="Resources\test\hinh1.png" />
     <Content Include="Resources\test\hinh10.png" />

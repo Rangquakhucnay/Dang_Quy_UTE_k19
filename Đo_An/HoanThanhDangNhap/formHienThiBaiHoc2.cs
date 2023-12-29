@@ -24,7 +24,7 @@ namespace HoanThanhDangNhap
         // 1. sử dụng cho hiển thị bài học
         string dapanA = "", dapanB = "", dapanC = "";
         string cauhoi = "khong lam dc", baihoc = "", hinhAnh = "";
-        string hide = "0", fault = "", answer = "";
+        string hide = "0", answer = "";
         string video = "";
         string faultTruoc = "0";
 
@@ -52,11 +52,12 @@ namespace HoanThanhDangNhap
         }
         int chuong = int.Parse(formDiToiBaiHoc2.sttChuongBaiHoc2);
         int nActi = int.Parse(formDiToiBaiHoc2.SoActi);
-        int nQT = formDiToiBaiHoc.TiendoActi;
-
+        int nQT = formDiToiBaiHoc2.TiendoActi;
+        
         //
         private void formHienThiBaiHoc_Load(object sender, EventArgs e)
         {
+           
             serialPort1.PortName = LoginStudent.tenCOM;
             serialPort1.BaudRate = LoginStudent.giatribaudrate;
             //
@@ -70,6 +71,7 @@ namespace HoanThanhDangNhap
 
                 LaySoHinh();  //lấy số hình của panel wiring
                 HienThiBaiHoc(2);
+               // MessageBox.Show(nonNullRowCount.ToString());
                 HienThiWiring();
                 panelWiring.Visible = true;
                 panelWiring.BringToFront();
@@ -106,7 +108,7 @@ namespace HoanThanhDangNhap
         {
             string folderPath = System.Windows.Forms.Application.StartupPath + "\\Resources2\\Wiring\\" + $"wiring_c{chuong}";
             maxImageIndex = Directory.GetFiles(folderPath, "*.*", SearchOption.AllDirectories).Length;
-            buttonCount = 7;
+           //buttonCount = 7;
         }
 
         private void LoadImage(int index)
@@ -255,6 +257,7 @@ namespace HoanThanhDangNhap
             // Xử lý các hành động tùy ý ở đây
             // Lấy giá trị số nguyên từ chuỗi ký tự của nút
             string giaTriNutChuoi = nut.Text;
+          // MessageBox.Show(giaTriNutChuoi);
             string soNguyenStr = new String(giaTriNutChuoi.Where(Char.IsDigit).ToArray());
             int giaTriNutSoNguyen = int.Parse(soNguyenStr);
             Color customColor = Color.FromArgb(110, 172, 183);
@@ -299,7 +302,7 @@ namespace HoanThanhDangNhap
             Workbook workbook = excel.Workbooks.Open(System.Windows.Forms.Application.StartupPath + "\\Resources2\\Du lieu cau hoi\\thu vien bai hoc.xlsx");
             Worksheet worksheet = workbook.Sheets[chuong];// Worksheet worksheet = workbook.Sheets["Tên sheet"];
             Range range = worksheet.UsedRange;
-
+             
             // Lấy số hàng và số cột của tập tin Excel
             int rowCount = range.Rows.Count;
             int colCount = range.Columns.Count;
@@ -321,7 +324,7 @@ namespace HoanThanhDangNhap
                 }
                 if (hasNonNullValue)
                 {
-                    nonNullRowCount++; // =27 của chương1
+                    nonNullRowCount++; // =13 // đếm số câu (1,1).(2.2)
                 }
                 bt1.Text = nonNullRowCount.ToString();//-----------------------------------------------------fix
             }
@@ -347,15 +350,10 @@ namespace HoanThanhDangNhap
                         dapanB = range.Cells[row, 8].Value2.ToString();
                         dapanC = range.Cells[row, 9].Value2.ToString();
                         answer = range.Cells[row, 10].Value2.ToString();
-                        fault = range.Cells[row, 11].Value2.ToString();
+                        
 
 
-                        //
-                        if (row > 2)
-                        {
-                            faultTruoc = range.Cells[row - 1, 11].Value2.ToString();
-                        }
-                        //
+                        
 
                         // Xử lý dữ liệu tìm được ở đây
                     }
@@ -387,37 +385,6 @@ namespace HoanThanhDangNhap
             Marshal.ReleaseComObject(workbook);
             Marshal.ReleaseComObject(excel);
 
-            // Hien thi du lieu len form 
-            /*
-             if (fault != "0")           // phast hien co fault thi` gui di ne`
-             {
-                 if (fault == faultTruoc)
-                 {
-                     guiMaFault(fault);
-                     //MessageBox.Show("a");
-                 }
-                 else
-                 {
-                     if (faultTruoc != "0")
-                     {
-                         guiMaFault("x");
-                         //MessageBox.Show("xoa loi");
-                         guiMaFault(fault);
-                         //MessageBox.Show("a");
-                     }
-                     else
-                     {
-                         guiMaFault(fault);
-                         //MessageBox.Show("a");
-                     }
-                 }
-             }
-             else        // neu khong co thi` gui ma fault xoa fault
-             {
-                 guiMaFault("x");
-             }*/
-
-            //---------------------------------------------------------------------------------------
             if (int.Parse(video) != 0)
             {
                 panelVideo.Visible = true;
@@ -448,6 +415,7 @@ namespace HoanThanhDangNhap
                    btnOK.Enabled = true;
                }
             */
+
             if (int.Parse(hide) == 1)
             {
                 picChe.BringToFront();
@@ -560,11 +528,7 @@ namespace HoanThanhDangNhap
             }
         }
 
-        private void panelWiring_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
+       
 
 
         /*private void pictureBox3_Click(object sender, EventArgs e)
@@ -736,8 +700,8 @@ namespace HoanThanhDangNhap
             if (currentImageIndex < maxImageIndex)
             {
                 currentImageIndex++;
-                LoadImage(currentImageIndex);
-                LoadButtonsWiring(currentImageIndex, buttonCount);
+               // LoadImage(currentImageIndex);
+              //  LoadButtonsWiring(currentImageIndex, buttonCount);
                 buttonLeft.Enabled = true;
                 buttonRight.Enabled = true;
             }

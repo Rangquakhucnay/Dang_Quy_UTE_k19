@@ -43,12 +43,12 @@
             this.label1 = new System.Windows.Forms.Label();
             this.zedGraphControl1 = new ZedGraph.ZedGraphControl();
             this.gbBox1 = new System.Windows.Forms.Panel();
-            this.tesssssssssss = new System.Windows.Forms.Button();
             this.lbTendothi = new System.Windows.Forms.Label();
             this.btChaydothi = new System.Windows.Forms.Button();
             this.txtQues = new System.Windows.Forms.TextBox();
             this.chlstDapAn = new System.Windows.Forms.CheckedListBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.lbnhanso = new System.Windows.Forms.Label();
             this.btDientinhhieu = new System.Windows.Forms.Button();
             this.picChe = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -65,7 +65,6 @@
             this.pictureBo = new System.Windows.Forms.PictureBox();
             this.label4 = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.lbnhanso = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.flowLayoutPanel1.SuspendLayout();
@@ -211,7 +210,6 @@
             // 
             // gbBox1
             // 
-            this.gbBox1.Controls.Add(this.tesssssssssss);
             this.gbBox1.Controls.Add(this.lbTendothi);
             this.gbBox1.Controls.Add(this.btChaydothi);
             this.gbBox1.Controls.Add(this.zedGraphControl1);
@@ -219,15 +217,6 @@
             this.gbBox1.Name = "gbBox1";
             this.gbBox1.Size = new System.Drawing.Size(1491, 699);
             this.gbBox1.TabIndex = 1;
-            // 
-            // tesssssssssss
-            // 
-            this.tesssssssssss.Location = new System.Drawing.Point(63, 78);
-            this.tesssssssssss.Name = "tesssssssssss";
-            this.tesssssssssss.Size = new System.Drawing.Size(81, 65);
-            this.tesssssssssss.TabIndex = 6;
-            this.tesssssssssss.Text = "button4";
-            this.tesssssssssss.UseVisualStyleBackColor = true;
             // 
             // lbTendothi
             // 
@@ -295,6 +284,15 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1496, 272);
             this.panel2.TabIndex = 11;
+            // 
+            // lbnhanso
+            // 
+            this.lbnhanso.AutoSize = true;
+            this.lbnhanso.Location = new System.Drawing.Point(762, 137);
+            this.lbnhanso.Name = "lbnhanso";
+            this.lbnhanso.Size = new System.Drawing.Size(44, 16);
+            this.lbnhanso.TabIndex = 18;
+            this.lbnhanso.Text = "label5";
             // 
             // btDientinhhieu
             // 
@@ -457,15 +455,6 @@
             // 
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // lbnhanso
-            // 
-            this.lbnhanso.AutoSize = true;
-            this.lbnhanso.Location = new System.Drawing.Point(762, 137);
-            this.lbnhanso.Name = "lbnhanso";
-            this.lbnhanso.Size = new System.Drawing.Size(44, 16);
-            this.lbnhanso.TabIndex = 18;
-            this.lbnhanso.Text = "label5";
-            // 
             // formHienThiBaiHoc3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -544,7 +533,6 @@
         private System.Windows.Forms.Button btChaydothi;
         private System.Windows.Forms.Label lbTendothi;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Button tesssssssssss;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btDientinhhieu;

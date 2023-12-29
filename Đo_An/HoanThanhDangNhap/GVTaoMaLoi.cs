@@ -105,7 +105,7 @@ namespace HoanThanhDangNhap
                         guiMaFault("p18");
                         break;
                     case 19:
-                        guiMaFault("p119");
+                        guiMaFault("p19");
                         break;
                     case 20:
                         guiMaFault("p20");

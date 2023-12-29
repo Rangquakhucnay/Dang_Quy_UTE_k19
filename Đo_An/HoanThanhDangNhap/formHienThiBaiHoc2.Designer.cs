@@ -310,7 +310,6 @@
             this.panelWiring.Name = "panelWiring";
             this.panelWiring.Size = new System.Drawing.Size(1768, 683);
             this.panelWiring.TabIndex = 15;
-            this.panelWiring.Paint += new System.Windows.Forms.PaintEventHandler(this.panelWiring_Paint);
             // 
             // bt1
             // 
