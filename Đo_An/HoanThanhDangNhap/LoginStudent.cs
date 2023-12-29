@@ -160,7 +160,7 @@ namespace HoanThanhDangNhap
             }
             else
             {
-                formExam f99 = new formExam();
+               formEXAMtonghop f99 = new formEXAMtonghop();
                 f99.ShowDialog();
             }
         }
@@ -206,7 +206,7 @@ namespace HoanThanhDangNhap
             }
             else
             {
-                formExam f12 = new formExam();
+                formEXAMtonghop f12 = new formEXAMtonghop();
                 f12.ShowDialog();
             }
         }

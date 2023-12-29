@@ -336,8 +336,8 @@ namespace HoanThanhDangNhap
                 if (firstCellValue == str)
                 {
                     // Duyệt qua các ô trong hàng để lấy dữ liệu
-                    for (int col = 2; col <= colCount; col++)
-                    {
+                  // for (int col = 2; col <= colCount; col++)
+                  //  {
                         video = range.Cells[row, 2].Value2.ToString();
                         hinhAnh = range.Cells[row, 3].Value2.ToString();
                         baihoc = range.Cells[row, 4].Value2.ToString();
@@ -358,7 +358,7 @@ namespace HoanThanhDangNhap
                         //
 
                         // Xử lý dữ liệu tìm được ở đây
-                    }
+                  //  }
                     break; // Thoát khỏi vòng lặp nếu đã tìm thấy hàng cần tìm kiếm
                 }
                 if (rowEND == "END")

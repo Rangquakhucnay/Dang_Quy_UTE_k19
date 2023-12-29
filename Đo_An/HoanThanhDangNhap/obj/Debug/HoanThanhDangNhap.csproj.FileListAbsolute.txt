@@ -1730,7 +1730,6 @@ D:\Đăng_Quý_UTE_K19\Đo_An\HoanThanhDangNhap\obj\Debug\HoanThanhDangNhap.form
 D:\Đăng_Quý_UTE_K19\Đo_An\HoanThanhDangNhap\obj\Debug\HoanThanhDangNhap.formDiToiBaiHoc2.resources
 D:\Đăng_Quý_UTE_K19\Đo_An\HoanThanhDangNhap\obj\Debug\HoanThanhDangNhap.formDiToiBaiHoc3.resources
 D:\Đăng_Quý_UTE_K19\Đo_An\HoanThanhDangNhap\obj\Debug\HoanThanhDangNhap.formDiToiBaiHoc4.resources
-D:\Đăng_Quý_UTE_K19\Đo_An\HoanThanhDangNhap\obj\Debug\HoanThanhDangNhap.formExam.resources
 D:\Đăng_Quý_UTE_K19\Đo_An\HoanThanhDangNhap\obj\Debug\HoanThanhDangNhap.formEXAMtonghop.resources
 D:\Đăng_Quý_UTE_K19\Đo_An\HoanThanhDangNhap\obj\Debug\HoanThanhDangNhap.formGV.resources
 D:\Đăng_Quý_UTE_K19\Đo_An\HoanThanhDangNhap\obj\Debug\HoanThanhDangNhap.formHienThiBaiHoc.resources

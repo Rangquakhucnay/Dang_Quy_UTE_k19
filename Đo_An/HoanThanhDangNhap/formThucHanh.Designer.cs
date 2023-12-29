@@ -34,7 +34,7 @@
             this.chlst_fault = new System.Windows.Forms.CheckedListBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.chlst_comp = new System.Windows.Forms.CheckedListBox();
-            this.label4 = new System.Windows.Forms.Label();
+            this.lbyeucau = new System.Windows.Forms.Label();
             this.serialPort1 = new System.IO.Ports.SerialPort(this.components);
             this.btnNutDapAn = new System.Windows.Forms.Button();
             this.cbChuong = new System.Windows.Forms.ComboBox();
@@ -43,16 +43,21 @@
             this.label1 = new System.Windows.Forms.Label();
             this.lblTenChuong = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.panelChuyencauhoi = new System.Windows.Forms.Panel();
+            this.rtb_Yeucau = new System.Windows.Forms.RichTextBox();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.panelChuyencauhoi.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnNutTaoFault
             // 
             this.btnNutTaoFault.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNutTaoFault.Location = new System.Drawing.Point(124, 306);
+            this.btnNutTaoFault.Location = new System.Drawing.Point(107, 649);
             this.btnNutTaoFault.Name = "btnNutTaoFault";
             this.btnNutTaoFault.Size = new System.Drawing.Size(155, 64);
             this.btnNutTaoFault.TabIndex = 3;
@@ -64,7 +69,7 @@
             // 
             this.panel3.Controls.Add(this.chlst_fault);
             this.panel3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel3.Location = new System.Drawing.Point(850, 649);
+            this.panel3.Location = new System.Drawing.Point(851, 667);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(385, 183);
             this.panel3.TabIndex = 13;
@@ -76,10 +81,9 @@
             this.chlst_fault.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chlst_fault.FormattingEnabled = true;
             this.chlst_fault.Items.AddRange(new object[] {
-            "Hở mạch",
-            "Ngắn mạch nguồn",
-            "Ngắn mạch GND",
-            "Điện trở không mong muốn"});
+            "0",
+            "0",
+            "0"});
             this.chlst_fault.Location = new System.Drawing.Point(0, 0);
             this.chlst_fault.Name = "chlst_fault";
             this.chlst_fault.Size = new System.Drawing.Size(385, 183);
@@ -91,7 +95,7 @@
             // 
             this.panel2.Controls.Add(this.chlst_comp);
             this.panel2.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel2.Location = new System.Drawing.Point(415, 649);
+            this.panel2.Location = new System.Drawing.Point(416, 667);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(408, 183);
             this.panel2.TabIndex = 12;
@@ -103,9 +107,9 @@
             this.chlst_comp.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chlst_comp.FormattingEnabled = true;
             this.chlst_comp.Items.AddRange(new object[] {
-            "Comp #2",
-            "Comp #4",
-            "Comp #10"});
+            "1",
+            "2",
+            "3"});
             this.chlst_comp.Location = new System.Drawing.Point(0, 0);
             this.chlst_comp.Name = "chlst_comp";
             this.chlst_comp.Size = new System.Drawing.Size(408, 183);
@@ -113,22 +117,22 @@
             this.chlst_comp.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.chlst_comp_ItemCheck);
             this.chlst_comp.SelectedIndexChanged += new System.EventHandler(this.chlst_comp_SelectedIndexChanged);
             // 
-            // label4
+            // lbyeucau
             // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label4.Location = new System.Drawing.Point(408, 6);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(858, 32);
-            this.label4.TabIndex = 4;
-            this.label4.Text = "Hãy nối dây theo mạch trên hình vẽ, sau đó nhấn nút \"Tạo lỗi\".";
+            this.lbyeucau.AutoSize = true;
+            this.lbyeucau.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.lbyeucau.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbyeucau.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.lbyeucau.Location = new System.Drawing.Point(517, 24);
+            this.lbyeucau.Name = "lbyeucau";
+            this.lbyeucau.Size = new System.Drawing.Size(821, 32);
+            this.lbyeucau.TabIndex = 4;
+            this.lbyeucau.Text = "Sinh viên chọn chương và làm theo các hướng dẫn bên dưới";
             // 
             // btnNutDapAn
             // 
             this.btnNutDapAn.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNutDapAn.Location = new System.Drawing.Point(1258, 649);
+            this.btnNutDapAn.Location = new System.Drawing.Point(1260, 667);
             this.btnNutDapAn.Name = "btnNutDapAn";
             this.btnNutDapAn.Size = new System.Drawing.Size(137, 64);
             this.btnNutDapAn.TabIndex = 14;
@@ -165,7 +169,7 @@
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(124, 440);
+            this.button1.Location = new System.Drawing.Point(107, 759);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(155, 64);
             this.button1.TabIndex = 18;
@@ -211,22 +215,55 @@
             // pictureBox1
             // 
             this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox1.Location = new System.Drawing.Point(415, 50);
+            this.pictureBox1.Location = new System.Drawing.Point(413, 71);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(980, 580);
+            this.pictureBox1.Size = new System.Drawing.Size(1026, 580);
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+      
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Location = new System.Drawing.Point(412, 71);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(1026, 580);
+            this.pictureBox2.TabIndex = 27;
+            this.pictureBox2.TabStop = false;
+            // 
+            // panelChuyencauhoi
+            // 
+            this.panelChuyencauhoi.BackColor = System.Drawing.Color.Transparent;
+            this.panelChuyencauhoi.Controls.Add(this.rtb_Yeucau);
+            this.panelChuyencauhoi.Location = new System.Drawing.Point(24, 285);
+            this.panelChuyencauhoi.Name = "panelChuyencauhoi";
+            this.panelChuyencauhoi.Size = new System.Drawing.Size(360, 322);
+            this.panelChuyencauhoi.TabIndex = 28;
+            // 
+            // rtb_Yeucau
+            // 
+            this.rtb_Yeucau.BackColor = System.Drawing.SystemColors.Control;
+            this.rtb_Yeucau.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.rtb_Yeucau.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rtb_Yeucau.Location = new System.Drawing.Point(0, 0);
+            this.rtb_Yeucau.Margin = new System.Windows.Forms.Padding(0);
+            this.rtb_Yeucau.Name = "rtb_Yeucau";
+            this.rtb_Yeucau.ReadOnly = true;
+            this.rtb_Yeucau.Size = new System.Drawing.Size(360, 323);
+            this.rtb_Yeucau.TabIndex = 29;
+            this.rtb_Yeucau.Text = "";
             // 
             // formThucHanh
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1422, 1003);
+            this.BackColor = System.Drawing.SystemColors.Control;
+            this.ClientSize = new System.Drawing.Size(1472, 1013);
+            this.Controls.Add(this.panelChuyencauhoi);
+            this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btnNutDapAn);
             this.Controls.Add(this.btnNutTaoFault);
-            this.Controls.Add(this.label4);
+            this.Controls.Add(this.lbyeucau);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.pictureBox1);
@@ -237,13 +274,14 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Thực hành";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.formThucHanh_FormClosing);
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.formThucHanh_FormClosed);
             this.Load += new System.EventHandler(this.formThucHanh_Load);
             this.panel3.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            this.panelChuyencauhoi.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -256,7 +294,7 @@
         private System.Windows.Forms.CheckedListBox chlst_fault;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.CheckedListBox chlst_comp;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label lbyeucau;
         private System.IO.Ports.SerialPort serialPort1;
         private System.Windows.Forms.Button btnNutDapAn;
         private System.Windows.Forms.ComboBox cbChuong;
@@ -264,5 +302,8 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblTenChuong;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Panel panelChuyencauhoi;
+        private System.Windows.Forms.RichTextBox rtb_Yeucau;
     }
 }

@@ -20,6 +20,7 @@ namespace HoanThanhDangNhap
         public formThucHanh()
         {
             InitializeComponent();
+            
         }
 
         // Bảng để dò tên chương sử dụng mảng 2 chiều
@@ -31,14 +32,13 @@ namespace HoanThanhDangNhap
             { "Chương 4:", "CẢM BIẾN CHÂN KHÔNG" },
             { "Chương 5:", "CẢM BIẾN NE" },
             { "Chương 6:", "CẢM BIẾN NHIỆT ĐỘ" },
-            { "Chương 7:", "BƯỚM GA TUYẾN TÍNH CÓ IDL" },
-            { "Chương 8:", "BƯỚM GA TIÊP ĐIỂM" },
+            { "Chương 7:", "BƯỚM GA TIÊP ĐIỂM" },
+            { "Chương 8:", "BƯỚM GA TUYẾN TÍNH CÓ IDL" },
             { "Chương 9:", "BƯỚM GA TUYẾN TÍNH KHÔNG CÓ IDL" },
-            { "Chương 10:", "CẢM BIẾN VỊ TRÍ BÀN ĐẠP GA" },
-            { "Chương 11:", "HỆ THỐNG BƠM NHIÊN LIỆU" },
-            { "Chương 12:", "HỆ THỐNG ĐÁNH LỬA" },
-            { "Chương 13:", "HỆ THỐNG PHUN XĂNG" },
-            { "Chương 14:", "HỆ THỐNG ĐIỀU KHIỂN BƯỚM GA" },
+            { "Chương 10:", "HỆ THỐNG BƠM NHIÊN LIỆU" },
+            { "Chương 11:", "HỆ THỐNG ĐÁNH LỬA" },
+            { "Chương 12:", "HỆ THỐNG PHUN XĂNG" },
+            { "Chương 13:", "HỆ THỐNG ĐIỀU KHIỂN BƯỚM GA" },
            
             // và tiếp tục với các cặp khác...
         };
@@ -52,15 +52,15 @@ namespace HoanThanhDangNhap
             { "faultC3", new string[] {  "05", "04" } },
             { "faultC4", new string[] { "06" } },
             { "faultC5", new string[] { "07" } },
-            { "faultC6", new string[] { "08","09" } },
-            { "faultC7", new string[] { "10" } },
-            { "faultC8", new string[] { "11" } },
-            { "faultC9", new string[] { "12" } },
-            { "faultC10", new string[] { "13" } },
-            { "faultC11", new string[] { "14","15","16" } },
-            { "faultC12", new string[] { "17" } },
-            { "faultC13", new string[] { "18"} },
-            { "faultC14", new string[] { "19", "20" } },
+            { "faultC6", new string[] { "08","09","10" } },
+            { "faultC7", new string[] { "11" } },
+            { "faultC8", new string[] { "12" } },
+            { "faultC9", new string[] { "13" } },
+            { "faultC10", new string[] { "14","15","16" } },
+            { "faultC11", new string[] { "17" } },
+            { "faultC12", new string[] { "18" } },
+            { "faultC13", new string[] { "19","20"} },
+           
         
 
            
@@ -68,14 +68,15 @@ namespace HoanThanhDangNhap
 
         // các biến để lưu kí tự excel lấy được
         string KituFault, Ma;
-        string comp1, comp2, comp3, comp4, comp5, comp6, comp7, comp8, comp9, comp10;
-        string dapan1, dapan2, hinh;
+     
+        string dapan1, dapan2, hinh, hinh2, comp1, comp2;
+        string yeucau1,yeucau2;
 
         // các biến để tạo lỗi
         string[] nRandom;
         string[] faultCArray;
-        int dem = 0;
-        int soCauhoiMax = 10;
+        int dem = 0, dem1 = 0;
+        int soCauhoiMax = 3;
 
         private void formThucHanh_Load(object sender, EventArgs e)
         {
@@ -89,6 +90,7 @@ namespace HoanThanhDangNhap
             btnNutDapAn.Visible = false;
             chlst_comp.Visible = false;
             chlst_fault.Visible = false;
+            btnNutTaoFault.Visible = false;
             chlst_comp.Items.Clear();
 
         }
@@ -98,15 +100,22 @@ namespace HoanThanhDangNhap
             serialPort1.Write(ft);
             serialPort1.Close();
         }
-        private void LoadHinhvaComp() 
-        {
-           string chuong = cbChuong.Text;
+
+         private void LoadHinh() // lấy danhsachchuoi comp đẩy vào trong checklistBox////// bỏ
+         {
+            string chuong = cbChuong.Text;
+            //int a = int.Parse(cbChuong.Text);
+            if (dem1 == soCauhoiMax) { dem1 = 1; }
+            else
+            {
+                dem1++;
+            }
 
             // Khai báo đối tượng Excel
             Microsoft.Office.Interop.Excel.Application excel = new Microsoft.Office.Interop.Excel.Application();
-            Workbook workbook = excel.Workbooks.Open(System.Windows.Forms.Application.StartupPath + "\\Resources\\Du lieu cau hoi\\thu vien comp.xlsx");
-            Worksheet worksheet = workbook.Sheets[1]; // Worksheet worksheet = workbook.Sheets["Tên sheet"];
-            Range range = worksheet.UsedRange;
+             Workbook workbook = excel.Workbooks.Open(System.Windows.Forms.Application.StartupPath + "\\Resources\\Du lieu cau hoi\\thu vien ma loi.xlsx");
+             Worksheet worksheet = workbook.Sheets[chuong]; // Worksheet worksheet = workbook.Sheets["Tên sheet"];
+             Range range = worksheet.UsedRange;
 
             // Lấy số hàng và số cột của tập tin Excel
             int rowCount = range.Rows.Count;
@@ -117,57 +126,44 @@ namespace HoanThanhDangNhap
             {
                 string firstCellValue = range.Cells[row, 1].Value2.ToString();
                 // Nếu giá trị của ô đầu tiên trong hàng bằng với giá trị cần tìm kiếm
-                if (firstCellValue == chuong)
+                string kiTuTimkiem = nRandom[dem1 - 1];
+                if (firstCellValue == kiTuTimkiem)
                 {
                     // Duyệt qua các ô trong hàng để lấy dữ liệu
                     for (int col = 2; col <= colCount; col++)
                     {
-                        comp1 = range.Cells[row, 2].Value2.ToString();
-                        comp2 = range.Cells[row, 3].Value2.ToString();
-                        comp3 = range.Cells[row, 4].Value2.ToString();
-                        comp4 = range.Cells[row, 5].Value2.ToString();
-                        comp5 = range.Cells[row, 6].Value2.ToString();
-                        comp6 = range.Cells[row, 7].Value2.ToString();
-                        comp7 = range.Cells[row, 8].Value2.ToString();
-                        comp8 = range.Cells[row, 9].Value2.ToString();      
-                        comp9 = range.Cells[row,10].Value2.ToString();
-                        comp10 = range.Cells[row,11].Value2.ToString();
-                        
 
-                        hinh  = range.Cells[row,12].Value2.ToString();
+
+                        hinh2  = range.Cells[row,7].Value2.ToString();
+                        yeucau1 = range.Cells[row, 9].Value2.ToString();
+                        yeucau2 = range.Cells[row, 10].Value2.ToString();
+
                         // Xử lý dữ liệu tìm được ở đây
                     }
-                    break; // Thoát khỏi vòng lặp nếu đã tìm thấy hàng cần tìm kiếm
-                }
-            }
-            // Đóng tập tin Excel
-            workbook.Close(true, Type.Missing, Type.Missing);
-            excel.Quit();
-            Marshal.ReleaseComObject(worksheet);
-            Marshal.ReleaseComObject(workbook);
-            Marshal.ReleaseComObject(excel);
+                     break; // Thoát khỏi vòng lặp nếu đã tìm thấy hàng cần tìm kiếm
+                 }
+             }
+             // Đóng tập tin Excel
+             workbook.Close(true, Type.Missing, Type.Missing);
+             excel.Quit();
+             Marshal.ReleaseComObject(range);// giải phóng tài nguyên COM giảm thiểu việc tiêu thụ bộ nhớ
+             Marshal.ReleaseComObject(worksheet);
+             Marshal.ReleaseComObject(workbook);
+             Marshal.ReleaseComObject(excel);
 
-            // xu ly danh sach comp
-            string[] comps = { comp1, comp2, comp3, comp4, comp5, comp6, comp7, comp8, comp9, comp10 };// vị trí có thể xảy ra lỗi!!
-            List<string> danhSachChuoi = new List<string>();
-            foreach (string comp in comps)
-            {
-                if (comp != "0")
-                {
-                    danhSachChuoi.Add(comp);
-                }
-            }
-            chlst_comp.Items.Clear();
-            string[] dsDA = danhSachChuoi.ToArray();
 
-            // hien thi len giao dien 
-            chlst_comp.Items.AddRange(dsDA);// dồn câu hỏi để hiển thị ra checklistbox      
-            pictureBox1.Image = new Bitmap(System.Windows.Forms.Application.StartupPath + hinh);
-            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox1.Show();
+
+
+
+             pictureBox2.Image = new Bitmap(System.Windows.Forms.Application.StartupPath + hinh2);
+
+             pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage; // để hình vừa với khung picturebox
+
+
+            // btnNutDapAn .Visible = true;
+             pictureBox2.Show();
+          //  LoadFault();
         }
-
-
         void TaoFault()
         {
             if (cbChuong.Text != "")
@@ -207,31 +203,73 @@ namespace HoanThanhDangNhap
                         Ma = range.Cells[row, 1].Value2.ToString();
                         dapan1 = range.Cells[row, 2].Value2.ToString();
                         dapan2 = range.Cells[row, 3].Value2.ToString();
+
                         KituFault = range.Cells[row, 5].Value2.ToString();
-                        // Xử lý dữ liệu tìm được ở đây
-                    }
-                    break; // Thoát khỏi vòng lặp nếu đã tìm thấy hàng cần tìm kiếm
+                        hinh = range.Cells[row, 6].Value2.ToString();
+                        hinh2 = range.Cells[row, 7].Value2.ToString();
+
+                         comp1 = range.Cells[row, 8].Value2.ToString();
+                         comp2 = range.Cells[row, 9].Value2.ToString();
+
+                        yeucau1 = range.Cells[row, 10].Value2.ToString();
+                        yeucau2 = range.Cells[row, 11].Value2.ToString();
+
+
+                            // Xử lý dữ liệu tìm được ở đây
+                        }
+                        break; // Thoát khỏi vòng lặp nếu đã tìm thấy hàng cần tìm kiếm
                 }
             }
             // Đóng tập tin Excel
             workbook.Close(true, Type.Missing, Type.Missing);
             excel.Quit();
-            Marshal.ReleaseComObject(worksheet);
+                Marshal.ReleaseComObject(range);// giải phóng tài nguyên COM giảm thiểu việc tiêu thụ bộ nhớ
+                Marshal.ReleaseComObject(worksheet);
             Marshal.ReleaseComObject(workbook);
             Marshal.ReleaseComObject(excel);
 
-            // Gửi mã đi để tạo fault ở phần cứng @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-            guiMaFault(KituFault);
+            pictureBox1.Image = new Bitmap(System.Windows.Forms.Application.StartupPath + hinh);
+            
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage; // để hình vừa với khung picturebox
+
+                // btnNutDapAn .Visible = true;
+                pictureBox1.Show();
+                
+                guiMaFault(KituFault);
+
             MessageBox.Show("Đã gửi mã tạo fault chuong " + a.ToString() + " loi " + Ma);// mơi thay ///////////////////////////////
+                string[] dsDA1 = comp1.Split(',');
+                chlst_comp.Items.Clear();
+                chlst_comp.Items.AddRange(dsDA1);
+
+                string[] dsDA2 = comp2.Split(',');
+                chlst_fault.Items.Clear();
+                chlst_fault.Items.AddRange(dsDA2);  
 
             }
             else
             {
                 MessageBox.Show("vui lòng chon chương","Thông Báo",MessageBoxButtons.OK);
             }
-        }// tới đay rồi
+        }
 
-        private void cbChuong_SelectedIndexChanged(object sender, EventArgs e)
+        private void btnNutTaoFault_Click(object sender, EventArgs e)
+        {
+            pictureBox2.Visible = false;
+
+            chlst_comp.Visible = true;
+            ////
+            
+            TaoFault();
+            btnNutTaoFault.Visible = false;
+            lbyeucau.Visible = false;
+            panelChuyencauhoi.Visible = true;
+                rtb_Yeucau.Clear();
+                string textToAdd = yeucau2;
+                rtb_Yeucau.AppendText(textToAdd);
+
+        }
+        private void cbChuong_SelectedIndexChanged(object sender, EventArgs e)//----------------------------------------------------------------------------
         {
             // code de hien thi ten chuong va nActi
             string tenChuong = "Chương " + cbChuong.Text + ":";
@@ -252,14 +290,20 @@ namespace HoanThanhDangNhap
             lblTenChuong.MaximumSize = new Size(220, 0); // 0 để setting chiều cao là không giới hạn
             lblTenChuong.TextAlign = ContentAlignment.MiddleCenter;
 
-            // load câu hỏi và câu trả lời 
-            LoadHinhvaComp();
-
             // load fault 
-            LoadFault();
+            LoadFault();// radom
+
+            // load câu hỏi và câu trả lời 
+            LoadHinh();
+            btnNutTaoFault.Visible = true;
+
+           
+            string textToAdd = yeucau1;
+            rtb_Yeucau.AppendText(textToAdd);
+                
         }
 
-        private void LoadFault()
+        private void LoadFault() //ramdom
         {
             // load các fault của chương đã chọn trước đó
             // Lấy ten chuong từ combobox
@@ -309,6 +353,8 @@ namespace HoanThanhDangNhap
             }
         }
 
+        
+
         private void chlst_fault_ItemCheck(object sender, ItemCheckEventArgs e)
         {
             // Đảm bảo rằng chỉ có một mục được chọn
@@ -321,10 +367,7 @@ namespace HoanThanhDangNhap
             }
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
+       
 
         private void formThucHanh_FormClosing(object sender, FormClosingEventArgs e)
         {
@@ -355,25 +398,18 @@ namespace HoanThanhDangNhap
         private void btnNutDapAn_Click_1(object sender, EventArgs e)
         {
             KiemTraDapAn();
-            guiMaFault("x");
+           // guiMaFault("x");
             MessageBox.Show("het fault");// moi sủa lại ......................................
             chlst_comp.Visible = false;
             chlst_fault.Visible = false;
             btnNutDapAn.Visible = false;
             btnNutTaoFault.Enabled = true;
+            btnNutTaoFault.Visible = true;
+            lbyeucau.Visible = true;
+            pictureBox2.Visible= true;
+            rtb_Yeucau.Clear();
         }
-
-        private void formThucHanh_FormClosed(object sender, FormClosedEventArgs e)
-        {
-                
-        }
-
-        private void btnNutTaoFault_Click(object sender, EventArgs e)
-        {
-            chlst_comp.Visible = true;
-            TaoFault(); 
-            btnNutTaoFault.Enabled = true;
-        }
+       
         private void KiemTraDapAn()
         {
             // kiem tra dap an 

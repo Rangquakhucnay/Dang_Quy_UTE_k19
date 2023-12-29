@@ -167,6 +167,7 @@ namespace HoanThanhDangNhap
             int rowCount = range.Rows.Count;
             int colCount = range.Columns.Count;
 
+            MessageBox.Show(colCount.ToString());
             // Lấy giá trị của các ô trong phạm vi
             object[,] values = range.Value2;
 
@@ -208,8 +209,8 @@ namespace HoanThanhDangNhap
                         cauhoi = range.Cells[row, 6].Value2.ToString();
                         dapanA = range.Cells[row, 7].Value2.ToString();
                         dapanB = range.Cells[row, 8].Value2.ToString();
-                        dapanC = range.Cells[row, 9].Value2.ToString();
                         answer = range.Cells[row, 10].Value2.ToString();
+                        dapanC = range.Cells[row, 9].Value2.ToString();
                         fault  = range.Cells[row, 11].Value2.ToString();
                         dapanD = range.Cells[row, 12].Value2.ToString();
                         dien   = range.Cells[row, 13].Value2.ToString();

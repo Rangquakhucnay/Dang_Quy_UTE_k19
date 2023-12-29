@@ -53,62 +53,62 @@ namespace HoanThanhDangNhap
                         guiMaFault("p1");
                         break;
                     case 2:
-                        guiMaFault("p19");
+                        guiMaFault("p2");
                         break;
                     case 3:
-                        guiMaFault("p4");
+                        guiMaFault("p3");
                         break;
                     case 4:
-                        guiMaFault("p2");
+                        guiMaFault("p4");
                       //  MessageBox.Show("check D");
                         break;
                     case 5:
-                        guiMaFault("p3");
-                        break;
-                    case 6:
-                        guiMaFault("p17");
-                        break;
-                    case 7:
                         guiMaFault("p5");
                         break;
-                    case 8:
+                    case 6:
                         guiMaFault("p6");
                         break;
-                    case 9:
-                        guiMaFault("p18");
-                        break;
-                    case 10:
+                    case 7:
                         guiMaFault("p7");
                         break;
-                    case 11:
+                    case 8:
                         guiMaFault("p8");
                         break;
-                    case 12:
+                    case 9:
                         guiMaFault("p9");
                         break;
-                    case 13:
-                        guiMaFault("p15");
-                        break;
-                    case 14:
+                    case 10:
                         guiMaFault("p10");
                         break;
-                    case 15:
+                    case 11:
                         guiMaFault("p11");
                         break;
-                    case 16:
+                    case 12:
                         guiMaFault("p12");
                         break;
-                    case 17:
+                    case 13:
                         guiMaFault("p13");
                         break;
-                    case 18:
+                    case 14:
                         guiMaFault("p14");
                         break;
-                    case 19:
+                    case 15:
                         guiMaFault("p15");
                         break;
-                    case 20:
+                    case 16:
                         guiMaFault("p16");
+                        break;
+                    case 17:
+                        guiMaFault("p17");
+                        break;
+                    case 18:
+                        guiMaFault("p18");
+                        break;
+                    case 19:
+                        guiMaFault("p119");
+                        break;
+                    case 20:
+                        guiMaFault("p20");
                         break;
                     
                         

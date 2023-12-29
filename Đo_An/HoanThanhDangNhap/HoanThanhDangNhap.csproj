@@ -192,12 +192,6 @@
     <Compile Include="formDiToiBaiHoc4.Designer.cs">
       <DependentUpon>formDiToiBaiHoc4.cs</DependentUpon>
     </Compile>
-    <Compile Include="formExam.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="formExam.Designer.cs">
-      <DependentUpon>formExam.cs</DependentUpon>
-    </Compile>
     <Compile Include="formEXAMtonghop.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -302,9 +296,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="formDiToiBaiHoc4.resx">
       <DependentUpon>formDiToiBaiHoc4.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="formExam.resx">
-      <DependentUpon>formExam.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="formEXAMtonghop.resx">
       <DependentUpon>formEXAMtonghop.cs</DependentUpon>
