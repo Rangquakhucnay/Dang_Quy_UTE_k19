@@ -33,24 +33,33 @@
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
             this.btnOK = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
-            this.bt1 = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.buttonRight = new System.Windows.Forms.Button();
             this.buttonLeft = new System.Windows.Forms.Button();
             this.serCom = new System.IO.Ports.SerialPort(this.components);
-            this.label1 = new System.Windows.Forms.Label();
             this.zedGraphControl1 = new ZedGraph.ZedGraphControl();
             this.gbBox1 = new System.Windows.Forms.Panel();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.txtDientro = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.txtIDLTT = new System.Windows.Forms.TextBox();
+            this.txtNhietdo = new System.Windows.Forms.TextBox();
+            this.txtOnoff = new System.Windows.Forms.TextBox();
+            this.txtVon = new System.Windows.Forms.TextBox();
             this.lbTendothi = new System.Windows.Forms.Label();
             this.btChaydothi = new System.Windows.Forms.Button();
             this.txtQues = new System.Windows.Forms.TextBox();
             this.chlstDapAn = new System.Windows.Forms.CheckedListBox();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.lbnhanso = new System.Windows.Forms.Label();
             this.btDientinhhieu = new System.Windows.Forms.Button();
             this.picChe = new System.Windows.Forms.PictureBox();
+            this.lbnhanso = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -60,11 +69,8 @@
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.panelDienso = new System.Windows.Forms.Panel();
-            this.label3 = new System.Windows.Forms.Label();
-            this.pictureBo = new System.Windows.Forms.PictureBox();
-            this.label4 = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.flowLayoutPanel1.SuspendLayout();
@@ -75,8 +81,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panelWiring.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            this.panelDienso.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBo)).BeginInit();
             this.SuspendLayout();
             // 
             // flowLayoutPanel2
@@ -113,15 +117,6 @@
             this.button3.Text = "Thoát";
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
-            // 
-            // bt1
-            // 
-            this.bt1.Location = new System.Drawing.Point(1613, 907);
-            this.bt1.Name = "bt1";
-            this.bt1.Size = new System.Drawing.Size(75, 23);
-            this.bt1.TabIndex = 20;
-            this.bt1.Text = "button1";
-            this.bt1.UseVisualStyleBackColor = true;
             // 
             // groupBox1
             // 
@@ -183,18 +178,9 @@
             // 
             this.serCom.DataReceived += new System.IO.Ports.SerialDataReceivedEventHandler(this.serCom_DataReceived);
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(1689, 871);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(44, 16);
-            this.label1.TabIndex = 21;
-            this.label1.Text = "label1";
-            // 
             // zedGraphControl1
             // 
-            this.zedGraphControl1.Location = new System.Drawing.Point(392, 16);
+            this.zedGraphControl1.Location = new System.Drawing.Point(270, 12);
             this.zedGraphControl1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.zedGraphControl1.Name = "zedGraphControl1";
             this.zedGraphControl1.ScrollGrace = 0D;
@@ -210,6 +196,17 @@
             // 
             // gbBox1
             // 
+            this.gbBox1.Controls.Add(this.label10);
+            this.gbBox1.Controls.Add(this.label9);
+            this.gbBox1.Controls.Add(this.txtDientro);
+            this.gbBox1.Controls.Add(this.label7);
+            this.gbBox1.Controls.Add(this.label8);
+            this.gbBox1.Controls.Add(this.label6);
+            this.gbBox1.Controls.Add(this.label5);
+            this.gbBox1.Controls.Add(this.txtIDLTT);
+            this.gbBox1.Controls.Add(this.txtNhietdo);
+            this.gbBox1.Controls.Add(this.txtOnoff);
+            this.gbBox1.Controls.Add(this.txtVon);
             this.gbBox1.Controls.Add(this.lbTendothi);
             this.gbBox1.Controls.Add(this.btChaydothi);
             this.gbBox1.Controls.Add(this.zedGraphControl1);
@@ -218,12 +215,101 @@
             this.gbBox1.Size = new System.Drawing.Size(1491, 699);
             this.gbBox1.TabIndex = 1;
             // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(1313, 471);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(45, 16);
+            this.label10.TabIndex = 9;
+            this.label10.Text = "IDLTT";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(1321, 355);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(28, 16);
+            this.label9.TabIndex = 8;
+            this.label9.Text = "Ôm";
+            // 
+            // txtDientro
+            // 
+            this.txtDientro.Location = new System.Drawing.Point(1162, 349);
+            this.txtDientro.Name = "txtDientro";
+            this.txtDientro.Size = new System.Drawing.Size(100, 22);
+            this.txtDientro.TabIndex = 7;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(1313, 286);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(21, 16);
+            this.label7.TabIndex = 6;
+            this.label7.Text = "◦C";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(1059, 431);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(65, 16);
+            this.label8.TabIndex = 6;
+            this.label8.Text = "Đóng/ mở";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(1303, 425);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(69, 16);
+            this.label6.TabIndex = 6;
+            this.label6.Text = "Van Trược";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(1318, 222);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(16, 16);
+            this.label5.TabIndex = 6;
+            this.label5.Text = "V";
+            // 
+            // txtIDLTT
+            // 
+            this.txtIDLTT.Location = new System.Drawing.Point(1162, 471);
+            this.txtIDLTT.Name = "txtIDLTT";
+            this.txtIDLTT.Size = new System.Drawing.Size(100, 22);
+            this.txtIDLTT.TabIndex = 5;
+            // 
+            // txtNhietdo
+            // 
+            this.txtNhietdo.Location = new System.Drawing.Point(1162, 286);
+            this.txtNhietdo.Name = "txtNhietdo";
+            this.txtNhietdo.Size = new System.Drawing.Size(100, 22);
+            this.txtNhietdo.TabIndex = 5;
+            // 
+            // txtOnoff
+            // 
+            this.txtOnoff.Location = new System.Drawing.Point(1162, 425);
+            this.txtOnoff.Name = "txtOnoff";
+            this.txtOnoff.Size = new System.Drawing.Size(100, 22);
+            this.txtOnoff.TabIndex = 5;
+            // 
+            // txtVon
+            // 
+            this.txtVon.Location = new System.Drawing.Point(1162, 219);
+            this.txtVon.Name = "txtVon";
+            this.txtVon.Size = new System.Drawing.Size(100, 22);
+            this.txtVon.TabIndex = 5;
+            // 
             // lbTendothi
             // 
             this.lbTendothi.AutoSize = true;
             this.lbTendothi.BackColor = System.Drawing.Color.Linen;
             this.lbTendothi.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTendothi.Location = new System.Drawing.Point(668, 648);
+            this.lbTendothi.Location = new System.Drawing.Point(489, 648);
             this.lbTendothi.Name = "lbTendothi";
             this.lbTendothi.Size = new System.Drawing.Size(305, 32);
             this.lbTendothi.TabIndex = 4;
@@ -274,7 +360,6 @@
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.lbnhanso);
             this.panel2.Controls.Add(this.btDientinhhieu);
             this.panel2.Controls.Add(this.picChe);
             this.panel2.Controls.Add(this.chlstDapAn);
@@ -285,23 +370,14 @@
             this.panel2.Size = new System.Drawing.Size(1496, 272);
             this.panel2.TabIndex = 11;
             // 
-            // lbnhanso
-            // 
-            this.lbnhanso.AutoSize = true;
-            this.lbnhanso.Location = new System.Drawing.Point(762, 137);
-            this.lbnhanso.Name = "lbnhanso";
-            this.lbnhanso.Size = new System.Drawing.Size(44, 16);
-            this.lbnhanso.TabIndex = 18;
-            this.lbnhanso.Text = "label5";
-            // 
             // btDientinhhieu
             // 
             this.btDientinhhieu.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btDientinhhieu.Location = new System.Drawing.Point(1050, 72);
+            this.btDientinhhieu.Location = new System.Drawing.Point(814, 123);
             this.btDientinhhieu.Name = "btDientinhhieu";
-            this.btDientinhhieu.Size = new System.Drawing.Size(381, 44);
+            this.btDientinhhieu.Size = new System.Drawing.Size(179, 44);
             this.btDientinhhieu.TabIndex = 4;
-            this.btDientinhhieu.Text = "Bấm vào em đi ";
+            this.btDientinhhieu.Text = "Tiếp Theo";
             this.btDientinhhieu.UseVisualStyleBackColor = true;
             this.btDientinhhieu.Click += new System.EventHandler(this.btDientinhhieu_Click);
             // 
@@ -314,6 +390,15 @@
             this.picChe.Size = new System.Drawing.Size(1497, 318);
             this.picChe.TabIndex = 17;
             this.picChe.TabStop = false;
+            // 
+            // lbnhanso
+            // 
+            this.lbnhanso.AutoSize = true;
+            this.lbnhanso.Location = new System.Drawing.Point(1701, 830);
+            this.lbnhanso.Name = "lbnhanso";
+            this.lbnhanso.Size = new System.Drawing.Size(44, 16);
+            this.lbnhanso.TabIndex = 18;
+            this.lbnhanso.Text = "label5";
             // 
             // label2
             // 
@@ -413,47 +498,15 @@
             this.pictureBox2.TabIndex = 0;
             this.pictureBox2.TabStop = false;
             // 
-            // panelDienso
-            // 
-            this.panelDienso.Controls.Add(this.label3);
-            this.panelDienso.Controls.Add(this.pictureBo);
-            this.panelDienso.Location = new System.Drawing.Point(2, 13);
-            this.panelDienso.Name = "panelDienso";
-            this.panelDienso.Size = new System.Drawing.Size(1670, 623);
-            this.panelDienso.TabIndex = 26;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(24, 22);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(386, 29);
-            this.label3.TabIndex = 3;
-            this.label3.Text = "Bấm để Tiếp tục phần thực hành";
-            // 
-            // pictureBo
-            // 
-            this.pictureBo.Image = global::HoanThanhDangNhap.Properties.Resources._393686953_804231791391891_7366914710212052393_n;
-            this.pictureBo.Location = new System.Drawing.Point(496, 6);
-            this.pictureBo.Name = "pictureBo";
-            this.pictureBo.Size = new System.Drawing.Size(1539, 536);
-            this.pictureBo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBo.TabIndex = 0;
-            this.pictureBo.TabStop = false;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(1714, 791);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(44, 16);
-            this.label4.TabIndex = 27;
-            this.label4.Text = "label4";
-            // 
             // timer1
             // 
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
             // formHienThiBaiHoc3
             // 
@@ -462,10 +515,7 @@
             this.ClientSize = new System.Drawing.Size(1890, 950);
             this.Controls.Add(this.gbBox1);
             this.Controls.Add(this.panelWiring);
-            this.Controls.Add(this.panelDienso);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.bt1);
+            this.Controls.Add(this.lbnhanso);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.panel2);
@@ -492,9 +542,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panelWiring.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            this.panelDienso.ResumeLayout(false);
-            this.panelDienso.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -505,14 +552,12 @@
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
         private System.Windows.Forms.Button btnOK;
         private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button bt1;
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.Button buttonRight;
         private System.Windows.Forms.Button buttonLeft;
         private System.IO.Ports.SerialPort serCom;
-        private System.Windows.Forms.Label label1;
         private ZedGraph.ZedGraphControl zedGraphControl1;
         private System.Windows.Forms.Panel gbBox1;
         private System.Windows.Forms.TextBox txtQues;
@@ -528,14 +573,23 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Panel panelDienso;
-        private System.Windows.Forms.PictureBox pictureBo;
         private System.Windows.Forms.Button btChaydothi;
         private System.Windows.Forms.Label lbTendothi;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Timer timer1;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btDientinhhieu;
         private System.Windows.Forms.Label lbnhanso;
+        private System.Windows.Forms.TextBox txtNhietdo;
+        private System.Windows.Forms.TextBox txtOnoff;
+        private System.Windows.Forms.TextBox txtVon;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.TextBox txtDientro;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.TextBox txtIDLTT;
+       
     }
 }

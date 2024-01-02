@@ -323,7 +323,7 @@ namespace HoanThanhDangNhap
                 {
                     nonNullRowCount++; // =27 của chương1
                 }
-                bt1.Text = nonNullRowCount.ToString();//-----------------------------------------------------fix
+               
             }
             ////////////////
 
@@ -387,35 +387,7 @@ namespace HoanThanhDangNhap
             Marshal.ReleaseComObject(workbook);
             Marshal.ReleaseComObject(excel);
 
-            // Hien thi du lieu len form 
-           /*
-            if (fault != "0")           // phast hien co fault thi` gui di ne`
-            {
-                if (fault == faultTruoc)
-                {
-                    guiMaFault(fault);
-                    //MessageBox.Show("a");
-                }
-                else
-                {
-                    if (faultTruoc != "0")
-                    {
-                        guiMaFault("x");
-                        //MessageBox.Show("xoa loi");
-                        guiMaFault(fault);
-                        //MessageBox.Show("a");
-                    }
-                    else
-                    {
-                        guiMaFault(fault);
-                        //MessageBox.Show("a");
-                    }
-                }
-            }
-            else        // neu khong co thi` gui ma fault xoa fault
-            {
-                guiMaFault("x");
-            }*/
+            
 
             //---------------------------------------------------------------------------------------
             if (int.Parse(video) != 0)

@@ -371,9 +371,9 @@ namespace HoanThanhDangNhap
 
         private void formThucHanh_FormClosing(object sender, FormClosingEventArgs e)
         {
-           // guiMaFault("x");
-           // MessageBox.Show("het fault");// moi sua lại ////////////////////////////////
-        }
+            guiMaFault("x");
+           // MessageBox.Show("het fault");
+           }
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -398,7 +398,7 @@ namespace HoanThanhDangNhap
         private void btnNutDapAn_Click_1(object sender, EventArgs e)
         {
             KiemTraDapAn();
-           // guiMaFault("x");
+            guiMaFault("x");
             MessageBox.Show("het fault");// moi sủa lại ......................................
             chlst_comp.Visible = false;
             chlst_fault.Visible = false;

@@ -65,7 +65,7 @@ namespace HoanThanhDangNhap
                 //MessageBox.Show("chạy");
             }
             //----------------------------------------------------------------------
-            MessageBox.Show(TiendoActi.ToString());
+           // MessageBox.Show(TiendoActi.ToString());
             string[] arrActi = new string[TiendoActi];
             for (int i = 1; i <= TiendoActi; i++)
             {

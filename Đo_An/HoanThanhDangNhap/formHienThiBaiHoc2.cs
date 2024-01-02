@@ -326,7 +326,7 @@ namespace HoanThanhDangNhap
                 {
                     nonNullRowCount++; // =13 // đếm số câu (1,1).(2.2)
                 }
-                bt1.Text = nonNullRowCount.ToString();//-----------------------------------------------------fix
+               
             }
             ////////////////
 
@@ -531,39 +531,9 @@ namespace HoanThanhDangNhap
        
 
 
-        /*private void pictureBox3_Click(object sender, EventArgs e)
-        {
-            if (currentImageIndexVideo > 1)
-            {
-                currentImageIndexVideo--;
-                LoadImageVideo(currentImageIndexVideo);
-                LoadButtonsVideo(currentImageIndexVideo, buttonCountVideo);
-                NextPicVideo.Enabled = true;
-            }
-            if (currentImageIndexVideo == 1)
-            {
-                PrevPicVideo.Enabled = false;
-                pictureBox3.Enabled = false;
-            }
-        }
-
-        private void pictureBox4_Click(object sender, EventArgs e)
-        {
-            if (currentImageIndexVideo < maxImageIndexVideo)
-            {
-                currentImageIndexVideo++;
-                LoadImageVideo(currentImageIndexVideo);
-                LoadButtonsVideo(currentImageIndexVideo, buttonCountVideo);
-                PrevPicVideo.Enabled = true;
-            }
-            if (currentImageIndexVideo == maxImageIndexVideo)
-            {
-                NextPicVideo.Enabled = false;
-                pictureBox4.Enabled = false;
-                btnOK.Enabled = true;
-            }
-        }
-        */
+        
+       
+        
         private void guiMaFault(string ft)
         {
             serialPort1.Open();
@@ -615,7 +585,7 @@ namespace HoanThanhDangNhap
 
                 nActi++;
 
-                if (nActi <= (nonNullRowCount - 3)) // vừa sửa lại -2
+                if (nActi <= (nonNullRowCount - 3)) 
                 {
                     HienthiKhinhanOK(nActi);
                 }

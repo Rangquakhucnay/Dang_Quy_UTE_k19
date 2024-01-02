@@ -18,6 +18,8 @@ using ZedGraph;
 using System.Threading;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using System.Security.Cryptography;
+using System.Diagnostics.Eventing.Reader;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace HoanThanhDangNhap
 {
@@ -40,10 +42,23 @@ namespace HoanThanhDangNhap
         string madothi = "", tendothi = "";
         string chancb = "", check = "";
 
+        string dapanhienthi;
         int nonNullRowCount = 0;
         string rowEND;
-        int a = 0;
-       
+        int checka = 0;
+
+        string dapandung="";
+
+        string madau1, madau2, madau3, madau4;
+
+
+        string giatri1, giatri2, giatri3, giatri4;
+
+        string kk, dienabcd;
+
+        string VG, R_TH, t_TH ,TH;
+        string chonloaitinhhieu;
+
         // cac bien hien thi panel wiring
         private int currentImageIndex = 1;
         private int maxImageIndex;
@@ -101,12 +116,12 @@ namespace HoanThanhDangNhap
             myPanne.X2Axis.Scale.Min = 0; // giá trị min 
             myPanne.X2Axis.Scale.Max = 50; // giá trị max
             myPanne.X2Axis.Scale.MinorStep = 1;
-            myPanne.X2Axis.Scale.MajorStep = 2;
+            myPanne.X2Axis.Scale.MajorStep = 1;
 
             myPanne.YAxis.Scale.Min = 0;
             myPanne.YAxis.Scale.Max = 50;
             myPanne.YAxis.Scale.MinorStep = 1;
-            myPanne.YAxis.Scale.MajorStep = 2;
+            myPanne.YAxis.Scale.MajorStep = 1;
 
             zedGraphControl1.AxisChange();
 
@@ -187,7 +202,7 @@ namespace HoanThanhDangNhap
                 {
                     nonNullRowCount++; // =27 của chương1
                 }
-                bt1.Text = nonNullRowCount.ToString();//-----------------------------------------------------fix
+               
             }
             ////////////////
 
@@ -209,26 +224,37 @@ namespace HoanThanhDangNhap
                         cauhoi = range.Cells[row, 6].Value2.ToString();
                         dapanA = range.Cells[row, 7].Value2.ToString();
                         dapanB = range.Cells[row, 8].Value2.ToString();
-                        answer = range.Cells[row, 10].Value2.ToString();
                         dapanC = range.Cells[row, 9].Value2.ToString();
-                        fault  = range.Cells[row, 11].Value2.ToString();
-                        dapanD = range.Cells[row, 12].Value2.ToString();
-                        dien   = range.Cells[row, 13].Value2.ToString();
-                        box    = range.Cells[row, 14].Value2.ToString();
-                      tendothi = range.Cells[row, 15].Value2.ToString();
-                       madothi = range.Cells[row, 16].Value2.ToString();
-                        chancb = range.Cells[row, 17].Value2.ToString();
-                        check  = range.Cells[row, 18].Value2.ToString();
+                        dapanD = range.Cells[row, 10].Value2.ToString();
+
+                        answer = range.Cells[row, 11].Value2.ToString();
+                      
+                       
+
+                        box    = range.Cells[row, 12].Value2.ToString();// == 3 thì tách chuổi đồ thị đưa giá trị ra màng hình
+                      tendothi = range.Cells[row, 13].Value2.ToString();
+                       madothi  = range.Cells[row, 14].Value2.ToString();
+                        kk = range.Cells[row, 15].Value2.ToString();// =1
+
+                        chancb  = range.Cells[row, 16].Value2.ToString();// mã ký tự gửi xuống arduino để nhận lại giá trị điền vào abcd
+                        check   = range.Cells[row, 17].Value2.ToString();// tất cả check = 0 trừ khi nào đáp án cú NULL thì =1
+                        chonloaitinhhieu = range.Cells[row, 18].Value2.ToString();// chọn VG ,R_TH ,t_TH ,TH ứng với 1,2,3,4
+                        dienabcd = range.Cells[row, 19].Value2.ToString();// nếu ==1  sẽ lấy giá trị của arduino điền vô ABCD
+
+
+                        madau1 = range.Cells[row, 20].Value2.ToString();
+                        madau2 = range.Cells[row, 21].Value2.ToString();
+                        madau3 = range.Cells[row, 22].Value2.ToString();
+                        madau4 = range.Cells[row, 23].Value2.ToString();
+
+                        
+
+                        
 
                         //
-                        if (row > 2)
-                        {
-                            faultTruoc = range.Cells[row - 1, 18].Value2.ToString();
-                        }
+                       
                         //----------------------------------------------------------------------------------------------------------
-                        label1.Text = box.ToString();
-                        bt1.Text = dien.ToString();
-                        label4.Text = chuong.ToString();
+                       
                         // Xử lý dữ liệu tìm được ở đây
                     }
                     break; // Thoát khỏi vòng lặp nếu đã tìm thấy hàng cần tìm kiếm
@@ -259,58 +285,8 @@ namespace HoanThanhDangNhap
             Marshal.ReleaseComObject(workbook);
             Marshal.ReleaseComObject(excel);
 
-            // Hien thi du lieu len form 
-            /* if (fault != "0")           // phast hien co fault thi` gui di ne`
-             {
-                 if (fault == faultTruoc)
-                 {
-                    // guiMaFault(fault);
-                     //MessageBox.Show("a");
-                 }
-                 else
-                 {
-                     if (faultTruoc != "0")
-                     {
-                         guiMaFault("x");
-                         //MessageBox.Show("xoa loi");
-                         guiMaFault(fault);
-                         //MessageBox.Show("a");
-                     }
-                     else
-                     {
-                         guiMaFault(fault);
-                         //MessageBox.Show("a");
-                     }
-                 }
-             }
-             else        // neu khong co thi` gui ma fault xoa fault
-             {
-                 guiMaFault("x");
-             }*/
-
-            //---------------------------------------------------------------------------------------
-
-
-
-
-            /*
-                if (int.Parse(video) == 1)
-                {
-                   // panelVideo.Visible = true;
-                   // panelVideo.BringToFront();
-                    currentImageIndexVideo = 1;
-                   // HienThiVideo();
-                    btnOK.Enabled = false;
-                }
-                else
-                {
-                   // panelVideo.SendToBack();
-                   // panelVideo.Visible = false;
-                    btnOK.Enabled = true;
-                }
-
-            */
-            //=======================================================================================
+            
+            
             
             
             void check_null()
@@ -325,11 +301,15 @@ namespace HoanThanhDangNhap
                         {
                             
                             serCom.Write(chancb.ToString());
+                           
                         }
+
                         else
+
                         {
                             serCom.Open();
                             serCom.Write(chancb.ToString());
+                          
                         }
                       
 
@@ -337,16 +317,14 @@ namespace HoanThanhDangNhap
                         // Delay(1000);
                         // serCom.Close();
                        // answers[i] = alldata;
-                          a = i;
+                          checka = i;
                         break;
                     }
                    
                 }
               
             }
-            
-            
-            
+        
 
 
                 if (int.Parse(hide) == 1)
@@ -372,7 +350,7 @@ namespace HoanThanhDangNhap
                 //  btDientinhhieu.Visible = true;
 
                 check_null();
-
+               // MessageBox.Show("ddđ "+checka.ToString());
                 // Delay(1000);
                 
                 if (int.Parse(check) == 0)
@@ -382,21 +360,7 @@ namespace HoanThanhDangNhap
                     }
                 }
 
-                if (int.Parse(dien) == 2)
-            {
-
-                panelDienso.Visible = true ;
-                panelDienso.BringToFront();
-                pictureBox1.Visible = false;
-                btnOK.Enabled = true;
-
-            }
-                else
-            {
-                panelDienso.Visible = false;
-                pictureBox1.Visible = true;
-                // btnOK.Enabled = true;
-            }
+               
 
                 if (int.Parse(box) == 3)
                 {
@@ -426,8 +390,195 @@ namespace HoanThanhDangNhap
                 btnOK.Enabled = true;
                  }
         }
-        int tong = 0;
-        public void draw(double Line)
+        private void guiMaFault(string ft)
+        {
+            if (serCom.IsOpen )
+            {
+                serCom.Write(ft);
+                serCom.Close();
+            }
+            else 
+            {   serCom.Open();
+                serCom.Write(ft);
+                serCom.Close();
+            }
+            
+           
+        }
+        int count(string input)
+        {
+            char[] arr;
+            arr = input.ToCharArray();
+
+            return arr.Length;
+        }
+        void tachchuoidothi()
+        {
+            string input = alldata;
+
+            string substringToFind1 = madau1;
+
+            string substringToFind2 = madau2;
+
+            string substringToFind3 = madau3;
+
+            string substringToFind4 = madau4;
+
+
+            int index1 = input.IndexOf(substringToFind1);
+            int index2 = input.IndexOf(substringToFind2);
+            int index3 = input.IndexOf(substringToFind3);
+            int index4 = input.IndexOf(substringToFind4);
+
+            if (index1 != -1)
+            {
+
+                 giatri1 = alldata.Substring(index1 + count(madau1), 4);
+            }
+            if (index2 != -1)
+            {
+
+                 giatri2 = alldata.Substring(index2 + count(madau2), 4);
+            }
+            if (index3 != -1)
+            {
+
+                 giatri3 = alldata.Substring(index3 + count(madau3), 4);
+            }
+            if (index4 != -1)
+            {
+
+                 giatri4 = alldata.Substring(index4 + count(madau4), 4);
+            }
+            //=======================================================
+            if (int.Parse(kk) == 1)
+            {
+
+                Invoke(new MethodInvoker(() => draw1(Convert.ToDouble(giatri1)))); // in ra đồ thị
+                txtDientro.Text = giatri2;
+                txtNhietdo.Text = giatri3;//
+                txtVon.Text = giatri4;
+
+            }
+            else if (int.Parse(kk) == 2)
+            {
+                Invoke(new MethodInvoker(() => draw1(Convert.ToDouble(giatri1)))); // in ra đồ thị
+                Invoke(new MethodInvoker(() => draw2(Convert.ToDouble(giatri2))));
+
+            }
+            else if (int.Parse(kk) == 3)
+            {
+                Invoke(new MethodInvoker(() => draw1(Convert.ToDouble(giatri1))));
+                txtOnoff.Text = giatri2;
+                txtNhietdo.Text = giatri3;
+            }
+            else if (int.Parse(kk) == 4)
+            {
+                Invoke(new MethodInvoker(() => draw1(Convert.ToDouble(giatri4))));
+                txtIDLTT.Text = giatri4;
+            }
+            else if (int.Parse(kk) == 5)
+            {
+                Invoke(new MethodInvoker(() => draw1(Convert.ToDouble(giatri1))));
+
+            }
+        }
+        void tachchuoidienABCD()
+        {
+
+            string input = alldata;
+
+
+            string substringToFind1 = madau1;  //VG/GHH/HJJJ
+           //MessageBox.Show("madau1:"+madau1);
+
+
+            string substringToFind2 = madau2;
+           // MessageBox.Show("madau2:"+madau2);
+
+            string substringToFind3 = madau3;
+
+           // MessageBox.Show("madau3:"+madau3);
+
+            string substringToFind4 = madau4;
+           // MessageBox.Show("madau4:"+madau4);
+
+            int index1 = input.IndexOf(substringToFind1);
+             //MessageBox.Show("1== :"+index1);
+            int index2 = input.IndexOf(substringToFind2);
+            int index3 = input.IndexOf(substringToFind3);
+            int index4 = input.IndexOf(substringToFind4);
+
+
+            if (index1 != -1)
+            {
+                //  for (int i = 0; i < input.Length; i++)
+                /* char[] arr;
+                 arr = madau1.ToCharArray();
+
+                 int count = arr.Length;*/
+                
+                 // MessageBox.Show("count :"+count.ToString());
+
+                 giatri1 = alldata.Substring(index1+ count(madau1), 4);  //VGH    H2.0
+              // MessageBox.Show("1 :"+alldata.Substring(index1, 3));
+               // MessageBox.Show("1== :"+giatri1);
+
+            }
+            if (index2 != -1)
+            {
+                
+                // MessageBox.Show("count :"+count.ToString());
+                giatri2 = alldata.Substring(index2 + count(madau2), 4);
+               // MessageBox.Show("2 :"+index2.ToString());
+            }
+            if (index3 != -1)
+            {
+
+                 giatri3 = alldata.Substring(index3 + count(madau3), 4);
+              //  MessageBox.Show("3 :"+index3.ToString());
+            }
+            if (index4 != -1)
+            {
+
+                 giatri4 = alldata.Substring(index4 + count(madau4), 4);
+                 // MessageBox.Show("4 :"+index4.ToString());
+                // MessageBox.Show("1 :"+alldata.Substring(index4, 3));
+                // MessageBox.Show("1== :"+giatri4);
+
+            }
+
+            if (int.Parse(chonloaitinhhieu)==1)
+            {
+                dapandung = giatri1;
+              //  MessageBox.Show("dapan1:" + dapandung);
+            }
+            else if (int.Parse(chonloaitinhhieu) == 2)
+            {
+                dapandung= giatri2;
+               // MessageBox.Show("dapan2:" + dapandung);
+            }
+            else if (int.Parse(chonloaitinhhieu) == 3)
+            {
+                dapandung =giatri3;
+              //  MessageBox.Show("dapan3:" + dapandung);
+            }
+            else if(int.Parse(chonloaitinhhieu) ==4) 
+            { 
+                dapandung = giatri4;
+              //  MessageBox.Show("dapan4:" + dapandung);
+            }
+
+
+           // MessageBox.Show("dapan:"+dapandung);
+
+
+
+
+        }
+
+            int tong = 0;
+        public void draw1(double Line)
         {
             LineItem duongline = zedGraphControl1.GraphPane.CurveList[0] as LineItem;
             if (duongline == null)
@@ -445,6 +596,24 @@ namespace HoanThanhDangNhap
             zedGraphControl1.Invalidate();
             tong += 2;
         }
+        public void draw2(double Line)
+        {
+            LineItem duongline = zedGraphControl1.GraphPane.CurveList[0] as LineItem;
+            if (duongline == null)
+            {
+                return;
+            }
+            IPointListEdit list = duongline.Points as IPointListEdit;
+            if (list == null)
+            {
+                return;
+
+            }
+            list.Add(tong, Line);
+            zedGraphControl1.AxisChange();
+            zedGraphControl1.Invalidate();
+            tong += 1;
+        }
 
 
         private void serCom_DataReceived(object sender, SerialDataReceivedEventArgs e)
@@ -454,33 +623,37 @@ namespace HoanThanhDangNhap
             alldata = serCom.ReadLine();  // đọc dữ dữ liệu từ arduino   
             alldata = alldata.Trim();
             int lenght = alldata.Length;
-
-
+            
+           // MessageBox.Show(alldata);
             if (lenght > 0)
             {
-                // int     VTD= alldata.IndexOf('d');// T29.5DHIGH
-                // int     VTC= alldata.IndexOf('c');
-                // string temp = alldata.Substring(VTD+1 ,VTC-VTD -1 );
-                // textBox1.Text = alldata.Substring(VTD+1, VTC-VTD-1);
-                //textBox1.Text= temp;
+              //  MessageBox.Show(alldata);
+                if (int.Parse(box) == 3) 
+                {
+                    tachchuoidothi();
+                }
+                if (int.Parse(dienabcd) == 1)
+                {
+                    tachchuoidienABCD();
+                }
 
-                lbnhanso.Text = alldata;
                 // trong cái hàm nhận dữ liệu thì gán dữ liệu vựa tạo vào cái đương line 
-                Invoke(new MethodInvoker(() => draw(Convert.ToDouble(alldata)))); // in ra đồ thị
+              //  Invoke(new MethodInvoker(() => draw1(Convert.ToDouble(alldata)))); // in ra đồ thị
+
             }
-            // trong cái hàm nhận dữ liệu thì gán dữ liệu vựa tạo vào cái đương line 
-            // Invoke(new MethodInvoker(() => draw(Convert.ToDouble(alldata)))); // in ra đồ thị
+            
 
         }
         private void btDientinhhieu_Click(object sender, EventArgs e)
         {
             serCom.Close();
            // dapanD = lbnhanso.Text;
+
             string[] dsDA = { dapanA, dapanB, dapanC, dapanD };
-            dsDA[a] = lbnhanso.Text;
+            dsDA[checka] = dapandung;
             chlstDapAn.Items.AddRange(dsDA);
 
-            //MessageBox.Show(lbnhanso.Text);
+          // MessageBox.Show(lbnhanso.Text);
             btDientinhhieu.Visible = false;
         }
         
@@ -511,7 +684,7 @@ namespace HoanThanhDangNhap
         {
             int chuong = int.Parse(formDiToiBaiHoc3.sttChuongBaiHoc3);
             string fileName = System.Windows.Forms.Application.StartupPath + "\\Resources3\\Wiring\\" + $"wiring_c{chuong}" + "\\" + $"hinh{index}.png";
-            pictureBox2.Image = Image.FromFile(fileName);
+            pictureBox2.Image = System.Drawing.Image.FromFile(fileName);
             pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
         }
 
@@ -596,6 +769,9 @@ namespace HoanThanhDangNhap
                 };
             }
         }
+
+       
+
         private void TaoVaXuLyNut(int dodai)
         {
             // Tạo các nút mới
@@ -642,6 +818,7 @@ namespace HoanThanhDangNhap
                 buttons.ElementAt(v - 1).Enabled = true;
             }
         }
+
         private void Nut_Click(object sender, EventArgs e)
         {
             // Lấy ra nút được nhấn
@@ -656,7 +833,7 @@ namespace HoanThanhDangNhap
             if (giaTriNutSoNguyen == 1)
             {
                 // panelVideo.SendToBack();
-                // guiMaFault("x");
+                 guiMaFault("x");
                 HienThiWiring();
                 panelWiring.Visible = true;
                 panelWiring.BringToFront();
@@ -664,7 +841,7 @@ namespace HoanThanhDangNhap
             }
             else
             {
-                //  guiMaFault("x");
+                 guiMaFault("x");
                 HienThiBaiHoc(giaTriNutSoNguyen);
                 btnOK.Enabled = true;
                 panelWiring.Visible = false;
@@ -709,7 +886,8 @@ namespace HoanThanhDangNhap
 
         private void formHienThiBaiHoc_FormClosed(object sender, FormClosedEventArgs e)
         {
-           // guiMaFault("x");
+          
+          guiMaFault("x");
            if (serCom.IsOpen)
             {
                 serCom.Close();
@@ -720,8 +898,8 @@ namespace HoanThanhDangNhap
 
         private void button3_Click(object sender, EventArgs e)
         {
-          //
-          //guiMaFault("x");
+          
+          guiMaFault("x");
             this.Close();
         }
 
