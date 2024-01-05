@@ -69,14 +69,16 @@ namespace HoanThanhDangNhap
                 }
 
 
-                string[] parts = lastTiendo.Split(new[] { "va" }, StringSplitOptions.None);
+                string[] parts = lastTiendo.Split(new[] { "va" }, StringSplitOptions.None);// 11va4
                 lastChuong = int.Parse(parts[0]);
                 lastnActi = int.Parse(parts[1]);
 
-                int vitriCot = lastChuong -  5;
-                em = int.Parse(parts[0]) - 10;
+                int vitriCot = lastChuong+ 5;
 
-                string nlastChuong = em.ToString();
+                //em = int.Parse(parts[0]) ;
+
+                string nlastChuong = (lastChuong-5).ToString();  
+                
                 string nlastnActi = lastnActi.ToString();
                 SQLiteCommand command1 = new SQLiteCommand();
                 command1.CommandType = CommandType.Text;
@@ -87,6 +89,7 @@ namespace HoanThanhDangNhap
                 if (reader1.Read())
                 {
                     TiendoHoanthanhChuong = reader.GetInt32(vitriCot);
+                    //MessageBox.Show(TiendoHoanthanhChuong.ToString());
                 }
 
                 if (TiendoHoanthanhChuong < lastnActi)

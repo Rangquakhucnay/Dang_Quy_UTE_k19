@@ -405,21 +405,7 @@ namespace HoanThanhDangNhap
                 btnOK.Enabled = true;
             }
 
-            /*   if (int.Parse(box) != 0)
-               {
-                  GroupBox1.Visible = true;
-                   GroupBox1.BringToFront();
-
-
-                   btnOK.Enabled = true;
-               }
-               else
-               {
-                   GroupBox1.SendToBack();
-                   GroupBox1.Visible = false;
-                   btnOK.Enabled = true;
-               }
-            */
+           
             if (int.Parse(hide) == 1)
             {
                 picChe.BringToFront();

@@ -20,9 +20,9 @@ namespace HoanThanhDangNhap
             InitializeComponent();
 
             // Khai báo và khởi tạo một mảng kiểu double với giá trị ban đầu
-            int[] MaxActi = { 26, 15, 20, 15, 7, 8, 18 };
+            int[] MaxActi = { 39, 31, 74, 32 };
 
-            int[] nqtc = new int[7];
+            int[] nqtc = new int[28];
             SQLiteConnection conn = null;
             string strConn = string.Format(@"Data Source = {0}\DBLogin.db;Version=3;", Application.StartupPath);
             string SvCanXemTienDo = Properties.Settings.Default.TenDangNhapALL;
@@ -44,15 +44,16 @@ namespace HoanThanhDangNhap
             if (reader.Read())
             {
                 ten = reader.GetString(1);
-                for (int i = 0; i <= 6; i++)
+                for (int i = 1; i <= 28; i++)
                 {
-                    if (reader.IsDBNull(i+6))
+                    if (reader.IsDBNull(i+5))
                     {
-                        nqtc[i] = 0;
+                        nqtc[i-1] = 0;
                     }
                     else
                     {
-                        nqtc[i] = reader.GetInt32(i+6);
+                        nqtc[i-1] = reader.GetInt32(i+5);
+                       // MessageBox.Show(nqtc[i-1].ToString());
                     }
                     
                 }
@@ -66,31 +67,55 @@ namespace HoanThanhDangNhap
             //string message = string.Join(", ", nqtc);
             //MessageBox.Show(message);
             TienDoHocTap.ChartAreas["ChartArea1"].AxisX.Interval = 1;
-            
-            /*
-            int[] nActiTungChuong = new int[16];
-            nActiTungChuong = { }
-            for (int i = 0; i <= 15; i++)
+
+          //  MessageBox.Show(nqtc[22].ToString());
+            for (int i = 1; i <= 4; i++)
             {
-                string chapterName = "Chương" + (i + 1).ToString();
-                int chapterProgress = nqtc[i]/nActiTungChuong[i]*100 ;
-                int numActivities = 100;
+                int tong=0;
+                string chapterName = "Phần " + (i).ToString();
+                //  MessageBox.Show(chapterName);
+                //===========================================================================
 
-                TienDoHocTap.Series["Tiến độ hiện tại"].Points.AddXY(chapterName, chapterProgress);
-                TienDoHocTap.Series["Số hoạt động của chương"].Points.AddXY(chapterName, numActivities);
-
-                TienDoHocTap.Series["Tiến độ hiện tại"].ChartType = SeriesChartType.StackedColumn;
-                TienDoHocTap.Series["Số hoạt động của chương"].ChartType = SeriesChartType.StackedColumn;
-
-                TienDoHocTap.Series["Số hoạt động của chương"].SetCustomProperty("StackedGroupName", "Tiến độ hiện tại");
-            }
-            */
-            for (int i = 0; i <= 6; i++)
-            {
-                string chapterName = "Chương" + (i + 1).ToString();
-                int chapterProgress = nqtc[i];
+                if (i == 1)
+                {
+                   //tong = 0;
+                    for (int j = 0; j <= 4; j++)
+                    {
+                        tong =tong+ nqtc[j];
+                    }
+                  //  MessageBox.Show(tong.ToString());
+                }
+                if (i == 2)
+                {//tong = 0;
+                    for (int j = 5; j <= 8; j++)
+                    {
+                        tong += nqtc[j];
+                    }
+                  // MessageBox.Show(tong.ToString());
+                }
+                if (i == 3)
+                {
+                   // tong = 0;
+                    for (int j = 9; j <= 22; j++)
+                    {
+                        tong =tong + nqtc[j];
+                    }
+                 //   MessageBox.Show(tong.ToString());
+                }
+                if (i == 4)
+                {
+                  // tong = 0;
+                    for (int j = 23; j <= 27; j++)
+                    {
+                        tong += nqtc[j];
+                    }
+                 //   MessageBox.Show(tong.ToString());
+                }
+                int chapterProgress = tong ;
+              //  MessageBox.Show(chapterProgress.ToString());
+               // MessageBox.Show(MaxActi[i-1].ToString());
                 //int numActivities = MaxActi[i] - chapterProgress;
-                double percentComplete = (double)chapterProgress / (double)MaxActi[i] * 100.0;
+                double percentComplete = (double)chapterProgress / (double)MaxActi[i-1] * 100.0;
 
                 TienDoHocTap.Series["Số hoạt động đã học"].Points.AddXY(chapterName, percentComplete);
                 TienDoHocTap.Series["Số hoạt động còn lại"].Points.AddXY(chapterName, 100.0 - percentComplete);

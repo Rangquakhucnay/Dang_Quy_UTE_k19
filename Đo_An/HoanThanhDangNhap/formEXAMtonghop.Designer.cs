@@ -242,13 +242,15 @@
             // 
             // btTieptuc
             // 
+            this.btTieptuc.BackColor = System.Drawing.Color.Linen;
             this.btTieptuc.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btTieptuc.ForeColor = System.Drawing.Color.Red;
             this.btTieptuc.Location = new System.Drawing.Point(125, 734);
             this.btTieptuc.Name = "btTieptuc";
             this.btTieptuc.Size = new System.Drawing.Size(155, 64);
             this.btTieptuc.TabIndex = 36;
             this.btTieptuc.Text = "Tiếp Tục";
-            this.btTieptuc.UseVisualStyleBackColor = true;
+            this.btTieptuc.UseVisualStyleBackColor = false;
             this.btTieptuc.Click += new System.EventHandler(this.btTieptuc_Click);
             // 
             // pictureBox2

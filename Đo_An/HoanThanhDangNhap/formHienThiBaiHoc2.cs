@@ -612,7 +612,7 @@ namespace HoanThanhDangNhap
                 command1.Connection = conn;
                 command1.Parameters.AddWithValue("@tendn", tendangnhapform1);
 
-                string lastTiendo = vitriCot.ToString() + "va" + nActi.ToString();
+                string lastTiendo = linh.ToString() + "va" + nActi.ToString();
 
                 SQLiteDataReader reader = command1.ExecuteReader();
                 if (reader.Read())

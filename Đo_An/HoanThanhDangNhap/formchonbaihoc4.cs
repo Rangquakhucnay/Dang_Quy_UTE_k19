@@ -67,9 +67,10 @@ namespace HoanThanhDangNhap
                 lastChuong = int.Parse(parts[0]);
                 lastnActi = int.Parse(parts[1]);
 
-                int vitriCot = lastChuong - 5;
-                em = int.Parse(parts[0]) - 32;
-                string nlastChuong = em.ToString();
+                int vitriCot = lastChuong + 5;
+
+               // em = int.Parse(parts[0]) - 32;
+                string nlastChuong = (lastChuong-23).ToString();
                 string nlastnActi = lastnActi.ToString();
                 SQLiteCommand command1 = new SQLiteCommand();
                 command1.CommandType = CommandType.Text;

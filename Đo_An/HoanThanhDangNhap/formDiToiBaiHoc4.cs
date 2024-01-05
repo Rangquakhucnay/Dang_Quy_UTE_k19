@@ -41,7 +41,7 @@ namespace HoanThanhDangNhap
             cbSoActiBH.Enabled = true;
             string tendangnhapform1 = Properties.Settings.Default.TenDangNhapALL;
             int chuongBH = int.Parse(cbSttChuongBH.Text);
-            int DinhviCot = chuongBH + 32;  //+19+13 là vì thứ tự cột bên database
+            int DinhviCot = chuongBH + 27;  //+5 5 4 13 là vì thứ tự cột bên database
             SQLiteConnection conn = null;
             string strConn = string.Format(@"Data Source = {0}\DBLogin.db;Version=3;", System.Windows.Forms.Application.StartupPath);
             if (conn == null)
@@ -49,7 +49,7 @@ namespace HoanThanhDangNhap
             if (conn.State == ConnectionState.Closed)
             {
                 conn.Open();
-                //MessageBox.Show("Đã kết nối");
+                //ageBoxMess.Show("Đã kết nối");
             }
             SQLiteCommand command = new SQLiteCommand();
             command.CommandType = CommandType.Text;

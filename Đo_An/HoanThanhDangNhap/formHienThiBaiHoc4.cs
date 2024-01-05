@@ -323,7 +323,6 @@ namespace HoanThanhDangNhap
                 {
                     nonNullRowCount++; // =27 của chương1
                 }
-                bt1.Text = nonNullRowCount.ToString();//-----------------------------------------------------fix
             }
             ////////////////
 
@@ -352,12 +351,7 @@ namespace HoanThanhDangNhap
 
 
 
-                        //
-                        if (row > 2)
-                        {
-                            faultTruoc = range.Cells[row - 1, 11].Value2.ToString();
-                        }
-                        //
+                      
 
                         // Xử lý dữ liệu tìm được ở đây
                     }
@@ -388,36 +382,8 @@ namespace HoanThanhDangNhap
             Marshal.ReleaseComObject(worksheet);
             Marshal.ReleaseComObject(workbook);
             Marshal.ReleaseComObject(excel);
-/*
-            // Hien thi du lieu len form 
-            if (fault != "0")           // phast hien co fault thi` gui di ne`
-            {
-                if (fault == faultTruoc)
-                {
-                    guiMaFault(fault);
-                    //MessageBox.Show("a");
-                }
-                else
-                {
-                    if (faultTruoc != "0")
-                    {
-                        guiMaFault("x");
-                        //MessageBox.Show("xoa loi");
-                        guiMaFault(fault);
-                        //MessageBox.Show("a");
-                    }
-                    else
-                    {
-                        guiMaFault(fault);
-                        //MessageBox.Show("a");
-                    }
-                }
-            }
-            else        // neu khong co thi` gui ma fault xoa fault
-            {
-                guiMaFault("x");
-            } */
 
+            
             //---------------------------------------------------------------------------------------
             if (int.Parse(video) != 0)
             {
@@ -434,21 +400,7 @@ namespace HoanThanhDangNhap
                 btnOK.Enabled = true;
             }
 
-            /*   if (int.Parse(box) != 0)
-               {
-                  GroupBox1.Visible = true;
-                   GroupBox1.BringToFront();
-
-
-                   btnOK.Enabled = true;
-               }
-               else
-               {
-                   GroupBox1.SendToBack();
-                   GroupBox1.Visible = false;
-                   btnOK.Enabled = true;
-               }
-            */
+            
             if (int.Parse(hide) == 1)
             {
                 picChe.BringToFront();
@@ -562,49 +514,7 @@ namespace HoanThanhDangNhap
             }
         }
 
-
-
-
-
-        /*private void pictureBox3_Click(object sender, EventArgs e)
-        {
-            if (currentImageIndexVideo > 1)
-            {
-                currentImageIndexVideo--;
-                LoadImageVideo(currentImageIndexVideo);
-                LoadButtonsVideo(currentImageIndexVideo, buttonCountVideo);
-                NextPicVideo.Enabled = true;
-            }
-            if (currentImageIndexVideo == 1)
-            {
-                PrevPicVideo.Enabled = false;
-                pictureBox3.Enabled = false;
-            }
-        }
-
-        private void pictureBox4_Click(object sender, EventArgs e)
-        {
-            if (currentImageIndexVideo < maxImageIndexVideo)
-            {
-                currentImageIndexVideo++;
-                LoadImageVideo(currentImageIndexVideo);
-                LoadButtonsVideo(currentImageIndexVideo, buttonCountVideo);
-                PrevPicVideo.Enabled = true;
-            }
-            if (currentImageIndexVideo == maxImageIndexVideo)
-            {
-                NextPicVideo.Enabled = false;
-                pictureBox4.Enabled = false;
-                btnOK.Enabled = true;
-            }
-        }
-        */
-        private void guiMaFault(string ft)
-        {
-           // serialPort1.Open();
-            //serialPort1.Write(ft);
-           // serialPort1.Close();
-        }
+       
         private void btnOK_Click(object sender, EventArgs e)
         {
             // Bật nút chuyển ảnh lên
@@ -650,7 +560,7 @@ namespace HoanThanhDangNhap
 
                 nActi++;
 
-                if (nActi <= (nonNullRowCount - 3)) // vừa sửa lại -2
+                if (nActi <= (nonNullRowCount - 3)) 
                 {
                     HienthiKhinhanOK(nActi);
                 }
@@ -666,9 +576,9 @@ namespace HoanThanhDangNhap
                 conn.Open();
 
                 string tendangnhapform1 = Properties.Settings.Default.TenDangNhapALL;
-            
-                int vitriCot = chuong + 32;
-                int linh = chuong + 27;
+
+                int vitriCot = chuong + 28;
+                int linh = chuong + 23;
                 string truycapCot = "nqtc" + linh.ToString();
 
                 SQLiteCommand command1 = new SQLiteCommand();
@@ -677,7 +587,7 @@ namespace HoanThanhDangNhap
                 command1.Connection = conn;
                 command1.Parameters.AddWithValue("@tendn", tendangnhapform1);
 
-                string lastTiendo = vitriCot.ToString() + "va" + nActi.ToString();
+                string lastTiendo = linh.ToString() + "va" + nActi.ToString();
 
                 SQLiteDataReader reader = command1.ExecuteReader();
                 if (reader.Read())

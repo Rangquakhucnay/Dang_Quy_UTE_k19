@@ -69,7 +69,7 @@ namespace HoanThanhDangNhap
         // các biến để lưu kí tự excel lấy được
         string KituFault, Ma;
      
-        string dapan1, dapan2, hinh, hinh2, comp1, comp2;
+        string dapan1, dapan2, hinh1, hinh2, comp1, comp2;
         string yeucau1,yeucau2;
 
         // các biến để tạo lỗi
@@ -134,9 +134,9 @@ namespace HoanThanhDangNhap
                     {
 
 
-                        hinh2  = range.Cells[row,7].Value2.ToString();
-                        yeucau1 = range.Cells[row, 9].Value2.ToString();
-                        yeucau2 = range.Cells[row, 10].Value2.ToString();
+                        hinh1  = range.Cells[row,7].Value2.ToString();
+                        yeucau1 = range.Cells[row, 10].Value2.ToString();
+                        yeucau2 = range.Cells[row, 11].Value2.ToString();
 
                         // Xử lý dữ liệu tìm được ở đây
                     }
@@ -155,7 +155,7 @@ namespace HoanThanhDangNhap
 
 
 
-             pictureBox2.Image = new Bitmap(System.Windows.Forms.Application.StartupPath + hinh2);
+             pictureBox2.Image = new Bitmap(System.Windows.Forms.Application.StartupPath + hinh1);
 
              pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage; // để hình vừa với khung picturebox
 
@@ -205,8 +205,8 @@ namespace HoanThanhDangNhap
                         dapan2 = range.Cells[row, 3].Value2.ToString();
 
                         KituFault = range.Cells[row, 5].Value2.ToString();
-                        hinh = range.Cells[row, 6].Value2.ToString();
-                        hinh2 = range.Cells[row, 7].Value2.ToString();
+                        hinh1 = range.Cells[row, 7].Value2.ToString();
+                        hinh2 = range.Cells[row, 6].Value2.ToString();
 
                          comp1 = range.Cells[row, 8].Value2.ToString();
                          comp2 = range.Cells[row, 9].Value2.ToString();
@@ -228,7 +228,7 @@ namespace HoanThanhDangNhap
             Marshal.ReleaseComObject(workbook);
             Marshal.ReleaseComObject(excel);
 
-            pictureBox1.Image = new Bitmap(System.Windows.Forms.Application.StartupPath + hinh);
+            pictureBox1.Image = new Bitmap(System.Windows.Forms.Application.StartupPath + hinh2);
             
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage; // để hình vừa với khung picturebox
 
@@ -289,6 +289,7 @@ namespace HoanThanhDangNhap
             lblTenChuong.AutoSize = true;
             lblTenChuong.MaximumSize = new Size(220, 0); // 0 để setting chiều cao là không giới hạn
             lblTenChuong.TextAlign = ContentAlignment.MiddleCenter;
+            rtb_Yeucau.Clear();
 
             // load fault 
             LoadFault();// radom
@@ -299,6 +300,7 @@ namespace HoanThanhDangNhap
 
            
             string textToAdd = yeucau1;
+          //  MessageBox.Show("khi bấm chọn chương"+yeucau1);
             rtb_Yeucau.AppendText(textToAdd);
                 
         }

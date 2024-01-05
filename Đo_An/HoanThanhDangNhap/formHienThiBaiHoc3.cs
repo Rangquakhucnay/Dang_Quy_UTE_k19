@@ -27,7 +27,7 @@ namespace HoanThanhDangNhap
     {
         // Khai báo các giá trị sử dụng
 
-
+       
 
         // 1. sử dụng cho hiển thị bài học
         string dapanA = "", dapanB = "", dapanC = "", dapanD = "";
@@ -55,6 +55,7 @@ namespace HoanThanhDangNhap
         string giatri1, giatri2, giatri3, giatri4;
 
         string kk, dienabcd;
+        string line1="", line2="";
 
         string VG, R_TH, t_TH ,TH;
         string chonloaitinhhieu;
@@ -72,6 +73,7 @@ namespace HoanThanhDangNhap
         public formHienThiBaiHoc3()
         {
             InitializeComponent();
+           // InitializeGraph();
             double scale = 0.95; // Thiết lập tỷ lệ kích thước của Form so với kích thước màn hình
             Screen screen = Screen.PrimaryScreen;
             int width = (int)(screen.Bounds.Width * scale);
@@ -91,39 +93,30 @@ namespace HoanThanhDangNhap
         private void formHienThiBaiHoc_Load(object sender, EventArgs e)        {
             serCom.PortName = LoginStudent.tenCOM;
             serCom.BaudRate = LoginStudent.giatribaudrate;
-            //serCom.Open();
+            this.ControlBox = false;
+          //
+          //serCom.Open();
+          giatriLine1.Visible = false;
+            giatriLine2.Visible = false;
+
             btDientinhhieu.Visible = false;
-            lbnhanso.Visible = false;
+
+
+            von.Visible = false;
+            nhietdo.Visible = false;
+            dientro.Visible = false;
+            vantruoc.Visible = false;
+            IDLTT.Visible = false;
+            PA.Visible = false;
             //-------------------------------------------------------------------------------------------------------------
-          //  MessageBox.Show(LoginStudent.tenCOM.ToString());
-          //  MessageBox.Show(LoginStudent.giatribaudrate.ToString());
+            //  MessageBox.Show(LoginStudent.tenCOM.ToString());
+            //  MessageBox.Show(LoginStudent.giatribaudrate.ToString());
 
             panelWiring.Visible = false;// ẩn panel wiring lúc bật lên
                                         // panelVideo.Visible = false; //panel Video hiển thị bài học
                                         //groupBox1.Visible =false
 
-              // khởi tạo biểu đồ
-            GraphPane myPanne = zedGraphControl1.GraphPane;
-            myPanne.Title.Text = "Giá Trị Nhiệt Độ";
-            myPanne.YAxis.Title.Text = "Giá Trị";
-            myPanne.XAxis.Title.Text = "Thời Gian";
-
-
-            RollingPointPairList List = new RollingPointPairList(500000);
-
-            LineItem Line = myPanne.AddCurve("Nhiệt độ", List, Color.Red, SymbolType.Diamond);
-
-            myPanne.X2Axis.Scale.Min = 0; // giá trị min 
-            myPanne.X2Axis.Scale.Max = 50; // giá trị max
-            myPanne.X2Axis.Scale.MinorStep = 1;
-            myPanne.X2Axis.Scale.MajorStep = 1;
-
-            myPanne.YAxis.Scale.Min = 0;
-            myPanne.YAxis.Scale.Max = 50;
-            myPanne.YAxis.Scale.MinorStep = 1;
-            myPanne.YAxis.Scale.MajorStep = 1;
-
-            zedGraphControl1.AxisChange();
+            
 
             //-------------------------------------------------------------------------fix
             if (nActi == 1)
@@ -246,15 +239,17 @@ namespace HoanThanhDangNhap
                         madau2 = range.Cells[row, 21].Value2.ToString();
                         madau3 = range.Cells[row, 22].Value2.ToString();
                         madau4 = range.Cells[row, 23].Value2.ToString();
+                        line1  = range.Cells[row, 24].Value2.ToString();
+                        line2  = range.Cells[row, 25].Value2.ToString();
 
-                        
 
-                        
+
+
 
                         //
-                       
+
                         //----------------------------------------------------------------------------------------------------------
-                       
+
                         // Xử lý dữ liệu tìm được ở đây
                     }
                     break; // Thoát khỏi vòng lặp nếu đã tìm thấy hàng cần tìm kiếm
@@ -364,17 +359,49 @@ namespace HoanThanhDangNhap
 
                 if (int.Parse(box) == 3)
                 {
-                     serCom.Open();
-                   //  btDientinhhieu.Visible= false;  
-                    lbTendothi.Text = tendothi;
+                // khởi tạo biểu đồ
+                GraphPane myPanne = zedGraphControl1.GraphPane;
+                myPanne.Title.Text = tendothi;
+                myPanne.YAxis.Title.Text = "Giá Trị";
+                myPanne.XAxis.Title.Text = "Thời Gian";
+
+
+                RollingPointPairList List1 = new RollingPointPairList(500000);
+                RollingPointPairList List2 = new RollingPointPairList(500000);
+
+                LineItem duongline1 = myPanne.AddCurve(line1, List1, Color.Red, SymbolType.None);
+                LineItem duongline2 = myPanne.AddCurve(line2, List2, Color.YellowGreen, SymbolType.None);
+                myPanne.X2Axis.Scale.Min = 0; // giá trị min 
+                myPanne.X2Axis.Scale.Max = 100; // giá trị max
+                myPanne.X2Axis.Scale.MinorStep = 1;
+                myPanne.X2Axis.Scale.MajorStep = 5;
+
+                myPanne.YAxis.Scale.Min = 0;
+                myPanne.YAxis.Scale.Max = 10;
+                myPanne.YAxis.Scale.MinorStep = 0.01;
+                myPanne.YAxis.Scale.MajorStep = 1;
+
+                zedGraphControl1.AxisChange();
+                // serCom.Open();
+                //  btDientinhhieu.Visible= false;  
+               // lbTendothi.Text = tendothi;
                     pictureBox1.Visible = false;
+               
                     //pictureBox1.SendToBack();
                     panelWiring.Visible = false;
                     rtb_Baihoc.Visible = false;
                     gbBox1.Visible = true;
                     gbBox1.BringToFront();
                 //  button1.Text = "nnnnnn";
-                serCom.Write(madothi.ToString());
+                if (serCom.IsOpen)
+                {
+                    serCom.Write(madothi.ToString()); 
+                }
+                else { 
+                    serCom.Open();
+                    serCom.Write(madothi.ToString());
+                      }
+
                     btnOK.Enabled = true;
                 
                 
@@ -389,6 +416,8 @@ namespace HoanThanhDangNhap
                 gbBox1.Visible = false;
                 btnOK.Enabled = true;
                  }
+
+
         }
         private void guiMaFault(string ft)
         {
@@ -405,6 +434,7 @@ namespace HoanThanhDangNhap
             
            
         }
+
         int count(string input)
         {
             char[] arr;
@@ -412,8 +442,10 @@ namespace HoanThanhDangNhap
 
             return arr.Length;
         }
+
         void tachchuoidothi()
-        {
+        {   
+          
             string input = alldata;
 
             string substringToFind1 = madau1;
@@ -426,6 +458,7 @@ namespace HoanThanhDangNhap
 
 
             int index1 = input.IndexOf(substringToFind1);
+
             int index2 = input.IndexOf(substringToFind2);
             int index3 = input.IndexOf(substringToFind3);
             int index4 = input.IndexOf(substringToFind4);
@@ -454,35 +487,69 @@ namespace HoanThanhDangNhap
             if (int.Parse(kk) == 1)
             {
 
-                Invoke(new MethodInvoker(() => draw1(Convert.ToDouble(giatri1)))); // in ra đồ thị
+                Invoke(new MethodInvoker(() => draw1(Convert.ToDouble(giatri1) ))); // in ra đồ thị
+                giatriLine1.Visible = true;
                 txtDientro.Text = giatri2;
                 txtNhietdo.Text = giatri3;//
                 txtVon.Text = giatri4;
-
+                dientro.Visible = true;
+                nhietdo.Visible = true;
+                von.Visible = true;
+                txtGiatri1.Visible = true;
+                txtGiatri1.Text = giatri1;
             }
             else if (int.Parse(kk) == 2)
             {
-                Invoke(new MethodInvoker(() => draw1(Convert.ToDouble(giatri1)))); // in ra đồ thị
-                Invoke(new MethodInvoker(() => draw2(Convert.ToDouble(giatri2))));
-
+              
+                 Invoke(new MethodInvoker(() => draw2(Convert.ToDouble(giatri1),Convert.ToDouble(giatri2) )));
+                giatriLine1.Visible = true;
+                giatriLine2.Visible = true;
+                lbGiatridothi1.Visible = true;
+                lbGiatridothi2.Visible = true;
+                txtGiatri1.Visible = true;
+                txtGiatri2.Visible = true;
+                txtGiatri1.Text = giatri1;
+                txtGiatri2.Text = giatri2;
+              
             }
             else if (int.Parse(kk) == 3)
             {
                 Invoke(new MethodInvoker(() => draw1(Convert.ToDouble(giatri1))));
+                giatriLine1.Visible = true;
+                lbGiatridothi1.Visible=true;
+                txtGiatri1.Visible=true;
+
+                txtGiatri1.Text=giatri1;
+
                 txtOnoff.Text = giatri2;
+                vantruoc.Visible = true;
                 txtNhietdo.Text = giatri3;
+                nhietdo.Visible = true;
+
             }
             else if (int.Parse(kk) == 4)
             {
-                Invoke(new MethodInvoker(() => draw1(Convert.ToDouble(giatri4))));
-                txtIDLTT.Text = giatri4;
+                Invoke(new MethodInvoker(() => draw1(Convert.ToDouble(giatri1))));
+                giatriLine1.Visible = true;
+
+                lbGiatridothi1.Visible = true;
+                txtGiatri1.Visible = true;
+                txtGiatri1.Text = giatri1;
+
+                txtIDLTT.Text = giatri2;
+                IDLTT.Visible = true;
             }
             else if (int.Parse(kk) == 5)
             {
-                Invoke(new MethodInvoker(() => draw1(Convert.ToDouble(giatri1))));
+                Invoke(new MethodInvoker(() => draw1(Convert.ToDouble(giatri1))));  
+                giatriLine1.Visible = true;
+                lbGiatridothi1.Visible = true;
+                txtGiatri1.Visible = true;
+                txtGiatri1.Text = giatri1;
 
             }
         }
+
         void tachchuoidienABCD()
         {
 
@@ -568,35 +635,59 @@ namespace HoanThanhDangNhap
                 dapandung = giatri4;
               //  MessageBox.Show("dapan4:" + dapandung);
             }
-
-
            // MessageBox.Show("dapan:"+dapandung);
-
-
-
-
         }
 
-            int tong = 0;
-        public void draw1(double Line)
+        void tatmo()
         {
-            LineItem duongline = zedGraphControl1.GraphPane.CurveList[0] as LineItem;
-            if (duongline == null)
-            {
-                return;
-            }
-            IPointListEdit list = duongline.Points as IPointListEdit;
-            if (list == null)
-            {
-                return;
+            lbGiatridothi1.Visible = false;
+            lbGiatridothi2.Visible = false;
+            txtGiatri1.Visible = false;
+            txtGiatri2.Visible = false;
+            tong = 0;
+        }
 
+        private void btReset_Click(object sender, EventArgs e)
+        {
+            reset();
+        }
+
+        void reset()
+        {
+            //using ZedGraph;
+
+            // Lấy đối tượng GraphPane từ zedGraphControl1
+            GraphPane graphPane = zedGraphControl1.GraphPane;
+
+            // Lấy danh sách đường cong từ GraphPane
+            CurveList curveList = graphPane.CurveList;
+
+            // Duyệt qua từng đường cong trong danh sách
+            foreach (CurveItem curve in curveList)
+            {
+                // Lấy danh sách điểm của đường cong
+                IPointListEdit pointList = curve.Points as IPointListEdit;
+
+                // Xóa tất cả các điểm trong danh sách
+                pointList.Clear();
             }
-            list.Add(tong, Line);
+
+            // Gọi AxisChange để cập nhật trục
             zedGraphControl1.AxisChange();
+
+            // Vẽ lại đồ thị
             zedGraphControl1.Invalidate();
-            tong += 2;
+            tong = 0;
         }
-        public void draw2(double Line)
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            
+        }
+
+        int tong = 0;
+
+        public void draw1(double Line1)
         {
             LineItem duongline = zedGraphControl1.GraphPane.CurveList[0] as LineItem;
             if (duongline == null)
@@ -609,10 +700,47 @@ namespace HoanThanhDangNhap
                 return;
 
             }
-            list.Add(tong, Line);
+            list.Add(tong, Line1);
             zedGraphControl1.AxisChange();
             zedGraphControl1.Invalidate();
             tong += 1;
+        }
+        // Invoke(new MethodInvoker(() => draw1(Convert.ToDouble(giatri1)))); 
+        
+        public void draw2(double line1,double line2)
+        {
+            LineItem duongline1 = zedGraphControl1.GraphPane.CurveList[0] as LineItem;
+            LineItem duongline2 = zedGraphControl1.GraphPane.CurveList[1] as LineItem;
+            if (duongline1 == null)
+            {
+                return;
+            }
+            if (duongline2 == null)
+            {
+                return;
+            }
+            IPointListEdit list1 = duongline1.Points as IPointListEdit;
+            IPointListEdit list2 = duongline2.Points as IPointListEdit;
+            if (list1 == null)
+            {
+                return;
+
+            }
+            if (list2 == null)
+            {
+                return;
+
+            }
+            list1.Add(tong, line1);
+            list2.Add(tong, line2);
+            zedGraphControl1.AxisChange();
+            zedGraphControl1.Invalidate();
+            tong += 1;
+           /* if (txtdien.Text == "1")
+            {
+                list1.Clear();
+                list2.Clear();
+            }*/
         }
 
 
@@ -625,7 +753,7 @@ namespace HoanThanhDangNhap
             int lenght = alldata.Length;
             
            // MessageBox.Show(alldata);
-            if (lenght > 0)
+            if (lenght > 0 && serCom.IsOpen)
             {
               //  MessageBox.Show(alldata);
                 if (int.Parse(box) == 3) 
@@ -644,16 +772,17 @@ namespace HoanThanhDangNhap
             
 
         }
+
         private void btDientinhhieu_Click(object sender, EventArgs e)
         {
             serCom.Close();
-           // dapanD = lbnhanso.Text;
-
+            string[] dsDA1 = { "A. ", "B. ", "C. ", "D. " };
+            
             string[] dsDA = { dapanA, dapanB, dapanC, dapanD };
-            dsDA[checka] = dapandung;
+            dsDA[checka] = dsDA1[checka]+ dapandung;
             chlstDapAn.Items.AddRange(dsDA);
 
-          // MessageBox.Show(lbnhanso.Text);
+          
             btDientinhhieu.Visible = false;
         }
         
@@ -664,6 +793,7 @@ namespace HoanThanhDangNhap
             LoadButtonsWiring(currentImageIndex, buttonCount);
             picChe.BringToFront(); //pic che hiện lên để che cái chỗ câu hỏi
         }
+
         private void HienThiGroupBox()
         {
             panelWiring.Visible = true;
@@ -770,8 +900,6 @@ namespace HoanThanhDangNhap
             }
         }
 
-       
-
         private void TaoVaXuLyNut(int dodai)
         {
             // Tạo các nút mới
@@ -854,6 +982,7 @@ namespace HoanThanhDangNhap
             buttonLeft.Enabled = true;
             buttonRight.Enabled = true;
         }
+
         private void HienThiVideo()
         {
             // lấy số hình có trong video đó
@@ -901,9 +1030,12 @@ namespace HoanThanhDangNhap
           
           guiMaFault("x");
             this.Close();
+            if (serCom.IsOpen)
+            {
+                serCom.Close();
+            }
+            LuuTiendo();
         }
-
-        
 
         private void chlstDapAn_ItemCheck(object sender, ItemCheckEventArgs e)
         {
@@ -916,13 +1048,6 @@ namespace HoanThanhDangNhap
                 }
             }
         }
-
-        
-
-        private void timer1_Tick(object sender, EventArgs e)
-        {
-
-        }
         
         private void btnOK_Click(object sender, EventArgs e)
         {
@@ -933,7 +1058,7 @@ namespace HoanThanhDangNhap
             //-------------------------
             if (nActi == 1)
             {
-                HienthiKhinhanOK(2);
+                HienthiKhinhanOK(1);
                 nActi++;
                 HienThiBaiHoc(nActi);
             }
@@ -949,9 +1074,11 @@ namespace HoanThanhDangNhap
                 {
                     CheckDapAn();
                     HienThiBaiHoc(nActi);
+
                 }
             }
         }
+
         private void CheckDapAn()
         {
             if (chlstDapAn.Text == "")
@@ -969,12 +1096,13 @@ namespace HoanThanhDangNhap
 
                 nActi++;
 
-                if (nActi <= (nonNullRowCount - 3)) // vừa sửa lại -2
+                if (nActi <= (nonNullRowCount - 3)) 
                 {
                     HienthiKhinhanOK(nActi);
                 }
             }
         }
+
         private void LuuTiendo()
         {
             SQLiteConnection conn = null;
@@ -987,8 +1115,8 @@ namespace HoanThanhDangNhap
                 string tendangnhapform1 = Properties.Settings.Default.TenDangNhapALL;
               //  string truycapCot = "nqtc" + chuong.ToString();
                 //--------------------------------------------------------------------------------------------------------------------------fix
-                int vitriCot = chuong + 19;
-                int linh = chuong + 14; 
+                int vitriCot = chuong + 14;
+                int linh = chuong + 9; 
                 string truycapCot = "nqtc" + linh.ToString();
 
                 SQLiteCommand command1 = new SQLiteCommand();
@@ -997,7 +1125,7 @@ namespace HoanThanhDangNhap
                 command1.Connection = conn;
                 command1.Parameters.AddWithValue("@tendn", tendangnhapform1);
 
-                string lastTiendo = vitriCot.ToString() + "va" + nActi.ToString();
+                string lastTiendo = linh.ToString() + "va" + nActi.ToString();
 
                 SQLiteDataReader reader = command1.ExecuteReader();
                 if (reader.Read())
@@ -1050,6 +1178,7 @@ namespace HoanThanhDangNhap
                 conn.Close();
                 conn.Dispose();
             }
+          //  serCom.Close();
         }
 
         private void buttonLeft_Click(object sender, EventArgs e)  // nút tiến wiring

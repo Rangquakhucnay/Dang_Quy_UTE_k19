@@ -41,7 +41,7 @@ namespace HoanThanhDangNhap
         {
             int lastChuong = 0;
             int lastnActi = 0;
-            int em = 0;
+            //int em = 0;
             int TiendoHoanthanhChuong = 0;
             string lastTiendo = "";
             SQLiteConnection conn = null;
@@ -63,17 +63,17 @@ namespace HoanThanhDangNhap
                     lastTiendo = reader.GetString(41);
                 }
                 //------------------------------------------------------------------------------------------------20va3
-               MessageBox.Show(lastTiendo);
+              // MessageBox.Show(lastTiendo);
 
-                string[] parts = lastTiendo.Split(new[] { "va" }, StringSplitOptions.None); // gồm 2 vị trí 0 và 1
-                lastChuong = int.Parse(parts[0]);// 20
-                lastnActi = int.Parse(parts[1]);// 3
-                em = int.Parse(parts[0])-19;
+                string[] parts = lastTiendo.Split(new[] { "va" }, StringSplitOptions.None); //10va5
+                lastChuong = int.Parse(parts[0]);// 10
+                lastnActi = int.Parse(parts[1]);// 5
+               // em = int.Parse(parts[0])-19;
 
-                int vitriCot = lastChuong + 5;/////////////////////////////////////////////////////////////////15
+                int vitriCot = lastChuong + 5;
 
-                string nlastChuong = em.ToString();//20
-                string nlastnActi = lastnActi.ToString();//3
+                string nlastChuong = (lastChuong-9).ToString();//10-9=1
+                string nlastnActi = lastnActi.ToString();//5
                 SQLiteCommand command1 = new SQLiteCommand();
                 command1.CommandType = CommandType.Text;
                 command1.CommandText = "select * from ThongTinSinhVien where TenDangNhap=@tendn";
