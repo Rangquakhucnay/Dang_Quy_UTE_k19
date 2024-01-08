@@ -32,7 +32,6 @@
             this.btnNutDapAn = new System.Windows.Forms.Button();
             this.btThoat = new System.Windows.Forms.Button();
             this.btTaode = new System.Windows.Forms.Button();
-            this.lbYeucau = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.chlst_fault = new System.Windows.Forms.CheckedListBox();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -48,11 +47,13 @@
             this.btTieptuc = new System.Windows.Forms.Button();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.picChe = new System.Windows.Forms.PictureBox();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picChe)).BeginInit();
             this.SuspendLayout();
             // 
             // btnNutDapAn
@@ -88,18 +89,6 @@
             this.btTaode.Text = "Tạo đề";
             this.btTaode.UseVisualStyleBackColor = true;
             this.btTaode.Click += new System.EventHandler(this.btTaode_Click);
-            // 
-            // lbYeucau
-            // 
-            this.lbYeucau.AutoSize = true;
-            this.lbYeucau.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.lbYeucau.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbYeucau.ForeColor = System.Drawing.Color.Black;
-            this.lbYeucau.Location = new System.Drawing.Point(396, -1);
-            this.lbYeucau.Name = "lbYeucau";
-            this.lbYeucau.Size = new System.Drawing.Size(389, 32);
-            this.lbYeucau.TabIndex = 32;
-            this.lbYeucau.Text = "Hãy đấu dây theo mạch sau";
             // 
             // panel3
             // 
@@ -270,11 +259,20 @@
             this.pictureBox1.TabIndex = 30;
             this.pictureBox1.TabStop = false;
             // 
+            // picChe
+            // 
+            this.picChe.Location = new System.Drawing.Point(395, 646);
+            this.picChe.Name = "picChe";
+            this.picChe.Size = new System.Drawing.Size(1029, 292);
+            this.picChe.TabIndex = 39;
+            this.picChe.TabStop = false;
+            // 
             // formEXAMtonghop
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1560, 1055);
+            this.Controls.Add(this.picChe);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.rtb_Yeucau);
             this.Controls.Add(this.btnNutDapAn);
@@ -283,7 +281,6 @@
             this.Controls.Add(this.btTieptuc);
             this.Controls.Add(this.btTaode);
             this.Controls.Add(this.btnNutTaoFault);
-            this.Controls.Add(this.lbYeucau);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.pictureBox1);
@@ -301,8 +298,8 @@
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picChe)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -311,7 +308,6 @@
         private System.Windows.Forms.Button btnNutDapAn;
         private System.Windows.Forms.Button btThoat;
         private System.Windows.Forms.Button btTaode;
-        private System.Windows.Forms.Label lbYeucau;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.CheckedListBox chlst_fault;
         private System.Windows.Forms.Panel panel2;
@@ -327,5 +323,6 @@
         private System.Windows.Forms.RichTextBox rtb_Yeucau;
         private System.Windows.Forms.Button btTieptuc;
         private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox picChe;
     }
 }

@@ -126,12 +126,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="dothi.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="dothi.Designer.cs">
-      <DependentUpon>dothi.cs</DependentUpon>
-    </Compile>
     <Compile Include="formChonBaiHoc.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -267,9 +261,6 @@
     <Compile Include="TienDoSV.Designer.cs">
       <DependentUpon>TienDoSV.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="dothi.resx">
-      <DependentUpon>dothi.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="formChonBaiHoc.resx">
       <DependentUpon>formChonBaiHoc.cs</DependentUpon>
     </EmbeddedResource>
@@ -369,6 +360,10 @@
     <None Include="Resources\electronics_repair_01_whitebg.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\z5051326105418_ba70c676bb66d0b15aa168e64ece78af.jpg" />
+    <None Include="Resources\z5051201367705_2e5866ce79104c56ed2c2f1b2bc42c31.jpg" />
+    <None Include="Resources\z5051189230262_ea1778e955ed0bc9803d2279a9bc0d95.jpg" />
+    <None Include="Resources\z5051125485181_4fd396214e9f85aba7799898e3eb7a65.jpg" />
     <None Include="Resources\z4961865012401_5e6dbbab7d1f6362a41553782ee89cd01.jpg" />
     <None Include="Resources\z4961865012401_5e6dbbab7d1f6362a41553782ee89cd0.jpg" />
     <None Include="Resources\logout.png" />

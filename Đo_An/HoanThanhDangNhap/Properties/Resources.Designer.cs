@@ -459,5 +459,45 @@ namespace HoanThanhDangNhap.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap z5051125485181_4fd396214e9f85aba7799898e3eb7a65 {
+            get {
+                object obj = ResourceManager.GetObject("z5051125485181_4fd396214e9f85aba7799898e3eb7a65", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap z5051189230262_ea1778e955ed0bc9803d2279a9bc0d95 {
+            get {
+                object obj = ResourceManager.GetObject("z5051189230262_ea1778e955ed0bc9803d2279a9bc0d95", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap z5051201367705_2e5866ce79104c56ed2c2f1b2bc42c31 {
+            get {
+                object obj = ResourceManager.GetObject("z5051201367705_2e5866ce79104c56ed2c2f1b2bc42c31", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap z5051326105418_ba70c676bb66d0b15aa168e64ece78af {
+            get {
+                object obj = ResourceManager.GetObject("z5051326105418_ba70c676bb66d0b15aa168e64ece78af", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }

@@ -46,7 +46,7 @@ namespace HoanThanhDangNhap
                     txtMaLoi.Text = string.Empty;
                     return;
                 }
-
+                MessageBox.Show("Đã Tạo Pan: " + txtMaLoi.Text);
                 switch (int.Parse(txtMaLoi.Text))
                 {
                     case 1:
@@ -110,8 +110,8 @@ namespace HoanThanhDangNhap
                     case 20:
                         guiMaFault("p20");
                         break;
-                    
-                        
+
+                       
                     default:
                         MessageBox.Show("Vui lòng nhập đúng mã lỗi có trong danh sách");
                         break;
@@ -130,6 +130,7 @@ namespace HoanThanhDangNhap
             else
             {
                 guiMaFault("x");
+                MessageBox.Show("Đã Xóa Lỗi!");
             }
         }
 

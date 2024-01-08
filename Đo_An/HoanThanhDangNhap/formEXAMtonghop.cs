@@ -84,7 +84,7 @@ namespace HoanThanhDangNhap
 
         private void btnNutTaoFault_Click(object sender, EventArgs e)
         {
-            lbYeucau.Visible = true;
+            //lbYeucau.Visible = true;
             btNopbai.Visible = true;
             demCauHoi = 1;
             btnNutTaoFault.Text = "Câu 1";
@@ -103,7 +103,7 @@ namespace HoanThanhDangNhap
         }
         private void btTieptuc_Click(object sender, EventArgs e)
         {
-           
+            picChe.Visible = false;
             btTieptuc.Visible=false;
             LoadHinh();
             pictureBox2.Visible = true;
@@ -272,6 +272,7 @@ namespace HoanThanhDangNhap
             }
             else { MessageBox.Show("Đáp án Sai"); }
             XoaCheck();
+            picChe.Visible = true;
         }
 
         private void formEXAMtonghop_FormClosing(object sender, FormClosingEventArgs e)
@@ -369,7 +370,8 @@ namespace HoanThanhDangNhap
             serialPort1.BaudRate = LoginStudent.giatribaudrate;
 
             // modify things
-            lbYeucau.Visible = false;
+            //  lbYeucau.Visible = false;
+            picChe.Visible = true;
             btNopbai.Visible = false;
             btnNutDapAn.Visible = false;
             chlst_comp.Visible = false;

@@ -67,7 +67,7 @@ namespace HoanThanhDangNhap
         private void pictureBox1_Click(object sender, EventArgs e)
         {
             //this.Hide();
-            Form1 f = new Form1();
+           taoaccount f = new taoaccount();
             f.ShowDialog();
         }
     }

@@ -1720,7 +1720,6 @@ D:\Đăng_Quý_UTE_K19\Dang_Quy_UTE_k19\Đo_An\HoanThanhDangNhap\obj\Debug\HoanT
 D:\Đăng_Quý_UTE_K19\Dang_Quy_UTE_k19\Đo_An\HoanThanhDangNhap\obj\Debug\HoanThanhDangNhap.formchonbaihoc3.resources
 D:\Đăng_Quý_UTE_K19\Đo_An\HoanThanhDangNhap\obj\Debug\HoanThanhDangNhap.csproj.AssemblyReference.cache
 D:\Đăng_Quý_UTE_K19\Đo_An\HoanThanhDangNhap\obj\Debug\HoanThanhDangNhap.csproj.ResolveComReference.cache
-D:\Đăng_Quý_UTE_K19\Đo_An\HoanThanhDangNhap\obj\Debug\HoanThanhDangNhap.dothi.resources
 D:\Đăng_Quý_UTE_K19\Đo_An\HoanThanhDangNhap\obj\Debug\HoanThanhDangNhap.formChonBaiHoc.resources
 D:\Đăng_Quý_UTE_K19\Đo_An\HoanThanhDangNhap\obj\Debug\HoanThanhDangNhap.formChonBaiHoc2.resources
 D:\Đăng_Quý_UTE_K19\Đo_An\HoanThanhDangNhap\obj\Debug\HoanThanhDangNhap.formchonbaihoc3.resources

@@ -63,7 +63,7 @@
             this.groupBox1.Controls.Add(this.txtTenLopMoi);
             this.groupBox1.Controls.Add(this.NutThemLop);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Font = new System.Drawing.Font("Quicksand", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(31, 12);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(429, 181);
@@ -73,15 +73,15 @@
             // 
             // txtTenLopMoi
             // 
-            this.txtTenLopMoi.Font = new System.Drawing.Font("Quicksand", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTenLopMoi.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTenLopMoi.Location = new System.Drawing.Point(120, 58);
             this.txtTenLopMoi.Name = "txtTenLopMoi";
-            this.txtTenLopMoi.Size = new System.Drawing.Size(294, 41);
+            this.txtTenLopMoi.Size = new System.Drawing.Size(294, 38);
             this.txtTenLopMoi.TabIndex = 5;
             // 
             // NutThemLop
             // 
-            this.NutThemLop.Font = new System.Drawing.Font("Quicksand", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NutThemLop.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.NutThemLop.Location = new System.Drawing.Point(240, 118);
             this.NutThemLop.Name = "NutThemLop";
             this.NutThemLop.Size = new System.Drawing.Size(174, 44);
@@ -93,16 +93,16 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Quicksand", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(6, 56);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(117, 41);
+            this.label2.Size = new System.Drawing.Size(117, 32);
             this.label2.TabIndex = 4;
             this.label2.Text = "Tên lớp:";
             // 
             // NutXoaLop
             // 
-            this.NutXoaLop.Font = new System.Drawing.Font("Quicksand", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NutXoaLop.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.NutXoaLop.Location = new System.Drawing.Point(286, 904);
             this.NutXoaLop.Name = "NutXoaLop";
             this.NutXoaLop.Size = new System.Drawing.Size(174, 50);
@@ -117,7 +117,7 @@
             this.columnHeader3,
             this.columnHeader4,
             this.columnHeader5});
-            this.lvDanhSachLop.Font = new System.Drawing.Font("Quicksand", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lvDanhSachLop.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lvDanhSachLop.FullRowSelect = true;
             this.lvDanhSachLop.GridLines = true;
             this.lvDanhSachLop.HideSelection = false;
@@ -146,7 +146,7 @@
             // 
             // NutXoa
             // 
-            this.NutXoa.Font = new System.Drawing.Font("Quicksand", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NutXoa.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.NutXoa.Location = new System.Drawing.Point(1253, 904);
             this.NutXoa.Name = "NutXoa";
             this.NutXoa.Size = new System.Drawing.Size(260, 50);
@@ -169,7 +169,7 @@
             this.groupBox2.Controls.Add(this.NutThem);
             this.groupBox2.Controls.Add(this.label1);
             this.groupBox2.Controls.Add(this.txtTensinhvienmoi);
-            this.groupBox2.Font = new System.Drawing.Font("Quicksand", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(1567, 249);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(435, 576);
@@ -201,7 +201,7 @@
             // 
             this.txtLopmoi.Location = new System.Drawing.Point(199, 285);
             this.txtLopmoi.Name = "txtLopmoi";
-            this.txtLopmoi.Size = new System.Drawing.Size(225, 36);
+            this.txtLopmoi.Size = new System.Drawing.Size(225, 34);
             this.txtLopmoi.TabIndex = 7;
             // 
             // label5
@@ -209,7 +209,7 @@
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(6, 285);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(91, 34);
+            this.label5.Size = new System.Drawing.Size(92, 29);
             this.label5.TabIndex = 8;
             this.label5.Text = "Mã lớp:";
             // 
@@ -217,7 +217,7 @@
             // 
             this.txtMatkhaumoi.Location = new System.Drawing.Point(199, 214);
             this.txtMatkhaumoi.Name = "txtMatkhaumoi";
-            this.txtMatkhaumoi.Size = new System.Drawing.Size(225, 36);
+            this.txtMatkhaumoi.Size = new System.Drawing.Size(225, 34);
             this.txtMatkhaumoi.TabIndex = 5;
             // 
             // label4
@@ -225,7 +225,7 @@
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(6, 214);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(118, 34);
+            this.label4.Size = new System.Drawing.Size(115, 29);
             this.label4.TabIndex = 6;
             this.label4.Text = "Mật khẩu:";
             // 
@@ -233,7 +233,7 @@
             // 
             this.txtTendangnhapmoi.Location = new System.Drawing.Point(199, 145);
             this.txtTendangnhapmoi.Name = "txtTendangnhapmoi";
-            this.txtTendangnhapmoi.Size = new System.Drawing.Size(225, 36);
+            this.txtTendangnhapmoi.Size = new System.Drawing.Size(225, 34);
             this.txtTendangnhapmoi.TabIndex = 3;
             // 
             // label3
@@ -241,7 +241,7 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(6, 145);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(177, 34);
+            this.label3.Size = new System.Drawing.Size(181, 29);
             this.label3.TabIndex = 4;
             this.label3.Text = "Tên đăng nhập:";
             // 
@@ -260,7 +260,7 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(6, 72);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(153, 34);
+            this.label1.Size = new System.Drawing.Size(162, 29);
             this.label1.TabIndex = 1;
             this.label1.Text = "Tên sinh viên:";
             // 
@@ -268,7 +268,7 @@
             // 
             this.txtTensinhvienmoi.Location = new System.Drawing.Point(199, 72);
             this.txtTensinhvienmoi.Name = "txtTensinhvienmoi";
-            this.txtTensinhvienmoi.Size = new System.Drawing.Size(225, 36);
+            this.txtTensinhvienmoi.Size = new System.Drawing.Size(225, 34);
             this.txtTensinhvienmoi.TabIndex = 0;
             // 
             // lvLop
@@ -276,7 +276,7 @@
             this.lvLop.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader1,
             this.columnHeader2});
-            this.lvLop.Font = new System.Drawing.Font("Quicksand", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lvLop.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lvLop.FullRowSelect = true;
             this.lvLop.GridLines = true;
             this.lvLop.HideSelection = false;
@@ -300,7 +300,7 @@
             // 
             // NutDangXuat
             // 
-            this.NutDangXuat.Font = new System.Drawing.Font("Quicksand SemiBold", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NutDangXuat.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.NutDangXuat.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.NutDangXuat.Location = new System.Drawing.Point(1368, 83);
             this.NutDangXuat.Name = "NutDangXuat";
@@ -310,7 +310,7 @@
             this.NutDangXuat.UseVisualStyleBackColor = true;
             this.NutDangXuat.Click += new System.EventHandler(this.button2_Click);
             // 
-            // LoginAd
+            // taoaccount
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -324,7 +324,7 @@
             this.Controls.Add(this.NutXoaLop);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
-            this.Name = "LoginAd";
+            this.Name = "taoaccount";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Thông tin sinh viên";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;

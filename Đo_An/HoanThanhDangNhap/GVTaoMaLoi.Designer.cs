@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.txtMaLoi = new System.Windows.Forms.TextBox();
             this.NutTaoLoi = new System.Windows.Forms.Button();
             this.NutXoaLoi = new System.Windows.Forms.Button();
@@ -42,26 +41,17 @@
             this.listcom = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.NutThoat = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::HoanThanhDangNhap.Properties.Resources._4bec8af5784caaf4779c842f4047eba9;
-            this.pictureBox1.Location = new System.Drawing.Point(38, 1);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(814, 815);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
             // 
             // txtMaLoi
             // 
@@ -79,7 +69,7 @@
             this.NutTaoLoi.Name = "NutTaoLoi";
             this.NutTaoLoi.Size = new System.Drawing.Size(156, 56);
             this.NutTaoLoi.TabIndex = 2;
-            this.NutTaoLoi.Text = "Tạo lỗi";
+            this.NutTaoLoi.Text = "Tạo PAN";
             this.NutTaoLoi.UseVisualStyleBackColor = true;
             this.NutTaoLoi.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -90,7 +80,7 @@
             this.NutXoaLoi.Name = "NutXoaLoi";
             this.NutXoaLoi.Size = new System.Drawing.Size(156, 56);
             this.NutXoaLoi.TabIndex = 3;
-            this.NutXoaLoi.Text = "Xóa lỗi";
+            this.NutXoaLoi.Text = "Reset";
             this.NutXoaLoi.UseVisualStyleBackColor = true;
             this.NutXoaLoi.Click += new System.EventHandler(this.NutXoaLoi_Click);
             // 
@@ -101,7 +91,7 @@
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.NutTaoLoi);
             this.panel1.Controls.Add(this.txtMaLoi);
-            this.panel1.Location = new System.Drawing.Point(886, 419);
+            this.panel1.Location = new System.Drawing.Point(908, 422);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(503, 187);
             this.panel1.TabIndex = 4;
@@ -129,7 +119,7 @@
             this.panel2.Controls.Add(this.label5);
             this.panel2.Controls.Add(this.label4);
             this.panel2.Controls.Add(this.label3);
-            this.panel2.Location = new System.Drawing.Point(886, 31);
+            this.panel2.Location = new System.Drawing.Point(908, 34);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(503, 336);
             this.panel2.TabIndex = 5;
@@ -185,16 +175,6 @@
             this.label6.TabIndex = 4;
             this.label6.Text = "Cổng COM";
             // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = global::HoanThanhDangNhap.Properties.Resources.Iconsmind_Outline_Information_512;
-            this.pictureBox2.Location = new System.Drawing.Point(16, 17);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(48, 41);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 1;
-            this.pictureBox2.TabStop = false;
-            // 
             // label5
             // 
             this.label5.AutoSize = true;
@@ -229,20 +209,40 @@
             // NutThoat
             // 
             this.NutThoat.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NutThoat.Location = new System.Drawing.Point(1059, 672);
+            this.NutThoat.Location = new System.Drawing.Point(1080, 673);
             this.NutThoat.Name = "NutThoat";
             this.NutThoat.Size = new System.Drawing.Size(156, 71);
             this.NutThoat.TabIndex = 6;
-            this.NutThoat.Text = "Thoát";
+            this.NutThoat.Text = "EXIT";
             this.NutThoat.UseVisualStyleBackColor = true;
             this.NutThoat.Click += new System.EventHandler(this.NutThoat_Click);
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::HoanThanhDangNhap.Properties.Resources.Iconsmind_Outline_Information_512;
+            this.pictureBox2.Location = new System.Drawing.Point(16, 17);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(48, 41);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 1;
+            this.pictureBox2.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::HoanThanhDangNhap.Properties.Resources.z5051189230262_ea1778e955ed0bc9803d2279a9bc0d95;
+            this.pictureBox1.Location = new System.Drawing.Point(12, 2);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(868, 870);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
             // 
             // GVTaoMaLoi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1422, 884);
+            this.ClientSize = new System.Drawing.Size(1448, 884);
             this.Controls.Add(this.NutThoat);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
@@ -254,12 +254,12 @@
             this.Text = "Giảng viên tạo mã lỗi";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.GVTaoMaLoi_FormClosed);
             this.Load += new System.EventHandler(this.GVTaoMaLoi_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
