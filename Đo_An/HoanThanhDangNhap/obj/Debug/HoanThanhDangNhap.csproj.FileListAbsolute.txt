@@ -1677,7 +1677,6 @@ D:\Đăng_Quý_UTE_K19\Dang_Quy_UTE_k19\Đo_An\HoanThanhDangNhap\obj\Debug\HoanT
 D:\Đăng_Quý_UTE_K19\Dang_Quy_UTE_k19\Đo_An\HoanThanhDangNhap\obj\Debug\HoanThanhDangNhap.formChonBaiHoc.resources
 D:\Đăng_Quý_UTE_K19\Dang_Quy_UTE_k19\Đo_An\HoanThanhDangNhap\obj\Debug\HoanThanhDangNhap.formDiToiBaiHoc.resources
 D:\Đăng_Quý_UTE_K19\Dang_Quy_UTE_k19\Đo_An\HoanThanhDangNhap\obj\Debug\HoanThanhDangNhap.formDiToiBaiHoc2.resources
-D:\Đăng_Quý_UTE_K19\Dang_Quy_UTE_k19\Đo_An\HoanThanhDangNhap\obj\Debug\HoanThanhDangNhap.formExam.resources
 D:\Đăng_Quý_UTE_K19\Dang_Quy_UTE_k19\Đo_An\HoanThanhDangNhap\obj\Debug\HoanThanhDangNhap.formEXAMtonghop.resources
 D:\Đăng_Quý_UTE_K19\Dang_Quy_UTE_k19\Đo_An\HoanThanhDangNhap\obj\Debug\HoanThanhDangNhap.formGV.resources
 D:\Đăng_Quý_UTE_K19\Dang_Quy_UTE_k19\Đo_An\HoanThanhDangNhap\obj\Debug\HoanThanhDangNhap.formHienThiBaiHoc.resources
@@ -1715,7 +1714,6 @@ D:\Đăng_Quý_UTE_K19\Dang_Quy_UTE_k19\Đo_An\HoanThanhDangNhap\bin\Debug\sv\Ze
 D:\Đăng_Quý_UTE_K19\Dang_Quy_UTE_k19\Đo_An\HoanThanhDangNhap\bin\Debug\tr\ZedGraph.resources.dll
 D:\Đăng_Quý_UTE_K19\Dang_Quy_UTE_k19\Đo_An\HoanThanhDangNhap\bin\Debug\zh-cn\ZedGraph.resources.dll
 D:\Đăng_Quý_UTE_K19\Dang_Quy_UTE_k19\Đo_An\HoanThanhDangNhap\bin\Debug\zh-tw\ZedGraph.resources.dll
-D:\Đăng_Quý_UTE_K19\Dang_Quy_UTE_k19\Đo_An\HoanThanhDangNhap\obj\Debug\HoanThanhDangNhap.dothi.resources
 D:\Đăng_Quý_UTE_K19\Dang_Quy_UTE_k19\Đo_An\HoanThanhDangNhap\obj\Debug\HoanThanhDangNhap.formHienThiBaiHoc4.resources
 D:\Đăng_Quý_UTE_K19\Dang_Quy_UTE_k19\Đo_An\HoanThanhDangNhap\obj\Debug\HoanThanhDangNhap.formchonbaihoc3.resources
 D:\Đăng_Quý_UTE_K19\Đo_An\HoanThanhDangNhap\obj\Debug\HoanThanhDangNhap.csproj.AssemblyReference.cache
