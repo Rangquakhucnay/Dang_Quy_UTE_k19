@@ -181,9 +181,7 @@
   <data name="Icons8-Ios7-Arrows-Forward.512" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Icons8-Ios7-Arrows-Forward.512.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="So do fault" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\bin\Debug\Resources\So do fault.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
+  
   <data name="z5051189230262_ea1778e955ed0bc9803d2279a9bc0d95" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\z5051189230262_ea1778e955ed0bc9803d2279a9bc0d95.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>

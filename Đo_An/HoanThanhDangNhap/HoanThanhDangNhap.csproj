@@ -360,12 +360,7 @@
     <None Include="Resources\electronics_repair_01_whitebg.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\z5051326105418_ba70c676bb66d0b15aa168e64ece78af.jpg" />
-    <None Include="Resources\z5051201367705_2e5866ce79104c56ed2c2f1b2bc42c31.jpg" />
     <None Include="Resources\z5051189230262_ea1778e955ed0bc9803d2279a9bc0d95.jpg" />
-    <None Include="Resources\z5051125485181_4fd396214e9f85aba7799898e3eb7a65.jpg" />
-    <None Include="Resources\z4961865012401_5e6dbbab7d1f6362a41553782ee89cd01.jpg" />
-    <None Include="Resources\z4961865012401_5e6dbbab7d1f6362a41553782ee89cd0.jpg" />
     <None Include="Resources\logout.png" />
     <None Include="Resources\Icons8-Ios7-Arrows-Forward.512.png" />
     <None Include="Resources\Icons8-Ios7-Arrows-Back.512.png" />
@@ -379,7 +374,6 @@
     <None Include="Resources\Picture11.png" />
     <None Include="Resources\Picture111.png" />
     <None Include="Resources\Picture12.png" />
-    <None Include="Resources\MachFAULT.png" />
     <None Include="Resources\Picture3.png" />
     <None Include="Resources\Picture4.png" />
     <None Include="Resources\Picture41.png" />
@@ -387,11 +381,7 @@
     <None Include="Resources\daynhiet.png" />
     <None Include="Resources\cam-bien-luu-luong-khi-nap.jpeg" />
     <None Include="Resources\Screenshot 2023-12-08 153203.png" />
-    <None Include="Resources\formkt.png" />
     <None Include="Resources\nutchonformkt.png" />
-    <None Include="Resources\hinhformkt.jpg" />
-    <None Include="Resources\4bec8af5784caaf4779c842f4047eba9.jpg" />
-    <None Include="Resources\393686953_804231791391891_7366914710212052393_n.jpg" />
     <Content Include="Resources\test\hinh1.png" />
     <Content Include="Resources\test\hinh10.png" />
     <Content Include="Resources\test\hinh11.png" />
@@ -423,8 +413,6 @@
     <Content Include="Resources\hinh anh c6\relay working animation.gif" />
     <Content Include="Resources\icon\unvisible eyes.png" />
     <Content Include="Resources\icon\visible-icon-13.jpg" />
-    <Content Include="Resources\mach c6.png" />
-    <Content Include="Resources\mach trang.jpg" />
     <None Include="Resources\visible-icon-13.jpg" />
   </ItemGroup>
   <ItemGroup>
