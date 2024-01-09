@@ -41,11 +41,32 @@
             this.serCom = new System.IO.Ports.SerialPort(this.components);
             this.zedGraphControl1 = new ZedGraph.ZedGraphControl();
             this.gbBox1 = new System.Windows.Forms.Panel();
-            this.btReset = new System.Windows.Forms.Button();
-            this.txtGiatri2 = new System.Windows.Forms.TextBox();
-            this.txtGiatri1 = new System.Windows.Forms.TextBox();
+            this.giatriLine2 = new System.Windows.Forms.Panel();
             this.lbGiatridothi2 = new System.Windows.Forms.Label();
+            this.txtGiatri2 = new System.Windows.Forms.TextBox();
+            this.giatriLine1 = new System.Windows.Forms.Panel();
             this.lbGiatridothi1 = new System.Windows.Forms.Label();
+            this.txtGiatri1 = new System.Windows.Forms.TextBox();
+            this.nhietdo = new System.Windows.Forms.Panel();
+            this.txtNhietdo = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.dientro = new System.Windows.Forms.Panel();
+            this.label9 = new System.Windows.Forms.Label();
+            this.txtDientro = new System.Windows.Forms.TextBox();
+            this.vantruoc = new System.Windows.Forms.Panel();
+            this.label6 = new System.Windows.Forms.Label();
+            this.txtOnoff = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.IDLTT = new System.Windows.Forms.Panel();
+            this.txtIDLTT = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.PA = new System.Windows.Forms.Panel();
+            this.txtPA = new System.Windows.Forms.TextBox();
+            this.adsad = new System.Windows.Forms.Label();
+            this.von = new System.Windows.Forms.Panel();
+            this.txtVon = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.btReset = new System.Windows.Forms.Button();
             this.lbTendothi = new System.Windows.Forms.Label();
             this.txtQues = new System.Windows.Forms.TextBox();
             this.chlstDapAn = new System.Windows.Forms.CheckedListBox();
@@ -63,45 +84,24 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.label6 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.txtIDLTT = new System.Windows.Forms.TextBox();
-            this.txtOnoff = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.txtDientro = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.txtNhietdo = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.txtVon = new System.Windows.Forms.TextBox();
-            this.txtPA = new System.Windows.Forms.TextBox();
-            this.adsad = new System.Windows.Forms.Label();
-            this.von = new System.Windows.Forms.Panel();
-            this.PA = new System.Windows.Forms.Panel();
-            this.nhietdo = new System.Windows.Forms.Panel();
-            this.dientro = new System.Windows.Forms.Panel();
-            this.vantruoc = new System.Windows.Forms.Panel();
-            this.IDLTT = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.giatriLine1 = new System.Windows.Forms.Panel();
-            this.giatriLine2 = new System.Windows.Forms.Panel();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.flowLayoutPanel1.SuspendLayout();
             this.gbBox1.SuspendLayout();
+            this.giatriLine2.SuspendLayout();
+            this.giatriLine1.SuspendLayout();
+            this.nhietdo.SuspendLayout();
+            this.dientro.SuspendLayout();
+            this.vantruoc.SuspendLayout();
+            this.IDLTT.SuspendLayout();
+            this.PA.SuspendLayout();
+            this.von.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picChe)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panelWiring.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            this.von.SuspendLayout();
-            this.PA.SuspendLayout();
-            this.nhietdo.SuspendLayout();
-            this.dientro.SuspendLayout();
-            this.vantruoc.SuspendLayout();
-            this.IDLTT.SuspendLayout();
-            this.giatriLine1.SuspendLayout();
-            this.giatriLine2.SuspendLayout();
             this.SuspendLayout();
             // 
             // flowLayoutPanel2
@@ -235,34 +235,15 @@
             this.gbBox1.Size = new System.Drawing.Size(1765, 808);
             this.gbBox1.TabIndex = 1;
             // 
-            // btReset
+            // giatriLine2
             // 
-            this.btReset.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.btReset.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btReset.ForeColor = System.Drawing.Color.Black;
-            this.btReset.Location = new System.Drawing.Point(1431, 748);
-            this.btReset.Name = "btReset";
-            this.btReset.Size = new System.Drawing.Size(274, 45);
-            this.btReset.TabIndex = 12;
-            this.btReset.Text = "Làm Mới Đồ Thị";
-            this.btReset.UseVisualStyleBackColor = false;
-            this.btReset.Click += new System.EventHandler(this.btReset_Click);
-            // 
-            // txtGiatri2
-            // 
-            this.txtGiatri2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtGiatri2.Location = new System.Drawing.Point(213, 13);
-            this.txtGiatri2.Name = "txtGiatri2";
-            this.txtGiatri2.Size = new System.Drawing.Size(116, 34);
-            this.txtGiatri2.TabIndex = 11;
-            // 
-            // txtGiatri1
-            // 
-            this.txtGiatri1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtGiatri1.Location = new System.Drawing.Point(211, 10);
-            this.txtGiatri1.Name = "txtGiatri1";
-            this.txtGiatri1.Size = new System.Drawing.Size(116, 34);
-            this.txtGiatri1.TabIndex = 11;
+            this.giatriLine2.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.giatriLine2.Controls.Add(this.lbGiatridothi2);
+            this.giatriLine2.Controls.Add(this.txtGiatri2);
+            this.giatriLine2.Location = new System.Drawing.Point(1023, 750);
+            this.giatriLine2.Name = "giatriLine2";
+            this.giatriLine2.Size = new System.Drawing.Size(332, 50);
+            this.giatriLine2.TabIndex = 14;
             // 
             // lbGiatridothi2
             // 
@@ -275,6 +256,24 @@
             this.lbGiatridothi2.TabIndex = 10;
             this.lbGiatridothi2.Text = "Giá Trị Line 2 :";
             // 
+            // txtGiatri2
+            // 
+            this.txtGiatri2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtGiatri2.Location = new System.Drawing.Point(213, 13);
+            this.txtGiatri2.Name = "txtGiatri2";
+            this.txtGiatri2.Size = new System.Drawing.Size(116, 34);
+            this.txtGiatri2.TabIndex = 11;
+            // 
+            // giatriLine1
+            // 
+            this.giatriLine1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.giatriLine1.Controls.Add(this.lbGiatridothi1);
+            this.giatriLine1.Controls.Add(this.txtGiatri1);
+            this.giatriLine1.Location = new System.Drawing.Point(142, 750);
+            this.giatriLine1.Name = "giatriLine1";
+            this.giatriLine1.Size = new System.Drawing.Size(330, 50);
+            this.giatriLine1.TabIndex = 14;
+            // 
             // lbGiatridothi1
             // 
             this.lbGiatridothi1.AutoSize = true;
@@ -286,6 +285,193 @@
             this.lbGiatridothi1.Size = new System.Drawing.Size(185, 29);
             this.lbGiatridothi1.TabIndex = 10;
             this.lbGiatridothi1.Text = "Giá Trị Line 1 :";
+            // 
+            // txtGiatri1
+            // 
+            this.txtGiatri1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtGiatri1.Location = new System.Drawing.Point(211, 10);
+            this.txtGiatri1.Name = "txtGiatri1";
+            this.txtGiatri1.Size = new System.Drawing.Size(116, 34);
+            this.txtGiatri1.TabIndex = 11;
+            // 
+            // nhietdo
+            // 
+            this.nhietdo.Controls.Add(this.txtNhietdo);
+            this.nhietdo.Controls.Add(this.label7);
+            this.nhietdo.Location = new System.Drawing.Point(1426, 147);
+            this.nhietdo.Name = "nhietdo";
+            this.nhietdo.Size = new System.Drawing.Size(244, 58);
+            this.nhietdo.TabIndex = 13;
+            // 
+            // txtNhietdo
+            // 
+            this.txtNhietdo.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNhietdo.Location = new System.Drawing.Point(30, 6);
+            this.txtNhietdo.Name = "txtNhietdo";
+            this.txtNhietdo.Size = new System.Drawing.Size(100, 38);
+            this.txtNhietdo.TabIndex = 5;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(186, 22);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(21, 16);
+            this.label7.TabIndex = 6;
+            this.label7.Text = "◦C";
+            // 
+            // dientro
+            // 
+            this.dientro.Controls.Add(this.label9);
+            this.dientro.Controls.Add(this.txtDientro);
+            this.dientro.Location = new System.Drawing.Point(1426, 83);
+            this.dientro.Name = "dientro";
+            this.dientro.Size = new System.Drawing.Size(244, 58);
+            this.dientro.TabIndex = 13;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(183, 22);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(28, 16);
+            this.label9.TabIndex = 8;
+            this.label9.Text = "Ôm";
+            // 
+            // txtDientro
+            // 
+            this.txtDientro.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDientro.Location = new System.Drawing.Point(29, 3);
+            this.txtDientro.Name = "txtDientro";
+            this.txtDientro.Size = new System.Drawing.Size(100, 38);
+            this.txtDientro.TabIndex = 7;
+            // 
+            // vantruoc
+            // 
+            this.vantruoc.Controls.Add(this.label6);
+            this.vantruoc.Controls.Add(this.txtOnoff);
+            this.vantruoc.Controls.Add(this.label8);
+            this.vantruoc.Location = new System.Drawing.Point(1384, 221);
+            this.vantruoc.Name = "vantruoc";
+            this.vantruoc.Size = new System.Drawing.Size(286, 58);
+            this.vantruoc.TabIndex = 13;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(210, 17);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(69, 16);
+            this.label6.TabIndex = 6;
+            this.label6.Text = "Van Trược";
+            // 
+            // txtOnoff
+            // 
+            this.txtOnoff.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtOnoff.Location = new System.Drawing.Point(72, 17);
+            this.txtOnoff.Name = "txtOnoff";
+            this.txtOnoff.Size = new System.Drawing.Size(100, 38);
+            this.txtOnoff.TabIndex = 5;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(3, 33);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(65, 16);
+            this.label8.TabIndex = 6;
+            this.label8.Text = "Đóng/ mở";
+            // 
+            // IDLTT
+            // 
+            this.IDLTT.Controls.Add(this.txtIDLTT);
+            this.IDLTT.Controls.Add(this.label1);
+            this.IDLTT.Location = new System.Drawing.Point(1426, 296);
+            this.IDLTT.Name = "IDLTT";
+            this.IDLTT.Size = new System.Drawing.Size(244, 58);
+            this.IDLTT.TabIndex = 13;
+            // 
+            // txtIDLTT
+            // 
+            this.txtIDLTT.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtIDLTT.Location = new System.Drawing.Point(30, 17);
+            this.txtIDLTT.Name = "txtIDLTT";
+            this.txtIDLTT.Size = new System.Drawing.Size(100, 38);
+            this.txtIDLTT.TabIndex = 5;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(175, 19);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(45, 16);
+            this.label1.TabIndex = 9;
+            this.label1.Text = "IDLTT";
+            // 
+            // PA
+            // 
+            this.PA.Controls.Add(this.txtPA);
+            this.PA.Controls.Add(this.adsad);
+            this.PA.Location = new System.Drawing.Point(1426, 370);
+            this.PA.Name = "PA";
+            this.PA.Size = new System.Drawing.Size(244, 58);
+            this.PA.TabIndex = 13;
+            // 
+            // txtPA
+            // 
+            this.txtPA.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPA.Location = new System.Drawing.Point(30, 20);
+            this.txtPA.Name = "txtPA";
+            this.txtPA.Size = new System.Drawing.Size(100, 38);
+            this.txtPA.TabIndex = 5;
+            // 
+            // adsad
+            // 
+            this.adsad.AutoSize = true;
+            this.adsad.Location = new System.Drawing.Point(185, 36);
+            this.adsad.Name = "adsad";
+            this.adsad.Size = new System.Drawing.Size(25, 16);
+            this.adsad.TabIndex = 9;
+            this.adsad.Text = "PA";
+            // 
+            // von
+            // 
+            this.von.Controls.Add(this.txtVon);
+            this.von.Controls.Add(this.label5);
+            this.von.Location = new System.Drawing.Point(1426, 16);
+            this.von.Name = "von";
+            this.von.Size = new System.Drawing.Size(244, 58);
+            this.von.TabIndex = 13;
+            // 
+            // txtVon
+            // 
+            this.txtVon.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtVon.Location = new System.Drawing.Point(30, 3);
+            this.txtVon.Name = "txtVon";
+            this.txtVon.Size = new System.Drawing.Size(100, 38);
+            this.txtVon.TabIndex = 5;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(188, 19);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(16, 16);
+            this.label5.TabIndex = 6;
+            this.label5.Text = "V";
+            // 
+            // btReset
+            // 
+            this.btReset.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.btReset.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btReset.ForeColor = System.Drawing.Color.Black;
+            this.btReset.Location = new System.Drawing.Point(1431, 748);
+            this.btReset.Name = "btReset";
+            this.btReset.Size = new System.Drawing.Size(274, 45);
+            this.btReset.TabIndex = 12;
+            this.btReset.Text = "Làm Mới Đồ Thị";
+            this.btReset.UseVisualStyleBackColor = false;
+            this.btReset.Click += new System.EventHandler(this.btReset_Click);
             // 
             // lbTendothi
             // 
@@ -473,192 +659,6 @@
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(210, 17);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(69, 16);
-            this.label6.TabIndex = 6;
-            this.label6.Text = "Van Trược";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(3, 33);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(65, 16);
-            this.label8.TabIndex = 6;
-            this.label8.Text = "Đóng/ mở";
-            // 
-            // txtIDLTT
-            // 
-            this.txtIDLTT.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtIDLTT.Location = new System.Drawing.Point(30, 17);
-            this.txtIDLTT.Name = "txtIDLTT";
-            this.txtIDLTT.Size = new System.Drawing.Size(100, 38);
-            this.txtIDLTT.TabIndex = 5;
-            // 
-            // txtOnoff
-            // 
-            this.txtOnoff.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtOnoff.Location = new System.Drawing.Point(72, 17);
-            this.txtOnoff.Name = "txtOnoff";
-            this.txtOnoff.Size = new System.Drawing.Size(100, 38);
-            this.txtOnoff.TabIndex = 5;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(183, 22);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(28, 16);
-            this.label9.TabIndex = 8;
-            this.label9.Text = "Ôm";
-            // 
-            // txtDientro
-            // 
-            this.txtDientro.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDientro.Location = new System.Drawing.Point(29, 3);
-            this.txtDientro.Name = "txtDientro";
-            this.txtDientro.Size = new System.Drawing.Size(100, 38);
-            this.txtDientro.TabIndex = 7;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(186, 22);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(21, 16);
-            this.label7.TabIndex = 6;
-            this.label7.Text = "◦C";
-            // 
-            // txtNhietdo
-            // 
-            this.txtNhietdo.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNhietdo.Location = new System.Drawing.Point(30, 6);
-            this.txtNhietdo.Name = "txtNhietdo";
-            this.txtNhietdo.Size = new System.Drawing.Size(100, 38);
-            this.txtNhietdo.TabIndex = 5;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(188, 19);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(16, 16);
-            this.label5.TabIndex = 6;
-            this.label5.Text = "V";
-            // 
-            // txtVon
-            // 
-            this.txtVon.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtVon.Location = new System.Drawing.Point(30, 3);
-            this.txtVon.Name = "txtVon";
-            this.txtVon.Size = new System.Drawing.Size(100, 38);
-            this.txtVon.TabIndex = 5;
-            // 
-            // txtPA
-            // 
-            this.txtPA.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPA.Location = new System.Drawing.Point(30, 20);
-            this.txtPA.Name = "txtPA";
-            this.txtPA.Size = new System.Drawing.Size(100, 38);
-            this.txtPA.TabIndex = 5;
-            // 
-            // adsad
-            // 
-            this.adsad.AutoSize = true;
-            this.adsad.Location = new System.Drawing.Point(185, 36);
-            this.adsad.Name = "adsad";
-            this.adsad.Size = new System.Drawing.Size(25, 16);
-            this.adsad.TabIndex = 9;
-            this.adsad.Text = "PA";
-            // 
-            // von
-            // 
-            this.von.Controls.Add(this.txtVon);
-            this.von.Controls.Add(this.label5);
-            this.von.Location = new System.Drawing.Point(1426, 16);
-            this.von.Name = "von";
-            this.von.Size = new System.Drawing.Size(244, 58);
-            this.von.TabIndex = 13;
-            // 
-            // PA
-            // 
-            this.PA.Controls.Add(this.txtPA);
-            this.PA.Controls.Add(this.adsad);
-            this.PA.Location = new System.Drawing.Point(1426, 370);
-            this.PA.Name = "PA";
-            this.PA.Size = new System.Drawing.Size(244, 58);
-            this.PA.TabIndex = 13;
-            // 
-            // nhietdo
-            // 
-            this.nhietdo.Controls.Add(this.txtNhietdo);
-            this.nhietdo.Controls.Add(this.label7);
-            this.nhietdo.Location = new System.Drawing.Point(1426, 147);
-            this.nhietdo.Name = "nhietdo";
-            this.nhietdo.Size = new System.Drawing.Size(244, 58);
-            this.nhietdo.TabIndex = 13;
-            // 
-            // dientro
-            // 
-            this.dientro.Controls.Add(this.label9);
-            this.dientro.Controls.Add(this.txtDientro);
-            this.dientro.Location = new System.Drawing.Point(1426, 83);
-            this.dientro.Name = "dientro";
-            this.dientro.Size = new System.Drawing.Size(244, 58);
-            this.dientro.TabIndex = 13;
-            // 
-            // vantruoc
-            // 
-            this.vantruoc.Controls.Add(this.label6);
-            this.vantruoc.Controls.Add(this.txtOnoff);
-            this.vantruoc.Controls.Add(this.label8);
-            this.vantruoc.Location = new System.Drawing.Point(1384, 221);
-            this.vantruoc.Name = "vantruoc";
-            this.vantruoc.Size = new System.Drawing.Size(286, 58);
-            this.vantruoc.TabIndex = 13;
-            // 
-            // IDLTT
-            // 
-            this.IDLTT.Controls.Add(this.txtIDLTT);
-            this.IDLTT.Controls.Add(this.label1);
-            this.IDLTT.Location = new System.Drawing.Point(1426, 296);
-            this.IDLTT.Name = "IDLTT";
-            this.IDLTT.Size = new System.Drawing.Size(244, 58);
-            this.IDLTT.TabIndex = 13;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(175, 19);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(45, 16);
-            this.label1.TabIndex = 9;
-            this.label1.Text = "IDLTT";
-            // 
-            // giatriLine1
-            // 
-            this.giatriLine1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.giatriLine1.Controls.Add(this.lbGiatridothi1);
-            this.giatriLine1.Controls.Add(this.txtGiatri1);
-            this.giatriLine1.Location = new System.Drawing.Point(142, 750);
-            this.giatriLine1.Name = "giatriLine1";
-            this.giatriLine1.Size = new System.Drawing.Size(330, 50);
-            this.giatriLine1.TabIndex = 14;
-            // 
-            // giatriLine2
-            // 
-            this.giatriLine2.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.giatriLine2.Controls.Add(this.lbGiatridothi2);
-            this.giatriLine2.Controls.Add(this.txtGiatri2);
-            this.giatriLine2.Location = new System.Drawing.Point(1023, 750);
-            this.giatriLine2.Name = "giatriLine2";
-            this.giatriLine2.Size = new System.Drawing.Size(332, 50);
-            this.giatriLine2.TabIndex = 14;
-            // 
             // formHienThiBaiHoc3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -685,17 +685,10 @@
             this.flowLayoutPanel1.ResumeLayout(false);
             this.gbBox1.ResumeLayout(false);
             this.gbBox1.PerformLayout();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picChe)).EndInit();
-            this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.panelWiring.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            this.von.ResumeLayout(false);
-            this.von.PerformLayout();
-            this.PA.ResumeLayout(false);
-            this.PA.PerformLayout();
+            this.giatriLine2.ResumeLayout(false);
+            this.giatriLine2.PerformLayout();
+            this.giatriLine1.ResumeLayout(false);
+            this.giatriLine1.PerformLayout();
             this.nhietdo.ResumeLayout(false);
             this.nhietdo.PerformLayout();
             this.dientro.ResumeLayout(false);
@@ -704,10 +697,17 @@
             this.vantruoc.PerformLayout();
             this.IDLTT.ResumeLayout(false);
             this.IDLTT.PerformLayout();
-            this.giatriLine1.ResumeLayout(false);
-            this.giatriLine1.PerformLayout();
-            this.giatriLine2.ResumeLayout(false);
-            this.giatriLine2.PerformLayout();
+            this.PA.ResumeLayout(false);
+            this.PA.PerformLayout();
+            this.von.ResumeLayout(false);
+            this.von.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picChe)).EndInit();
+            this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panelWiring.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
