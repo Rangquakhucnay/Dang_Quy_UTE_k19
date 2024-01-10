@@ -60,6 +60,7 @@ namespace HoanThanhDangNhap
         string VG, R_TH, t_TH ,TH;
         string chonloaitinhhieu;
 
+        double aa, bb;
         // cac bien hien thi panel wiring
         private int currentImageIndex = 1;
         private int maxImageIndex;
@@ -377,9 +378,9 @@ namespace HoanThanhDangNhap
                 myPanne.X2Axis.Scale.MajorStep = 5;
 
                 myPanne.YAxis.Scale.Min = 0;
-                myPanne.YAxis.Scale.Max = 10;
-                myPanne.YAxis.Scale.MinorStep = 0.01;
-                myPanne.YAxis.Scale.MajorStep = 1;
+                myPanne.YAxis.Scale.Max = 6;
+                myPanne.YAxis.Scale.MinorStep = 1;
+                myPanne.YAxis.Scale.MajorStep = 5;
 
                 zedGraphControl1.AxisChange();
                 // serCom.Open();
@@ -500,8 +501,26 @@ namespace HoanThanhDangNhap
             }
             else if (int.Parse(kk) == 2)
             {
-              
-                 Invoke(new MethodInvoker(() => draw2(Convert.ToDouble(giatri1),Convert.ToDouble(giatri2) )));
+                
+                try
+                {
+                    double aa = Convert.ToDouble(giatri1);
+                    double bb = Convert.ToDouble(giatri2);
+                    Invoke(new MethodInvoker(() => draw2(aa, bb)));
+                    // Console.WriteLine(soThuc); // In ra: 3.14
+                }
+                catch (FormatException ex)
+                {
+                    aa = 2.5; bb = 2.5;
+                    Invoke(new MethodInvoker(() => draw2(aa, bb)));
+                    // Console.WriteLine("Chuỗi không thể chuyển đổi thành số thực: " + ex.Message);
+                  
+                }
+
+               
+
+
+               
                 giatriLine1.Visible = true;
                 giatriLine2.Visible = true;
                 lbGiatridothi1.Visible = true;
@@ -1149,9 +1168,9 @@ namespace HoanThanhDangNhap
                         int kq2 = command.ExecuteNonQuery();
                         if (kq2 > 0)
                         {
-                            MessageBox.Show("Lưu tiến độ thành công!");
-                            MessageBox.Show(nqt.ToString());
-                            MessageBox.Show(vitri.ToString());
+                           // //MessageBox.Show("Lưu tiến độ thành công!");
+                           // MessageBox.Show(nqt.ToString());
+                           // MessageBox.Show(vitri.ToString());
                         }
                         else
                         {

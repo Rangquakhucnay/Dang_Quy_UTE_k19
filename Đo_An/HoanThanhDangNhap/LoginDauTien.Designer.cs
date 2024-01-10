@@ -60,12 +60,13 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(82)))), ((int)(((byte)(110)))));
-            this.label2.Location = new System.Drawing.Point(851, 247);
+            this.label2.Location = new System.Drawing.Point(753, 248);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(383, 69);
+            this.label2.Size = new System.Drawing.Size(555, 69);
             this.label2.TabIndex = 4;
-            this.label2.Text = "BAE Training";
+            this.label2.Text = "Diagnostic Program";
             this.label2.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // txtMatKhau
             // 
@@ -94,13 +95,12 @@
             // 
             this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox2.Image = global::HoanThanhDangNhap.Properties.Resources.Logo_DH_Su_Pham_Ky_Thuat_TP_Ho_Chi_Minh_HCMUTE;
-            this.pictureBox2.Location = new System.Drawing.Point(981, 74);
+            this.pictureBox2.Location = new System.Drawing.Point(976, 55);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(123, 129);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 2;
             this.pictureBox2.TabStop = false;
-       
             // 
             // panel1
             // 
