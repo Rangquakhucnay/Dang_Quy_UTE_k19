@@ -641,7 +641,7 @@ namespace HoanThanhDangNhap
                 {
 
                     int nqtOLD = reader.GetInt32(vitriCot);
-                    MessageBox.Show(nqtOLD.ToString());
+                 //   MessageBox.Show(nqtOLD.ToString());
 
                     int vitri = reader.GetInt32(0);
                     int nqt = 0;

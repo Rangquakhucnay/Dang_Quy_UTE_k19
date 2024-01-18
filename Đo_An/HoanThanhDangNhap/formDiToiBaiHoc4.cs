@@ -92,6 +92,7 @@ namespace HoanThanhDangNhap
             conn.Dispose();
         }
 
+        
         private void btnOK_Click(object sender, EventArgs e)
         {
             if (cbSoActiBH.Text == "")

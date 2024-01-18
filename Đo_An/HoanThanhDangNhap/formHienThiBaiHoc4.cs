@@ -27,6 +27,8 @@ namespace HoanThanhDangNhap
         string hide = "0", fault = "", answer = "";
         string video = "";
         string faultTruoc = "0";
+        string ma="",check = "";
+        
 
         int nonNullRowCount = 0;
         string rowEND;
@@ -250,7 +252,7 @@ namespace HoanThanhDangNhap
         }
         private void Nut_Click(object sender, EventArgs e)
         {
-            // Lấy ra nút được nhấn
+           // Lấy ra nút được nhấn
             System.Windows.Forms.Button nut = sender as System.Windows.Forms.Button;
             // Xử lý các hành động tùy ý ở đây
             // Lấy giá trị số nguyên từ chuỗi ký tự của nút
@@ -261,8 +263,8 @@ namespace HoanThanhDangNhap
             nut.BackColor = customColor;
             if (giaTriNutSoNguyen == 1)
             {
-                panelVideo.SendToBack();
-              /// guiMaFault("x");
+                // panelVideo.SendToBack();
+                 guiMaFault("x");
                 HienThiWiring();
                 panelWiring.Visible = true;
                 panelWiring.BringToFront();
@@ -270,7 +272,7 @@ namespace HoanThanhDangNhap
             }
             else
             {
-               // guiMaFault("x");
+                 guiMaFault("x");
                 HienThiBaiHoc(giaTriNutSoNguyen);
                 btnOK.Enabled = true;
                 panelWiring.Visible = false;
@@ -278,8 +280,8 @@ namespace HoanThanhDangNhap
             }
             nActi = giaTriNutSoNguyen;  //set nActi về lại giá trị của cái nút mà mình bấm
             btnOK.Enabled = true;
-            NextPicVideo.Enabled = true;
-            PrevPicVideo.Enabled = true;
+            //  NextPicVideo.Enabled = true;
+            //  PrevPicVideo.Enabled = true;
             buttonLeft.Enabled = true;
             buttonRight.Enabled = true;
         }
@@ -287,6 +289,21 @@ namespace HoanThanhDangNhap
         /// <summary>
         /// /////////////////////////////////////////////////////////////////////////////////////
         /// </summary>
+
+        private void guiMaFault(string ft)
+        {
+            if (serialPort1.IsOpen)
+            {
+                serialPort1.Write(ft);
+                serialPort1.Close();
+            }
+            else
+            {
+                serialPort1.Open();
+                serialPort1.Write(ft);
+                serialPort1.Close();
+            }
+        }
 
         private void HienThiBaiHoc(int v)
         {
@@ -345,13 +362,15 @@ namespace HoanThanhDangNhap
                         dapanA = range.Cells[row, 7].Value2.ToString();
                         dapanB = range.Cells[row, 8].Value2.ToString();
                         dapanC = range.Cells[row, 9].Value2.ToString();
-                        answer = range.Cells[row, 10].Value2.ToString();
-                        fault = range.Cells[row, 11].Value2.ToString();
-                        dapanD = range.Cells[row, 12].Value2.ToString();
+                        answer = range.Cells[row, 11].Value2.ToString();
+                       
+                        dapanD = range.Cells[row, 10].Value2.ToString();
+                       check = range.Cells[row, 12].Value2.ToString();
+                        ma = range.Cells[row, 13].Value2.ToString();
 
 
 
-                      
+
 
                         // Xử lý dữ liệu tìm được ở đây
                     }
@@ -424,6 +443,7 @@ namespace HoanThanhDangNhap
                 string[] dsDA = { dapanA, dapanB, dapanC, dapanD };
                 chlstDapAn.Items.AddRange(dsDA);
             }
+            checkguima();
         }
 
         private void HienThiVideo()
@@ -458,7 +478,7 @@ namespace HoanThanhDangNhap
 
         private void formHienThiBaiHoc_FormClosed(object sender, FormClosedEventArgs e)
         {
-           // guiMaFault("x");
+            guiMaFault("x");
             LuuTiendo();
             //MessageBox.Show("đã lưu");
         }
@@ -466,8 +486,9 @@ namespace HoanThanhDangNhap
         
         private void button3_Click(object sender, EventArgs e)
         {
-          //  guiMaFault("x");
+            guiMaFault("x");
             this.Close();
+            LuuTiendo();
         }
 
         private void chlstDapAn_ItemCheck(object sender, ItemCheckEventArgs e)
@@ -514,12 +535,18 @@ namespace HoanThanhDangNhap
             }
         }
 
-       
-        private void btnOK_Click(object sender, EventArgs e)
+       public void checkguima()
+        {
+            if (int.Parse( check) == 1)
+            {
+                guiMaFault(ma);
+            }
+        }
+        private void btnOK_Click(object sender, EventArgs e)    
         {
             // Bật nút chuyển ảnh lên
-            PrevPicVideo.Enabled = true;
-            NextPicVideo.Enabled = true;
+          //  PrevPicVideo.Enabled = true;
+            //NextPicVideo.Enabled = true;
 
             //-------------------------
             if (nActi == 1)

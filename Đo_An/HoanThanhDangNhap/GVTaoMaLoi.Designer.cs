@@ -41,11 +41,11 @@
             this.listcom = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.NutThoat = new System.Windows.Forms.Button();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -175,6 +175,16 @@
             this.label6.TabIndex = 4;
             this.label6.Text = "Cổng COM";
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::HoanThanhDangNhap.Properties.Resources.Iconsmind_Outline_Information_512;
+            this.pictureBox2.Location = new System.Drawing.Point(16, 17);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(48, 41);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 1;
+            this.pictureBox2.TabStop = false;
+            // 
             // label5
             // 
             this.label5.AutoSize = true;
@@ -217,19 +227,9 @@
             this.NutThoat.UseVisualStyleBackColor = true;
             this.NutThoat.Click += new System.EventHandler(this.NutThoat_Click);
             // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = global::HoanThanhDangNhap.Properties.Resources.Iconsmind_Outline_Information_512;
-            this.pictureBox2.Location = new System.Drawing.Point(16, 17);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(48, 41);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 1;
-            this.pictureBox2.TabStop = false;
-            // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::HoanThanhDangNhap.Properties.Resources.z5051189230262_ea1778e955ed0bc9803d2279a9bc0d95;
+            this.pictureBox1.Image = global::HoanThanhDangNhap.Properties.Resources.z5061536431857_7d36129f9fca2cefaba4b95903d32a66;
             this.pictureBox1.Location = new System.Drawing.Point(12, 2);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(868, 870);

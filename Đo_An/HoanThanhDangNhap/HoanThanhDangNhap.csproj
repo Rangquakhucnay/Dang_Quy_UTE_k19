@@ -360,6 +360,7 @@
     <None Include="Resources\electronics_repair_01_whitebg.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\z5061536431857_7d36129f9fca2cefaba4b95903d32a66.jpg" />
     <None Include="Resources\z5051189230262_ea1778e955ed0bc9803d2279a9bc0d95.jpg" />
     <None Include="Resources\logout.png" />
     <None Include="Resources\Icons8-Ios7-Arrows-Forward.512.png" />

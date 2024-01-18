@@ -118,11 +118,11 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="electronics_repair_01" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\electronics_repair_01.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Picture3" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Picture3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Picture11" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Picture11.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="logout" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\logout.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -130,11 +130,9 @@
   <data name="bg2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\bg2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-
   <data name="Screenshot 2023-12-08 153203" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Screenshot 2023-12-08 153203.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  
   <data name="Picture111" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Picture111.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -153,12 +151,9 @@
   <data name="Picture12" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Picture12.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  
-  
-  <data name="visible-icon-13" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\visible-icon-13.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="bg21" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\bg21.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
- 
   <data name="Iconsmind-Outline-Information.512" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Iconsmind-Outline-Information.512.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -168,12 +163,8 @@
   <data name="Picture41" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Picture41.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  
   <data name="user2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\user.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="user1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\user1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Icons8-Ios7-Arrows-Back.512" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Icons8-Ios7-Arrows-Back.512.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -181,12 +172,11 @@
   <data name="Icons8-Ios7-Arrows-Forward.512" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Icons8-Ios7-Arrows-Forward.512.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  
   <data name="z5051189230262_ea1778e955ed0bc9803d2279a9bc0d95" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\z5051189230262_ea1778e955ed0bc9803d2279a9bc0d95.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="electronics_repair_01" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\electronics_repair_01.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="user1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\user1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="bg100" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\bg100.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -200,28 +190,28 @@
   <data name="pass1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\pass1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
- 
   <data name="pas" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\pas.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  
-  <data name="bg21" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\bg21.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Picture11" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Picture11.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  
+  <data name="visible-icon-13" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\visible-icon-13.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="daynhiet" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\daynhiet.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
- 
   <data name="nutchonformkt" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\nutchonformkt.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="cam-bien-luu-luong-khi-nap" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\cam-bien-luu-luong-khi-nap.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
- 
   <data name="bg3" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\bg3.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  
+  <data name="z5061536431857_7d36129f9fca2cefaba4b95903d32a66" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\z5061536431857_7d36129f9fca2cefaba4b95903d32a66.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>

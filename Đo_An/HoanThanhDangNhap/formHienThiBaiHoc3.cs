@@ -511,7 +511,7 @@ namespace HoanThanhDangNhap
                 }
                 catch (FormatException ex)
                 {
-                    aa = 2.5; bb = 2.5;
+                    bb = 2.5;aa = 2;
                     Invoke(new MethodInvoker(() => draw2(aa, bb)));
                     // Console.WriteLine("Chuỗi không thể chuyển đổi thành số thực: " + ex.Message);
                   
@@ -1077,7 +1077,7 @@ namespace HoanThanhDangNhap
             //-------------------------
             if (nActi == 1)
             {
-                HienthiKhinhanOK(1);
+                HienthiKhinhanOK(2);
                 nActi++;
                 HienThiBaiHoc(nActi);
             }

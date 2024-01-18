@@ -39,6 +39,7 @@ namespace HoanThanhDangNhap
             { "Chương 11:", "HỆ THỐNG ĐÁNH LỬA" },
             { "Chương 12:", "HỆ THỐNG PHUN XĂNG" },
             { "Chương 13:", "HỆ THỐNG ĐIỀU KHIỂN BƯỚM GA" },
+            { "Chương 14:", "HỆ THỐNG ĐIỀU khIỂN BƯỚM GA 2 " },
            
             // và tiếp tục với các cặp khác...
         };
@@ -59,11 +60,12 @@ namespace HoanThanhDangNhap
             { "faultC10", new string[] { "14","15","16" } },
             { "faultC11", new string[] { "17" } },
             { "faultC12", new string[] { "18" } },
-            { "faultC13", new string[] { "19","20"} },
-           
-        
+            { "faultC13", new string[] { "19"} },
+            { "faultC14", new string[] { "20"} },
 
-           
+
+
+
         };
 
         // các biến để lưu kí tự excel lấy được
@@ -237,7 +239,7 @@ namespace HoanThanhDangNhap
                 
                 guiMaFault(KituFault);
 
-            MessageBox.Show("Đã gửi mã tạo fault chuong " + a.ToString() + " loi " + Ma);// mơi thay ///////////////////////////////
+          //  MessageBox.Show("Đã gửi mã tạo fault chuong " + a.ToString() + " loi " + Ma);// mơi thay ///////////////////////////////
                 string[] dsDA1 = comp1.Split(',');
                 chlst_comp.Items.Clear();
                 chlst_comp.Items.AddRange(dsDA1);
